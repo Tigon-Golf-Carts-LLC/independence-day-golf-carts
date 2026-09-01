@@ -337,7 +337,9 @@ export function buildDataFiles(data) {
         salesEvent: { name: salesEvent.name, alternateName: salesEvent.altName },
         summary: data.summary,
         facets: data.facets,
-        stores: data.stores,
+        // dmsName is stripped: the store list is published verbatim and must not
+        // carry the dealer group's internal naming.
+        stores: data.stores.map(({ dmsName, ...store }) => store),
         carts: data.carts.map((cart) => ({
           ...cart,
           url: `${site.url}/golfcart/${cart.slug}/`,
