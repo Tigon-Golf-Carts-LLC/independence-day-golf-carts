@@ -11,7 +11,7 @@ import { dirname, resolve, join } from "node:path";
 
 import { site } from "../data/site.config.mjs";
 import { toStateCode, locations as locationSeed } from "../data/locations.mjs";
-import { financingPartners } from "../data/site.config.mjs";
+import { financingPartners, storeDisplayName } from "../data/site.config.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = resolve(root, "dist");
@@ -367,5 +367,32 @@ test("every financing partner links to its dealer-specific application", () => {
   for (const anchor of externalAnchors.filter((a) => financingPartners.some((p) => a.includes(p.url.replace(/&/g, "&amp;"))))) {
     assert.ok(anchor.includes('target="_blank"'), `external link missing target=_blank: ${anchor}`);
     assert.ok(anchor.includes("noopener"), `external link missing rel=noopener: ${anchor}`);
+  }
+});
+
+test("locations are named for the sales event, never the DMS parent group", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  for (const store of inventory.stores) {
+    const expected = storeDisplayName(store.city, store.state);
+    assert.equal(store.name, expected, `${store.slug} has the wrong display name`);
+    assert.ok(!/tigon/i.test(store.name), `${store.slug} still carries the DMS group name`);
+  }
+  for (const cart of inventory.carts) {
+    if (!cart.storeName) continue;
+    assert.ok(!/tigon/i.test(cart.storeName), `cart ${cart.slug} carries a DMS store name`);
+  }
+
+  // No location page, and no page that names a store, may render the DMS name.
+  // "Tigon" is also a battery brand in the DMS, so only store-name contexts
+  // are checked here rather than the raw word.
+  for (const store of inventory.stores) {
+    const html = read(join("locations", store.slug, "index.html"));
+    assert.ok(html.includes(expectedName(store)), `${store.slug} page does not show its display name`);
+    assert.ok(!/Tigon\s+(Hatfield|Bayville|Dover|Ocean View|Rio Grande|Waretown|Long Pond|Scranton|Gloucester Point|Raleigh|Orangeburg|Lecanto|South Bend|Swanton|Wichita Falls)/.test(html),
+      `${store.slug} page still shows a DMS store name`);
+  }
+
+  function expectedName(store) {
+    return storeDisplayName(store.city, store.state);
   }
 });

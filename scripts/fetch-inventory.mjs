@@ -18,6 +18,7 @@ import { dirname, resolve } from "node:path";
 import { getAllCarts, getStores } from "./lib/dms.mjs";
 import { toSlugPart, toMakeKey, buildCartTitle, isoStamp } from "./lib/util.mjs";
 import { locations as locationSeed, toStateCode } from "../data/locations.mjs";
+import { storeDisplayName } from "../data/site.config.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = resolve(root, "data/inventory.json");
@@ -40,7 +41,8 @@ function mergeStores(dmsStores) {
       ...seed,
       storeId: store?.storeId ?? null,
       storeMongoId: store?._id ?? null,
-      name: store?.name ?? `Independence Day Golf Carts — ${seed.city}, ${seed.stateCode}`,
+      name: storeDisplayName(seed.city, seed.state),
+      dmsName: store?.name ?? null,
       address1: store?.address?.address1 ?? "",
       address2: store?.address?.address2 ?? "",
       postalCode: store?.address?.postalCode ?? "",
@@ -67,7 +69,8 @@ function mergeStores(dmsStores) {
       keywords: [`${city} golf carts`, `${city} ${state} golf cart dealer`],
       storeId: store?.storeId ?? null,
       storeMongoId: store?._id ?? null,
-      name: store?.name ?? `Independence Day Golf Carts — ${city}`,
+      name: storeDisplayName(city, state),
+      dmsName: store?.name ?? null,
       address1: store?.address?.address1 ?? "",
       address2: store?.address?.address2 ?? "",
       postalCode: store?.address?.postalCode ?? "",

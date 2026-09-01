@@ -1,6 +1,6 @@
 /** Location index and per-store pages — the local SEO surface. */
 
-import { site, salesEvent } from "../../data/site.config.mjs";
+import { site, salesEvent, storeDisplayName } from "../../data/site.config.mjs";
 import { esc, clamp, formatPriceShort } from "../lib/util.mjs";
 import { renderPage, ICONS, abs } from "../lib/layout.mjs";
 import { cartCard, ctaBand } from "../lib/components.mjs";
@@ -11,7 +11,7 @@ export function storeSchema(store) {
   return {
     "@type": ["AutoDealer", "LocalBusiness"],
     "@id": `${url}#dealer`,
-    name: store.name,
+    name: store.name || storeDisplayName(store.city, store.state),
     branchOf: { "@id": `${site.url}/#organization` },
     parentOrganization: { "@id": `${site.url}/#organization` },
     url,

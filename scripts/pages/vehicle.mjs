@@ -4,7 +4,7 @@
  * richest structured data on the site (Product + Vehicle + Offer + FAQ).
  */
 
-import { site, salesEvent } from "../../data/site.config.mjs";
+import { site, salesEvent, storeDisplayName } from "../../data/site.config.mjs";
 import { esc, clamp, formatPrice, formatPriceShort, monthlyPayment, cartImages } from "../lib/util.mjs";
 import { renderPage, ICONS, abs } from "../lib/layout.mjs";
 import { cartCard, cartSchema, cartDescription, cartProperties, ctaBand } from "../lib/components.mjs";
@@ -100,7 +100,7 @@ export function renderVehiclePage({ cart, data, related }) {
         <div class="cart-card__badges" style="margin-bottom:10px">${badges}</div>
         <h1 style="margin-bottom:8px">${esc(heading)}</h1>
         <p style="color:var(--muted);margin:0">
-          ${cart.city ? `${ICONS.pin} In stock at ${esc(store?.name || `${site.name} — ${cart.city}`)}, ${esc(cart.city)}, ${esc(cart.stateCode)}` : "Call for current location"}
+          ${cart.city ? `${ICONS.pin} In stock at ${esc(store?.name || storeDisplayName(cart.city, cart.state))}` : "Call for current location"}
           ${cart.serial ? ` &middot; Stock #${esc(cart.serial)}` : ""}
         </p>
       </div>
