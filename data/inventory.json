@@ -1,18 +1,18 @@
 {
- "generatedAt": "2026-09-01T18:23:04+00:00",
+ "generatedAt": "2026-09-01T18:39:59+00:00",
  "source": "dms-live",
  "summary": {
-  "total": 1172,
-  "new": 644,
-  "used": 528,
+  "total": 1170,
+  "new": 643,
+  "used": 527,
   "electric": 1031,
-  "gas": 141,
+  "gas": 139,
   "streetLegal": 588,
-  "lifted": 679,
-  "withPhotos": 810,
+  "lifted": 677,
+  "withPhotos": 808,
   "priceMin": 1600,
   "priceMax": 17845,
-  "priceCount": 1172
+  "priceCount": 1170
  },
  "facets": {
   "makes": [
@@ -29,7 +29,7 @@
    {
     "key": "club_car",
     "label": "Club Car",
-    "count": 317
+    "count": 316
    },
    {
     "key": "cushman",
@@ -104,7 +104,7 @@
    {
     "key": "yamaha",
     "label": "Yamaha",
-    "count": 104
+    "count": 103
    }
   ],
   "models": [
@@ -285,7 +285,7 @@
    {
     "key": "g29",
     "label": "G29",
-    "count": 53,
+    "count": 52,
     "makeKey": "yamaha"
    },
    {
@@ -369,7 +369,7 @@
    {
     "key": "onward-4-passenger-2-2-lsv",
     "label": "Onward 4 Passenger (2+2) LSV",
-    "count": 14,
+    "count": 13,
     "makeKey": "club_car"
    },
    {
@@ -589,7 +589,7 @@
    {
     "key": "candy-apple-red",
     "label": "Candy Apple Red",
-    "count": 10
+    "count": 9
    },
    {
     "key": "caribbean",
@@ -784,7 +784,7 @@
    {
     "key": "white",
     "label": "White",
-    "count": 149
+    "count": 148
    },
    {
     "key": "yellow",
@@ -801,7 +801,7 @@
    {
     "key": "4-passenger",
     "label": "4 Passenger",
-    "count": 911
+    "count": 909
    },
    {
     "key": "6-passenger",
@@ -818,7 +818,7 @@
    {
     "key": "2x4",
     "label": "2X4",
-    "count": 1142
+    "count": 1140
    },
    {
     "key": "4x4",
@@ -840,7 +840,7 @@
    {
     "key": "lithium",
     "label": "Lithium",
-    "count": 685
+    "count": 684
    }
   ]
  },
@@ -1129,7 +1129,7 @@
    "postalCode": "23072",
    "country": "USA",
    "inDms": true,
-   "cartCount": 41
+   "cartCount": 40
   },
   {
    "slug": "raleigh",
@@ -1223,7 +1223,7 @@
    "postalCode": "34461",
    "country": "USA",
    "inDms": true,
-   "cartCount": 56
+   "cartCount": 55
   },
   {
    "slug": "south-bend",
@@ -2537,7 +2537,7 @@
   },
   {
    "id": "6a2706fa49521a8063d13f0a",
-   "slug": "club-car-onward-4-passenger-2-2-lsv-candy-apple-red-gloucester-point-virginia-usa-01",
+   "slug": "club-car-onward-4-passenger-2-2-lsv-candy-apple-red-gloucester-point-virginia-usa",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Onward 4 Passenger (2+2) LSV",
@@ -2699,7 +2699,7 @@
   },
   {
    "id": "6a2d7ea38221bed0f712b1d9",
-   "slug": "club-car-onward-4-passenger-2-2-lsv-candy-apple-red-gloucester-point-virginia-usa-02",
+   "slug": "club-car-onward-4-passenger-2-2-lsv-candy-apple-red-gloucester-point-virginia-usa-01",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Onward 4 Passenger (2+2) LSV",
@@ -7706,87 +7706,6 @@
      "inventory"
     ],
     "onWebsite": false,
-    "needOnWebsite": true,
-    "isDraft": false
-   },
-   "storeId": "T8",
-   "locationSlug": "gloucester-point",
-   "city": "Gloucester Point",
-   "state": "Virginia",
-   "stateCode": "VA",
-   "country": "USA",
-   "storeName": "Independence Golf Carts Sale location In Gloucester Point Virginia",
-   "locationDescription": ""
-  },
-  {
-   "id": "6a187fe3f2d90d449a67052f",
-   "slug": "club-car-onward-4-passenger-2-2-lsv-candy-apple-red-gloucester-point-virginia-usa",
-   "make": "Club Car",
-   "makeKey": "club_car",
-   "model": "Onward 4 Passenger (2+2) LSV",
-   "modelKey": "onward-4-passenger-2-2-lsv",
-   "year": "2027",
-   "title": "Club Car Onward 4 Passenger (2+2) LSV Candy Apple Red",
-   "price": 12199,
-   "rawPricing": {
-    "retailPrice": 12199,
-    "invoiceNo": "3156017"
-   },
-   "isElectric": false,
-   "isUsed": false,
-   "condition": "New",
-   "fuel": "Gas",
-   "status": "retail",
-   "color": "Candy Apple Red",
-   "colorKey": "candy-apple-red",
-   "seatColor": "Beige",
-   "driveTrain": "2X4",
-   "tireType": "Street Tire",
-   "tireRimSize": "10",
-   "passengers": "4 Passenger",
-   "hasSoundSystem": false,
-   "isLifted": true,
-   "hasHitch": false,
-   "hasExtendedTop": false,
-   "isStreetLegal": false,
-   "battery": {
-    "type": "Lithium",
-    "brand": "Denago",
-    "year": "2026",
-    "ampHours": "105",
-    "packVoltage": "48",
-    "batteryVoltage": "",
-    "warrantyLength": "8 years"
-   },
-   "engine": {
-    "make": "4 Stroke Other",
-    "horsepower": "",
-    "stroke": ""
-   },
-   "vin": "",
-   "serial": "BW2711-803526",
-   "odometer": 0,
-   "hours": 0,
-   "warranty": "2 years",
-   "images": [
-    "d4e80458-5091-70b9-1bdd-b2a297770b21-1785248732421.jpg",
-    "d4e80458-5091-70b9-1bdd-b2a297770b21-1785248732426.jpg",
-    "d4e80458-5091-70b9-1bdd-b2a297770b21-1785248732430.jpg",
-    "d4e80458-5091-70b9-1bdd-b2a297770b21-1785248732434.jpg"
-   ],
-   "hasPhotos": true,
-   "inventoryState": {
-    "status": "retail",
-    "isInStock": true,
-    "isOnLot": false,
-    "isInBoneyard": false,
-    "isService": false,
-    "isComplete": false,
-    "isRFS": false,
-    "categories": [
-     "inventory"
-    ],
-    "onWebsite": true,
     "needOnWebsite": true,
     "isDraft": false
    },
@@ -47083,87 +47002,6 @@
    "stateCode": "IN",
    "country": "USA",
    "storeName": "Independence Golf Carts Sale location In South Bend Indiana",
-   "locationDescription": ""
-  },
-  {
-   "id": "6a5117d25732b1aa145306a1",
-   "slug": "yamaha-g29-white-lecanto-florida-usa",
-   "make": "Yamaha",
-   "makeKey": "yamaha",
-   "model": "G29",
-   "modelKey": "g29",
-   "year": "2013",
-   "title": "Yamaha G29 White",
-   "price": 6000,
-   "rawPricing": {
-    "retailPrice": 6000,
-    "invoiceNo": ""
-   },
-   "isElectric": false,
-   "isUsed": true,
-   "condition": "Used",
-   "fuel": "Gas",
-   "status": "retail",
-   "color": "White",
-   "colorKey": "white",
-   "seatColor": "Black",
-   "driveTrain": "2X4",
-   "tireType": "All-Terrain",
-   "tireRimSize": "14",
-   "passengers": "4 Passenger",
-   "hasSoundSystem": false,
-   "isLifted": true,
-   "hasHitch": false,
-   "hasExtendedTop": true,
-   "isStreetLegal": false,
-   "battery": {
-    "type": "",
-    "brand": "",
-    "year": "",
-    "ampHours": "",
-    "packVoltage": "",
-    "batteryVoltage": "",
-    "warrantyLength": ""
-   },
-   "engine": {
-    "make": "Yamaha carbureted. HP 11.5",
-    "horsepower": "",
-    "stroke": ""
-   },
-   "vin": "",
-   "serial": "JW8-316025",
-   "odometer": null,
-   "hours": null,
-   "warranty": "90 days",
-   "images": [
-    "5468e4d8-6061-7004-f2d5-432ff9ecff31-1786541968243.jpg",
-    "5468e4d8-6061-7004-f2d5-432ff9ecff31-1786541968248.jpg",
-    "5468e4d8-6061-7004-f2d5-432ff9ecff31-1786541968251.jpg",
-    "5468e4d8-6061-7004-f2d5-432ff9ecff31-1786541968255.jpg"
-   ],
-   "hasPhotos": true,
-   "inventoryState": {
-    "status": "retail",
-    "isInStock": true,
-    "isOnLot": false,
-    "isInBoneyard": false,
-    "isService": false,
-    "isComplete": false,
-    "isRFS": true,
-    "categories": [
-     "inventory"
-    ],
-    "onWebsite": false,
-    "needOnWebsite": true,
-    "isDraft": false
-   },
-   "storeId": "T12",
-   "locationSlug": "lecanto",
-   "city": "Lecanto",
-   "state": "Florida",
-   "stateCode": "FL",
-   "country": "USA",
-   "storeName": "Independence Golf Carts Sale location In Lecanto Florida",
    "locationDescription": ""
   },
   {
