@@ -90,15 +90,31 @@ function mergeStores(dmsStores) {
  */
 const NON_RETAIL_STATUS = new Set(["boneyard", "permanent_boneyard", "work_in_progress"]);
 
+/** Public photographs on a raw DMS record. `internalCartImageUrls` is private. */
+function publicImages(raw) {
+  return (Array.isArray(raw?.imageUrls) ? raw.imageUrls : []).filter(
+    (name) => typeof name === "string" && name.trim(),
+  );
+}
+
 /**
- * Whether a raw DMS record is a cart a customer can actually buy.
+ * Whether a raw DMS record belongs on the website.
  *
- * Deliberately conservative: it excludes only what the DMS marks as clearly
- * not-for-sale. Fields that are false on plainly retail units — isComplete,
- * rfsStatus.isRFS, advertising.onWebsite — are captured but not filtered on,
- * because they would exclude sellable stock.
+ * The two decisive rules come from the dealership:
+ *
+ *   isRFS  — "ready for sale". A record with rfsStatus.isRFS false is not to be
+ *            published. These carry internal figures rather than asking prices,
+ *            which is what put wrong numbers on the site: every cart on the
+ *            event page was isRFS false, including one at $17,845.
+ *   photos — a cart with no public photograph is not listed at all, rather than
+ *            listed behind a placeholder.
+ *
+ * The status and stock checks below remain as a second line of defence.
  */
 function isSellable(raw) {
+  if (raw?.rfsStatus?.isRFS !== true) return false;
+  if (publicImages(raw).length === 0) return false;
+
   const status = String(raw?.status ?? "").toLowerCase();
   if (NON_RETAIL_STATUS.has(status)) return false;
   if (raw?.isInBoneyard === true) return false;
@@ -172,13 +188,7 @@ function normaliseCart(raw, storeById) {
   const storeId = raw?.cartLocation?.locationId || raw?.cartLocation?.latestStoreId || "";
   const store = storeById.get(storeId) ?? null;
 
-  const images = [
-    ...new Set(
-      (Array.isArray(raw?.imageUrls) ? raw.imageUrls : [])
-        .filter((name) => typeof name === "string" && name.trim())
-        .map((name) => name.trim()),
-    ),
-  ];
+  const images = [...new Set(publicImages(raw).map((name) => name.trim()))];
 
   return {
     id: raw._id,
@@ -382,7 +392,12 @@ async function main() {
     const reasons = {};
     for (const raw of source.rawCarts) {
       if (isSellable(raw)) continue;
-      const key = String(raw?.status ?? "unknown");
+      const key =
+        raw?.rfsStatus?.isRFS !== true
+          ? "not ready for sale"
+          : publicImages(raw).length === 0
+            ? "no photograph"
+            : String(raw?.status ?? "unknown");
       reasons[key] = (reasons[key] ?? 0) + 1;
     }
     process.stderr.write(
