@@ -165,10 +165,10 @@ export function renderAboutPage(data) {
     <div class="prose">
       <h2>Who we are</h2>
       <p>Independence Day Golf Carts is the Fourth of July sales event arm of ${esc(site.legalName)}, a golf cart dealer group operating ${data.stores.length} locations across ${new Set(data.stores.map((store) => store.state)).size} states. Between them our stores carry ${data.summary.total} carts — new and used, electric and gas, lifted and street legal — all listed on one shared inventory.</p>
-      <p>The ${esc(salesEvent.name)} is our largest sale of the year. From June 20 through July 8 every cart on every lot carries Independence Day pricing, backed by 0% APR financing for 48 months, free local delivery and same-day trade appraisals.</p>
+      <p>The ${esc(salesEvent.name)} is our largest sale of the year. From June 20 through July 8 every cart on every lot carries Independence Day pricing, backed by 0% APR financing for 48 months and same-day trade appraisals.</p>
       <h2>How we work</h2>
       <p>Every cart is inspected before it reaches the sales floor. Used carts are reconditioned, and the battery year and pack condition are published on each vehicle page so you can judge remaining life before you call. Prices, photos and availability on this site come straight from our dealer management system and refresh every morning at 1:30&nbsp;AM Eastern.</p>
-      <p>If the cart you want is at another location, we move it. If you need it delivered, we deliver it — free locally during the event, and nationwide for a quote.</p>
+      <p>If the cart you want is at another location, we move it. If you need it delivered, we deliver it — locally or nationwide, quoted to your address.</p>
       <h2>What we sell</h2>
       <ul>
         <li>New golf carts from ${data.facets.makes.map((make) => make.label).join(", ")}</li>
@@ -259,8 +259,8 @@ ${data.stores.map((store) => `      <li><a href="/locations/${store.slug}/">${IC
     path: "/contact/",
     title: `Contact Independence Day Golf Carts | ${site.phone}`,
     h1: "Contact Us",
-    lede: `Call ${site.phone} seven days a week, or send a message and a product specialist will get back to you the same day.`,
-    description: `Contact Independence Day Golf Carts at ${site.phone}. ${data.stores.length} locations, open seven days a week during the July 4th Golf Cart Sales Event.`,
+    lede: `Call ${site.phone} Monday through Saturday, 9:00 AM to 5:00 PM, or send a message and a product specialist will get back to you the same day.`,
+    description: `Contact Independence Day Golf Carts at ${site.phone}. ${data.stores.length} locations, open Monday to Saturday 9AM–5PM during the July 4th Golf Cart Sales Event.`,
     body,
     pageKeywords: ["contact golf cart dealer", "golf cart dealership phone number"],
     faqEntries: faq.filter((entry) => ["contact", "delivery"].includes(entry.topic)),
@@ -365,10 +365,10 @@ export function renderDeliveryPage(data) {
   const states = [...new Set(data.stores.map((store) => store.state))].sort();
   const body = `<section class="section section--tight">
   <div class="wrap"><div class="prose">
-    <h2>Free local delivery during the event</h2>
-    <p>Local delivery is included at no charge during the ${esc(salesEvent.name)}. With ${data.stores.length} locations across ${states.length} states, most customers are inside a delivery radius of at least one store.</p>
+    <h2>Delivery to your door</h2>
+    <p>We deliver carts locally and nationwide. Delivery is quoted per order based on your address and the cart, so call ${esc(site.phone)} with your ZIP code for a firm number. With ${data.stores.length} locations across ${states.length} states, most customers are inside the local delivery range of at least one store.
     <h3>Where we deliver locally</h3>
-    <p>${esc(states.join(", "))} — and we regularly deliver into neighbouring states from our border locations. Give us your ZIP code on the phone and we will confirm whether you fall inside free delivery.</p>
+    <p>${esc(states.join(", "))} — and we regularly deliver into neighbouring states from our border locations. Give us your ZIP code on the phone and we will quote the delivery cost before you commit.</p>
     <h3>Nationwide shipping</h3>
     <p>Carts ship anywhere in the continental United States on enclosed or open transport depending on the cart and the route. Shipping is quoted per order; call ${esc(site.phone)} with your delivery ZIP for a firm number.</p>
     <h3>What happens on delivery day</h3>
@@ -388,8 +388,8 @@ export function renderDeliveryPage(data) {
     path: "/delivery/",
     title: `Golf Cart Delivery & Nationwide Shipping | ${site.name}`,
     h1: "Delivery & Shipping",
-    lede: "Free local delivery during the July 4th Golf Cart Sales Event, and nationwide shipping available on request.",
-    description: `Free local golf cart delivery during the ${salesEvent.name} from ${data.stores.length} locations, plus nationwide shipping. Call ${site.phone} for a delivery quote.`,
+    lede: "Local and nationwide golf cart delivery, quoted to your address before you commit.",
+    description: `Local and nationwide golf cart delivery from ${data.stores.length} locations during the ${salesEvent.name}. Call ${site.phone} for a delivery quote to your ZIP code.`,
     body,
     pageKeywords: ["golf cart delivery", "golf cart shipping", "golf cart delivered to my house"],
     faqEntries: faq.filter((entry) => entry.topic === "delivery"),

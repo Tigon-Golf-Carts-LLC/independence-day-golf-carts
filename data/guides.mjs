@@ -35,7 +35,7 @@ export const guides = [
         "Browse live inventory on this site — it refreshes every morning at 1:30 AM Eastern directly from the dealership system.",
         "Call 1-844-844-6638 with the stock you want. A deposit holds event pricing even if delivery is scheduled after July 8.",
         "Ask for the trade appraisal at the same time; trade value stacks on top of event pricing.",
-        "Confirm delivery. Local delivery is free during the event and most locations can deliver within a few days.",
+        "Confirm delivery. Delivery is quoted to your address, and most locations can deliver within a few days.",
       ] },
       { h2: "New or used during the event?" },
       { p: "New carts carry a full factory warranty and the current battery chemistry, which matters most on electric models — a new lithium pack should give 8 to 10 years of service. Used carts from the event floor have been reconditioned and inspected, and the battery year is published on every vehicle page on this site so you can judge remaining pack life before you call." },

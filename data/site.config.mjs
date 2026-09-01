@@ -13,7 +13,7 @@ export const site = {
   tagline: "The July 4th Golf Cart Sales Event",
   founded: "2016",
   description:
-    "Independence Day Golf Carts hosts the nation's biggest July 4th Golf Cart Sales Event — Independence Day pricing on new and used electric and gas golf carts, street legal LSVs and lifted carts, with 0% APR financing and same-day delivery from 15 dealership locations.",
+    "Independence Day Golf Carts hosts the nation's biggest July 4th Golf Cart Sales Event — Independence Day pricing on new and used electric and gas golf carts, street legal LSVs and lifted carts, with 0% APR financing across 15 dealership locations.",
   shortDescription:
     "July 4th Golf Cart Sales Event — Independence Day savings on new & used golf carts with 0% APR financing.",
   phone: "1-844-844-6638",
@@ -36,16 +36,20 @@ export const site = {
     "https://www.youtube.com/@independencedaygolfcarts",
     "https://x.com/IndyDayCarts",
   ],
+  // Every location keeps the same hours. Sunday is deliberately absent from
+  // `hours`: schema.org treats an omitted day as closed.
   hours: [
-    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:00" },
-    { days: ["Saturday"], opens: "09:00", closes: "17:00" },
-    { days: ["Sunday"], opens: "11:00", closes: "16:00" },
+    {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
   ],
   hoursDisplay: [
-    { label: "Monday – Friday", value: "9:00 AM – 6:00 PM" },
-    { label: "Saturday", value: "9:00 AM – 5:00 PM" },
-    { label: "Sunday", value: "11:00 AM – 4:00 PM" },
+    { label: "Monday – Saturday", value: "9:00 AM – 5:00 PM" },
+    { label: "Sunday", value: "Closed" },
   ],
+  hoursSummary: "Monday – Saturday, 9:00 AM – 5:00 PM. Closed Sunday.",
 };
 
 /** The sales event this whole site is built around. */
@@ -54,13 +58,13 @@ export const salesEvent = {
   altName: "Independence Day Golf Cart Sales Event",
   headline: "The July 4th Golf Cart Sales Event",
   subhead:
-    "Independence Day pricing on every new and used golf cart in stock. 0% APR for 48 months, free delivery, and the largest Fourth of July golf cart selection in the country.",
+    "Independence Day pricing on every new and used golf cart in stock. 0% APR for 48 months and the largest Fourth of July golf cart selection in the country.",
   startMonthDay: "06-20",
   endMonthDay: "07-08",
   offers: [
     "Independence Day pricing on every cart in stock",
     "0% APR financing for 48 months on approved credit",
-    "Free local delivery during the July 4th event",
+    "Local and nationwide delivery available",
     "Trade-ins welcomed and appraised same day",
     "Lifted, street legal and lithium models included",
   ],
@@ -68,12 +72,12 @@ export const salesEvent = {
 
 /** Financing partners (shown on /financing and in schema). */
 export const financingPartners = [
-  { name: "Sheffield BBT", url: "https://sheffieldbbt.com/apply", blurb: "Long-term fixed-rate recreational financing with fast decisions." },
-  { name: "BLI Heartland", url: "https://app.bfrportal.com", blurb: "Flexible terms and seasonal payment options for powersports buyers." },
-  { name: "DLL Financial", url: "https://www.dfrportal.com", blurb: "Established equipment lender with competitive promotional rates." },
-  { name: "Roadrunner / Octane", url: "https://app.roadrunnerfinancial.com", blurb: "Soft-pull prequalification in minutes with no credit score impact." },
-  { name: "Univest Capital", url: "https://www.univestcapitalinc.com/apply", blurb: "Commercial and fleet financing for resorts, clubs and communities." },
-  { name: "Dealer Direct", url: "https://www.dealerdirect.com", blurb: "Multi-lender marketplace matching you to the best available offer." },
+  { name: "Sheffield BBT", url: "https://prequalify.sheffieldfinancial.com/Apply/Dealer/56712?source=web", blurb: "Long-term fixed-rate recreational financing with fast decisions." },
+  { name: "BLI Heartland", url: "https://blirentals.com/app/TIGON_GOLFCARTS_LLC", blurb: "Flexible terms and seasonal payment options for powersports buyers." },
+  { name: "DLL Financial", url: "https://applynow-cica-prd.dllgroup.com/?entityId=4&dealerCode=015639", blurb: "Established equipment lender with competitive promotional rates." },
+  { name: "Roadrunner / Octane", url: "https://octane.co/flex/034170", blurb: "Soft-pull prequalification in minutes with no credit score impact." },
+  { name: "Univest Capital", url: "https://form.jotform.com/UnivestCapital/credit-application-bakos?utm_source=TIGON+Golf+Carts&utm_medium=Financing&utm_campaign=Business&utm_term=Best+Golf+Cart+Financing", blurb: "Commercial and fleet financing for resorts, clubs and communities." },
+  { name: "Dealer Direct", url: "https://dealerdirect.apptraker.com/my/guest?dealer=10735", blurb: "Multi-lender marketplace matching you to the best available offer." },
 ];
 
 /** Primary + supporting keyword strategy. Drives meta keywords, seo.txt and internal linking. */

@@ -11,6 +11,7 @@ import { dirname, resolve, join } from "node:path";
 
 import { site } from "../data/site.config.mjs";
 import { toStateCode, locations as locationSeed } from "../data/locations.mjs";
+import { financingPartners } from "../data/site.config.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = resolve(root, "dist");
@@ -286,5 +287,85 @@ test("every generated location page has usable geo data", () => {
       store.stateCode,
       `store ${store.slug} state "${store.state}" does not match code "${store.stateCode}"`,
     );
+  }
+});
+
+test("no page makes a claim the business does not offer", () => {
+  // These were all asserted site-wide at one point and are not true:
+  // there is no free delivery, and no location opens on Sunday.
+  const forbidden = [
+    /free\s+(local\s+)?deliver/i,
+    /deliver(y|ed)\s+free/i,
+    /delivery is included/i,
+    /same-day delivery/i,
+    /open\s+7\s+days/i,
+    /seven days a week/i,
+    /open on sunday/i,
+  ];
+  const offenders = [];
+  for (const file of htmlFiles) {
+    const html = readFileSync(file, "utf8");
+    for (const pattern of forbidden) {
+      if (pattern.test(html)) offenders.push(`${file.replace(DIST, "dist")} matches ${pattern}`);
+    }
+  }
+  // The AI/SEO text files carry the same business facts and must agree.
+  for (const name of ["llms.txt", "llms-full.txt", "ai.txt", "gpt.txt", "claude.txt", "geo.txt", "nlp.txt"]) {
+    const contents = read(name);
+    for (const pattern of [/free\s+(local\s+)?deliver/i, /delivery is included/i]) {
+      if (pattern.test(contents)) offenders.push(`${name} matches ${pattern}`);
+    }
+  }
+  assert.deepEqual(offenders.slice(0, 10), [], `unsupported claims found:\n${offenders.slice(0, 10).join("\n")}`);
+});
+
+test("published hours are Monday to Saturday, 9 to 5, closed Sunday", () => {
+  const spec = site.hours;
+  assert.equal(spec.length, 1, "one hours block covers Monday to Saturday");
+  assert.deepEqual(spec[0].days, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]);
+  assert.equal(spec[0].opens, "09:00");
+  assert.equal(spec[0].closes, "17:00");
+  assert.ok(!spec.some((entry) => entry.days.includes("Sunday")), "Sunday must be absent so schema reads it as closed");
+
+  // Every location page must publish the same hours in its structured data.
+  const inventory = JSON.parse(read("inventory.json"));
+  for (const store of inventory.stores.slice(0, 5)) {
+    const html = read(join("locations", store.slug, "index.html"));
+    const graph = JSON.parse(
+      html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]
+        .replace(/\\u003c/g, "<").replace(/\\u003e/g, ">"),
+    )["@graph"];
+    const dealer = graph.find((node) => [].concat(node["@type"]).includes("AutoDealer") && node["@id"].includes("/locations/"));
+    assert.ok(dealer, `${store.slug} has no location AutoDealer node`);
+    const hours = dealer.openingHoursSpecification;
+    assert.equal(hours.length, 1);
+    assert.equal(hours[0].closes, "17:00", `${store.slug} publishes the wrong closing time`);
+    assert.ok(!hours[0].dayOfWeek.includes("Sunday"), `${store.slug} claims Sunday hours`);
+    assert.ok(html.includes("Closed"), `${store.slug} should show Sunday as closed`);
+  }
+});
+
+test("every financing partner links to its dealer-specific application", () => {
+  const html = read(join("financing", "index.html"));
+  assert.equal(financingPartners.length, 6);
+  for (const partner of financingPartners) {
+    assert.match(partner.url, /^https:\/\//, `${partner.name} URL must be absolute https`);
+    assert.ok(
+      !/^https:\/\/(www\.)?(sheffieldbbt|app\.bfrportal|dfrportal|app\.roadrunnerfinancial|univestcapitalinc|dealerdirect)\.com\/?$/.test(partner.url),
+      `${partner.name} still points at a generic homepage: ${partner.url}`,
+    );
+    // The rendered page must carry the URL, HTML-escaped.
+    const escaped = partner.url.replace(/&/g, "&amp;");
+    assert.ok(html.includes(`href="${escaped}"`), `${partner.name} link is missing from /financing/`);
+    assert.ok(
+      html.includes(`>Apply with ${partner.name} `) || html.includes(`Apply with ${partner.name}`),
+      `${partner.name} has no apply button`,
+    );
+  }
+  // External applications must open safely in a new tab.
+  const externalAnchors = html.match(/<a[^>]+href="https:\/\/(?!fonts|s3)[^"]+"[^>]*>/g) ?? [];
+  for (const anchor of externalAnchors.filter((a) => financingPartners.some((p) => a.includes(p.url.replace(/&/g, "&amp;"))))) {
+    assert.ok(anchor.includes('target="_blank"'), `external link missing target=_blank: ${anchor}`);
+    assert.ok(anchor.includes("noopener"), `external link missing rel=noopener: ${anchor}`);
   }
 });
