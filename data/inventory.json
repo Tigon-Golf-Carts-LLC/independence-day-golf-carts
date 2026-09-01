@@ -1,18 +1,18 @@
 {
- "generatedAt": "2026-09-01T18:51:47+00:00",
+ "generatedAt": "2026-09-01T19:29:57+00:00",
  "source": "dms-live",
  "summary": {
-  "total": 236,
-  "new": 105,
+  "total": 238,
+  "new": 107,
   "used": 131,
-  "electric": 197,
+  "electric": 199,
   "gas": 39,
-  "streetLegal": 88,
-  "lifted": 122,
-  "withPhotos": 236,
+  "streetLegal": 90,
+  "lifted": 124,
+  "withPhotos": 238,
   "priceMin": 2500,
   "priceMax": 15500,
-  "priceCount": 236
+  "priceCount": 238
  },
  "facets": {
   "makes": [
@@ -34,7 +34,7 @@
    {
     "key": "denago",
     "label": "Denago",
-    "count": 85
+    "count": 87
    },
    {
     "key": "epic",
@@ -130,7 +130,7 @@
    {
     "key": "nomad-xl",
     "label": "Nomad XL",
-    "count": 43,
+    "count": 44,
     "makeKey": "denago"
    },
    {
@@ -160,7 +160,7 @@
    {
     "key": "rover-xl",
     "label": "Rover XL",
-    "count": 30,
+    "count": 31,
     "makeKey": "denago"
    },
    {
@@ -215,7 +215,7 @@
    {
     "key": "aqua",
     "label": "Aqua",
-    "count": 22
+    "count": 23
    },
    {
     "key": "beige",
@@ -275,7 +275,7 @@
    {
     "key": "lava",
     "label": "Lava",
-    "count": 1
+    "count": 2
    },
    {
     "key": "light-blue",
@@ -332,7 +332,7 @@
    {
     "key": "4-passenger",
     "label": "4 Passenger",
-    "count": 190
+    "count": 192
    },
    {
     "key": "6-passenger",
@@ -349,7 +349,7 @@
    {
     "key": "2x4",
     "label": "2X4",
-    "count": 231
+    "count": 233
    },
    {
     "key": "4x4",
@@ -371,7 +371,7 @@
    {
     "key": "lithium",
     "label": "Lithium",
-    "count": 122
+    "count": 124
    }
   ]
  },
@@ -501,7 +501,7 @@
    "postalCode": "08230",
    "country": "USA",
    "inDms": true,
-   "cartCount": 8
+   "cartCount": 9
   },
   {
    "slug": "rio-grande",
@@ -564,7 +564,7 @@
    "postalCode": "08758",
    "country": "USA",
    "inDms": true,
-   "cartCount": 20
+   "cartCount": 21
   },
   {
    "slug": "long-pond",
@@ -1263,7 +1263,7 @@
   },
   {
    "id": "6a89b14b962340e42a35723d",
-   "slug": "denago-rover-xl6-matte-white-waretown-new-jersey-usa-01",
+   "slug": "denago-rover-xl6-matte-white-waretown-new-jersey-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL6",
@@ -2154,7 +2154,7 @@
   },
   {
    "id": "6a7e12b4a5615f3710eeb5d5",
-   "slug": "denago-rover-xl-matte-black-lecanto-florida-usa-01",
+   "slug": "denago-rover-xl-matte-black-lecanto-florida-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -2559,7 +2559,7 @@
   },
   {
    "id": "6a58e60fcb80c0ee96839173",
-   "slug": "denago-rover-xl-aqua-ocean-view-new-jersey-usa-12",
+   "slug": "denago-rover-xl-aqua-ocean-view-new-jersey-usa-01",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -2801,8 +2801,89 @@
    "locationDescription": ""
   },
   {
+   "id": "6a4bcd5ed74c62e6827e729b",
+   "slug": "denago-rover-xl-aqua-ocean-view-new-jersey-usa",
+   "make": "Denago",
+   "makeKey": "denago",
+   "model": "Rover XL",
+   "modelKey": "rover-xl",
+   "year": "2026",
+   "title": "Denago Rover XL Aqua",
+   "price": 10995,
+   "rawPricing": {
+    "retailPrice": 10995,
+    "invoiceNo": "DENEV35619 (T2)"
+   },
+   "isElectric": true,
+   "isUsed": false,
+   "condition": "New",
+   "fuel": "Electric",
+   "status": "retail",
+   "color": "Aqua",
+   "colorKey": "aqua",
+   "seatColor": "Stone",
+   "driveTrain": "2X4",
+   "tireType": "All-Terrain",
+   "tireRimSize": "14",
+   "passengers": "4 Passenger",
+   "hasSoundSystem": true,
+   "isLifted": true,
+   "hasHitch": false,
+   "hasExtendedTop": false,
+   "isStreetLegal": true,
+   "battery": {
+    "type": "Lithium",
+    "brand": "Denago",
+    "year": "2026",
+    "ampHours": "105",
+    "packVoltage": "48",
+    "batteryVoltage": "",
+    "warrantyLength": "8 years"
+   },
+   "engine": {
+    "make": "",
+    "horsepower": "",
+    "stroke": ""
+   },
+   "vin": "7XBADABA7TA044579",
+   "serial": "",
+   "odometer": null,
+   "hours": null,
+   "warranty": "2 years",
+   "images": [
+    "c498e418-0071-7091-5f45-35e32b257174-1783432471543.jpg",
+    "c498e418-0071-7091-5f45-35e32b257174-1783432471547.jpg",
+    "c498e418-0071-7091-5f45-35e32b257174-1783432471550.jpg",
+    "c498e418-0071-7091-5f45-35e32b257174-1783432471553.jpg"
+   ],
+   "hasPhotos": true,
+   "inventoryState": {
+    "status": "retail",
+    "isInStock": true,
+    "isOnLot": false,
+    "isInBoneyard": false,
+    "isService": false,
+    "isComplete": false,
+    "isRFS": true,
+    "categories": [
+     "inventory"
+    ],
+    "onWebsite": true,
+    "needOnWebsite": true,
+    "isDraft": false
+   },
+   "storeId": "T2",
+   "locationSlug": "ocean-view",
+   "city": "Ocean View",
+   "state": "New Jersey",
+   "stateCode": "NJ",
+   "country": "USA",
+   "storeName": "Independence Golf Carts Sale location In Ocean View New Jersey",
+   "locationDescription": ""
+  },
+  {
    "id": "6a1dddc675a667c288c12275",
-   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-08",
+   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-06",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -2883,7 +2964,7 @@
   },
   {
    "id": "6a1d9157dfca37b4fc232b98",
-   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-07",
+   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-05",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -2964,7 +3045,7 @@
   },
   {
    "id": "6a10b6a406916db7733dec30",
-   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-05",
+   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-04",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -3126,7 +3207,7 @@
   },
   {
    "id": "6a0e15c3c7931014519a5637",
-   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-04",
+   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-03",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -3207,7 +3288,7 @@
   },
   {
    "id": "6a0e13ecc7931014519a1c3d",
-   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-03",
+   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-02",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -3450,7 +3531,7 @@
   },
   {
    "id": "6a0cb4d3c793101451770e0b",
-   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-02",
+   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-01",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -3531,7 +3612,7 @@
   },
   {
    "id": "6a0c9cc5c793101451744e81",
-   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa-01",
+   "slug": "denago-rover-xl-aqua-hatfield-pennsylvania-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -4260,7 +4341,7 @@
   },
   {
    "id": "6887aadd4c6bccbabe0c82a8",
-   "slug": "denago-rover-xl-red-long-pond-pennsylvania-usa-01",
+   "slug": "denago-rover-xl-red-long-pond-pennsylvania-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -4584,7 +4665,7 @@
   },
   {
    "id": "680f981a230782a4053e6cf6",
-   "slug": "denago-rover-xl-verdant-hatfield-pennsylvania-usa-01",
+   "slug": "denago-rover-xl-verdant-hatfield-pennsylvania-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL",
@@ -4742,6 +4823,87 @@
    "stateCode": "",
    "country": "USA",
    "storeName": "",
+   "locationDescription": ""
+  },
+  {
+   "id": "6a89b736962340e42a36cb6d",
+   "slug": "denago-nomad-xl-lava-waretown-new-jersey-usa",
+   "make": "Denago",
+   "makeKey": "denago",
+   "model": "Nomad XL",
+   "modelKey": "nomad-xl",
+   "year": "2026",
+   "title": "Denago Nomad XL Lava",
+   "price": 9995,
+   "rawPricing": {
+    "retailPrice": 9995,
+    "invoiceNo": "DENEV39013 (T10)"
+   },
+   "isElectric": true,
+   "isUsed": false,
+   "condition": "New",
+   "fuel": "Electric",
+   "status": "retail",
+   "color": "Lava",
+   "colorKey": "lava",
+   "seatColor": "Stone",
+   "driveTrain": "2X4",
+   "tireType": "All-Terrain",
+   "tireRimSize": "14",
+   "passengers": "4 Passenger",
+   "hasSoundSystem": true,
+   "isLifted": true,
+   "hasHitch": false,
+   "hasExtendedTop": true,
+   "isStreetLegal": true,
+   "battery": {
+    "type": "Lithium",
+    "brand": "Denago",
+    "year": "2026",
+    "ampHours": "105",
+    "packVoltage": "48",
+    "batteryVoltage": "",
+    "warrantyLength": "8 years"
+   },
+   "engine": {
+    "make": "",
+    "horsepower": "",
+    "stroke": ""
+   },
+   "vin": "7XBABAAB4TA050856",
+   "serial": "",
+   "odometer": null,
+   "hours": null,
+   "warranty": "2 years",
+   "images": [
+    "140894b8-8041-70bb-f192-aaf042070bd7-1787769337686.jpg",
+    "140894b8-8041-70bb-f192-aaf042070bd7-1787769337691.jpg",
+    "140894b8-8041-70bb-f192-aaf042070bd7-1787769337695.jpg",
+    "140894b8-8041-70bb-f192-aaf042070bd7-1787769337697.jpg"
+   ],
+   "hasPhotos": true,
+   "inventoryState": {
+    "status": "retail",
+    "isInStock": true,
+    "isOnLot": false,
+    "isInBoneyard": false,
+    "isService": false,
+    "isComplete": false,
+    "isRFS": true,
+    "categories": [
+     "inventory"
+    ],
+    "onWebsite": true,
+    "needOnWebsite": true,
+    "isDraft": false
+   },
+   "storeId": "T10",
+   "locationSlug": "waretown",
+   "city": "Waretown",
+   "state": "New Jersey",
+   "stateCode": "NJ",
+   "country": "USA",
+   "storeName": "Independence Golf Carts Sale location In Waretown New Jersey",
    "locationDescription": ""
   },
   {
@@ -5232,7 +5394,7 @@
   },
   {
    "id": "6a22e88849521a8063a3f803",
-   "slug": "denago-nomad-xl-glacier-hatfield-pennsylvania-usa-02",
+   "slug": "denago-nomad-xl-glacier-hatfield-pennsylvania-usa-01",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -5313,7 +5475,7 @@
   },
   {
    "id": "6a1dd58075a667c288c0305d",
-   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-06",
+   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-05",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -5394,7 +5556,7 @@
   },
   {
    "id": "6a1dcc2575a667c288bee381",
-   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-05",
+   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-04",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -5475,7 +5637,7 @@
   },
   {
    "id": "6a1db607dfca37b4fc274e23",
-   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-04",
+   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-03",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -5637,7 +5799,7 @@
   },
   {
    "id": "6a1da072dfca37b4fc249e20",
-   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-03",
+   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-02",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -5718,7 +5880,7 @@
   },
   {
    "id": "6a189acc4565d34f03e57c24",
-   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-02",
+   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-01",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -5799,7 +5961,7 @@
   },
   {
    "id": "6a10b87506916db7733e4102",
-   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa-01",
+   "slug": "denago-nomad-xl-aqua-hatfield-pennsylvania-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -5880,7 +6042,7 @@
   },
   {
    "id": "69e78be0997462982715cd2c",
-   "slug": "denago-nomad-xl-matte-black-hatfield-pennsylvania-usa-01",
+   "slug": "denago-nomad-xl-matte-black-hatfield-pennsylvania-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -5961,7 +6123,7 @@
   },
   {
    "id": "69e673c99974629827011e4c",
-   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-07",
+   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-05",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -6042,7 +6204,7 @@
   },
   {
    "id": "69e6663e9974629827fb816d",
-   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-06",
+   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-04",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -7263,7 +7425,7 @@
   },
   {
    "id": "69a882dbdf4a03d2eab532c8",
-   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-05",
+   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-03",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -7911,7 +8073,7 @@
   },
   {
    "id": "68c58791bf550abf625e0175",
-   "slug": "denago-nomad-xl-red-hatfield-pennsylvania-usa-03",
+   "slug": "denago-nomad-xl-red-hatfield-pennsylvania-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -8073,7 +8235,7 @@
   },
   {
    "id": "68b72d6b1101d55c5d895f7b",
-   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-04",
+   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-02",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -8154,7 +8316,7 @@
   },
   {
    "id": "68b72d2c1101d55c5d895c5b",
-   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-03",
+   "slug": "denago-nomad-xl-white-hatfield-pennsylvania-usa-01",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Nomad XL",
@@ -8316,7 +8478,7 @@
   },
   {
    "id": "690ba06d7b8a9714b7486165",
-   "slug": "tara-spirit-plus-beige-south-bend-indiana-usa-04",
+   "slug": "tara-spirit-plus-beige-south-bend-indiana-usa",
    "make": "Tara",
    "makeKey": "tara",
    "model": "Spirit Plus",
@@ -8478,7 +8640,7 @@
   },
   {
    "id": "690b98cc7b8a9714b7483afc",
-   "slug": "tara-spirit-plus-beige-wichita-falls-texas-usa-03",
+   "slug": "tara-spirit-plus-beige-wichita-falls-texas-usa",
    "make": "Tara",
    "makeKey": "tara",
    "model": "Spirit Plus",
@@ -8559,7 +8721,7 @@
   },
   {
    "id": "690b97947b8a9714b7483643",
-   "slug": "tara-spirit-plus-beige-hatfield-pennsylvania-usa-08",
+   "slug": "tara-spirit-plus-beige-hatfield-pennsylvania-usa-01",
    "make": "Tara",
    "makeKey": "tara",
    "model": "Spirit Plus",
@@ -8802,7 +8964,7 @@
   },
   {
    "id": "690b938c7b8a9714b7481377",
-   "slug": "tara-spirit-plus-beige-hatfield-pennsylvania-usa-06",
+   "slug": "tara-spirit-plus-beige-hatfield-pennsylvania-usa",
    "make": "Tara",
    "makeKey": "tara",
    "model": "Spirit Plus",
@@ -8964,7 +9126,7 @@
   },
   {
    "id": "690b95f07b8a9714b748289f",
-   "slug": "tara-spirit-plus-beige-waretown-new-jersey-usa-02",
+   "slug": "tara-spirit-plus-beige-waretown-new-jersey-usa",
    "make": "Tara",
    "makeKey": "tara",
    "model": "Spirit Plus",
@@ -9045,7 +9207,7 @@
   },
   {
    "id": "6a0dfda1c7931014519020f9",
-   "slug": "denago-scout-2-white-lecanto-florida-usa-02",
+   "slug": "denago-scout-2-white-lecanto-florida-usa-01",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Scout 2",
@@ -10594,7 +10756,7 @@
   },
   {
    "id": "6a7cc5d2de1495573d5bbee4",
-   "slug": "ezgo-rxv-blue-waretown-new-jersey-usa-02",
+   "slug": "ezgo-rxv-blue-waretown-new-jersey-usa-01",
    "make": "EZGO",
    "makeKey": "ezgo",
    "model": "RXV",
@@ -10918,7 +11080,7 @@
   },
   {
    "id": "6a7cac03414460a9de370dc2",
-   "slug": "ezgo-rxv-blue-waretown-new-jersey-usa-01",
+   "slug": "ezgo-rxv-blue-waretown-new-jersey-usa",
    "make": "EZGO",
    "makeKey": "ezgo",
    "model": "RXV",
@@ -11892,7 +12054,7 @@
   },
   {
    "id": "6a75ddaaa1999d8c52fce5b5",
-   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-08",
+   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-05",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "G29",
@@ -12135,7 +12297,7 @@
   },
   {
    "id": "6a5625d3dcae91aabab22aa5",
-   "slug": "yamaha-g29-white-scranton-pennsylvania-usa-02",
+   "slug": "yamaha-g29-white-scranton-pennsylvania-usa",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "G29",
@@ -12216,7 +12378,7 @@
   },
   {
    "id": "6a51160cfffd88f30569238c",
-   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-05",
+   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-04",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "G29",
@@ -12297,7 +12459,7 @@
   },
   {
    "id": "6a511561fffd88f30567d9d2",
-   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-04",
+   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-03",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "G29",
@@ -12459,7 +12621,7 @@
   },
   {
    "id": "6a50f40efffd88f30563a709",
-   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-03",
+   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-02",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "G29",
@@ -12783,7 +12945,7 @@
   },
   {
    "id": "6a8329de1a88e70ff1778f4d",
-   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-16",
+   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-05",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -12864,7 +13026,7 @@
   },
   {
    "id": "6a7dec64a5615f3710ec3754",
-   "slug": "club-car-tempo-gray-rio-grande-new-jersey-usa-02",
+   "slug": "club-car-tempo-gray-rio-grande-new-jersey-usa",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -12945,7 +13107,7 @@
   },
   {
    "id": "6a7dbaf5edb9d10d7924a48f",
-   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-15",
+   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-04",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -13269,7 +13431,7 @@
   },
   {
    "id": "6a6b7c17dd729504710054ff",
-   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-09",
+   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-02",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -13431,7 +13593,7 @@
   },
   {
    "id": "6a64c0fadceb49c8bf33bae2",
-   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-05",
+   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -14892,7 +15054,7 @@
   },
   {
    "id": "69aede36966101fff8290ad5",
-   "slug": "yamaha-drive-2-black-long-pond-pennsylvania-usa-01",
+   "slug": "yamaha-drive-2-black-long-pond-pennsylvania-usa",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "Drive 2",
@@ -15945,7 +16107,7 @@
   },
   {
    "id": "6a0889e510157207617330e7",
-   "slug": "ezgo-other-green-hatfield-pennsylvania-usa-01",
+   "slug": "ezgo-other-green-hatfield-pennsylvania-usa",
    "make": "EZGO",
    "makeKey": "ezgo",
    "model": "Other",
@@ -16026,7 +16188,7 @@
   },
   {
    "id": "6a6a74a5f5da53512802dd70",
-   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-07",
+   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-01",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -16107,7 +16269,7 @@
   },
   {
    "id": "6a5e131c08b1230b3bd05944",
-   "slug": "ezgo-txt-white-hatfield-pennsylvania-usa-03",
+   "slug": "ezgo-txt-white-hatfield-pennsylvania-usa-01",
    "make": "EZGO",
    "makeKey": "ezgo",
    "model": "TXT",
@@ -16593,7 +16755,7 @@
   },
   {
    "id": "6a901a6a1faeccbe653f8bb3",
-   "slug": "club-car-tempo-gray-lecanto-florida-usa-07",
+   "slug": "club-car-tempo-gray-lecanto-florida-usa-06",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -16674,7 +16836,7 @@
   },
   {
    "id": "6a79c967abf2084b489240b5",
-   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-13",
+   "slug": "club-car-tempo-gray-ocean-view-new-jersey-usa-03",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -16836,7 +16998,7 @@
   },
   {
    "id": "6a7751bfa1999d8c520d87bc",
-   "slug": "club-car-tempo-gray-south-bend-indiana-usa-05",
+   "slug": "club-car-tempo-gray-south-bend-indiana-usa",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -16917,7 +17079,7 @@
   },
   {
    "id": "6a71e9d7bbdb413b431f4814",
-   "slug": "club-car-tempo-gray-gloucester-point-virginia-usa-03",
+   "slug": "club-car-tempo-gray-gloucester-point-virginia-usa-02",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -16998,7 +17160,7 @@
   },
   {
    "id": "6a6cac91dd72950471080cf7",
-   "slug": "club-car-tempo-gray-wichita-falls-texas-usa-04",
+   "slug": "club-car-tempo-gray-wichita-falls-texas-usa-01",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -17079,7 +17241,7 @@
   },
   {
    "id": "6a6bab48dd7295047103d219",
-   "slug": "club-car-tempo-gray-wichita-falls-texas-usa-03",
+   "slug": "club-car-tempo-gray-wichita-falls-texas-usa",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -17322,7 +17484,7 @@
   },
   {
    "id": "6a11bddf06916db773459310",
-   "slug": "club-car-precedent-beige-waretown-new-jersey-usa-03",
+   "slug": "club-car-precedent-beige-waretown-new-jersey-usa-02",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Precedent",
@@ -17403,7 +17565,7 @@
   },
   {
    "id": "6a11bbb706916db773456adc",
-   "slug": "club-car-precedent-beige-south-bend-indiana-usa-05",
+   "slug": "club-car-precedent-beige-south-bend-indiana-usa-01",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Precedent",
@@ -17565,7 +17727,7 @@
   },
   {
    "id": "69aee413966101fff8295408",
-   "slug": "yamaha-drive-2-green-swanton-ohio-usa-02",
+   "slug": "yamaha-drive-2-green-swanton-ohio-usa-01",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "Drive 2",
@@ -17724,7 +17886,7 @@
   },
   {
    "id": "69aee1b2966101fff8292ef0",
-   "slug": "yamaha-drive-2-green-south-bend-indiana-usa-03",
+   "slug": "yamaha-drive-2-green-south-bend-indiana-usa",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "Drive 2",
@@ -18129,7 +18291,7 @@
   },
   {
    "id": "68fa7d45c52387fc91fb85e6",
-   "slug": "club-car-precedent-beige-south-bend-indiana-usa-03",
+   "slug": "club-car-precedent-beige-south-bend-indiana-usa",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Precedent",
@@ -19668,7 +19830,7 @@
   },
   {
    "id": "68d1cb61c618efe29dade3ed",
-   "slug": "club-car-precedent-beige-waretown-new-jersey-usa-02",
+   "slug": "club-car-precedent-beige-waretown-new-jersey-usa-01",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Precedent",
@@ -19829,7 +19991,7 @@
   },
   {
    "id": "68c5a0dbbf550abf625ff966",
-   "slug": "ezgo-txt-white-hatfield-pennsylvania-usa-02",
+   "slug": "ezgo-txt-white-hatfield-pennsylvania-usa",
    "make": "EZGO",
    "makeKey": "ezgo",
    "model": "TXT",
