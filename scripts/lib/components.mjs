@@ -1,6 +1,6 @@
 /** Reusable markup fragments shared across page templates. */
 
-import { site, salesEvent, financingPartners } from "../../data/site.config.mjs";
+import { site, salesEvent, financingPartners, storeDisplayName } from "../../data/site.config.mjs";
 import { esc, formatPrice, formatPriceShort, monthlyPayment, cartImages, clamp } from "./util.mjs";
 import { ICONS } from "./layout.mjs";
 
@@ -125,7 +125,7 @@ export function cartSchema(cart, { includeOffer = true } = {}) {
         ? {
             availableAtOrFrom: {
               "@type": "Place",
-              name: cart.storeName || `${site.name} — ${cart.city}`,
+              name: cart.storeName || storeDisplayName(cart.city, cart.state),
               address: { "@type": "PostalAddress", addressLocality: cart.city, addressRegion: cart.stateCode, addressCountry: "US" },
             },
           }

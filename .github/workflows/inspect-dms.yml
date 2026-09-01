@@ -1,0 +1,23 @@
+name: Inspect DMS payload
+
+# Prints the real shape of a cart record from the Tigon DMS into the job
+# summary. Run this whenever a field on the site disagrees with the dealership
+# system and you need to see what the API actually sends.
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "How many carts to sample"
+        type: string
+        default: "25"
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Inspect the DMS payload
+        run: node scripts/inspect-dms.mjs "${{ inputs.sample }}"

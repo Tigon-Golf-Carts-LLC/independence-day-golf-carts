@@ -11,7 +11,7 @@ import { dirname, resolve, join } from "node:path";
 
 import { site } from "../data/site.config.mjs";
 import { toStateCode, locations as locationSeed } from "../data/locations.mjs";
-import { financingPartners } from "../data/site.config.mjs";
+import { financingPartners, storeDisplayName } from "../data/site.config.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = resolve(root, "dist");
@@ -175,6 +175,20 @@ test("inventory feeds agree with the generated vehicle pages", () => {
         url.startsWith("https://s3.amazonaws.com/prod.docs.s3/carts/") || url.startsWith("/images/"),
         `unexpected image URL on ${cart.slug}: ${url}`,
       );
+    }
+    // A cart the DMS gave photos for must publish those photos, not the placeholder.
+    if (cart.hasPhotos) {
+      assert.equal(
+        cart.imageUrls.length,
+        cart.images.length,
+        `${cart.slug} has ${cart.images.length} photos but publishes ${cart.imageUrls.length}`,
+      );
+      for (const url of cart.imageUrls) {
+        assert.ok(
+          url.startsWith("https://s3.amazonaws.com/prod.docs.s3/carts/"),
+          `${cart.slug} has photos but published a placeholder: ${url}`,
+        );
+      }
     }
   }
 });
@@ -367,5 +381,143 @@ test("every financing partner links to its dealer-specific application", () => {
   for (const anchor of externalAnchors.filter((a) => financingPartners.some((p) => a.includes(p.url.replace(/&/g, "&amp;"))))) {
     assert.ok(anchor.includes('target="_blank"'), `external link missing target=_blank: ${anchor}`);
     assert.ok(anchor.includes("noopener"), `external link missing rel=noopener: ${anchor}`);
+  }
+});
+
+test("locations are named for the sales event, never the DMS parent group", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  for (const store of inventory.stores) {
+    const expected = storeDisplayName(store.city, store.state);
+    assert.equal(store.name, expected, `${store.slug} has the wrong display name`);
+    assert.ok(!/tigon/i.test(store.name), `${store.slug} still carries the DMS group name`);
+  }
+  for (const cart of inventory.carts) {
+    if (!cart.storeName) continue;
+    assert.ok(!/tigon/i.test(cart.storeName), `cart ${cart.slug} carries a DMS store name`);
+  }
+
+  // No location page, and no page that names a store, may render the DMS name.
+  // "Tigon" is also a battery brand in the DMS, so only store-name contexts
+  // are checked here rather than the raw word.
+  for (const store of inventory.stores) {
+    const html = read(join("locations", store.slug, "index.html"));
+    assert.ok(html.includes(expectedName(store)), `${store.slug} page does not show its display name`);
+    assert.ok(!/Tigon\s+(Hatfield|Bayville|Dover|Ocean View|Rio Grande|Waretown|Long Pond|Scranton|Gloucester Point|Raleigh|Orangeburg|Lecanto|South Bend|Swanton|Wichita Falls)/.test(html),
+      `${store.slug} page still shows a DMS store name`);
+  }
+
+  function expectedName(store) {
+    return storeDisplayName(store.city, store.state);
+  }
+});
+
+test("carts with photos render those photos, not the placeholder", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  const withPhotos = inventory.carts.filter((cart) => cart.hasPhotos);
+  assert.ok(withPhotos.length > 0, "expected at least one cart with photography");
+
+  // Vehicle pages must use the real S3 file as the gallery hero and the OG image.
+  for (const cart of withPhotos.slice(0, 15)) {
+    const html = read(join("golfcart", cart.slug, "index.html"));
+    const expected = `https://s3.amazonaws.com/prod.docs.s3/carts/${cart.images[0]}`;
+    assert.ok(html.includes(`src="${expected}"`), `${cart.slug} gallery does not show its first photo`);
+    assert.ok(
+      html.includes(`<meta property="og:image" content="${expected}">`),
+      `${cart.slug} og:image is not its own photo`,
+    );
+    assert.ok(
+      !html.includes('data-gallery-main src="/images/cart-photo-coming-soon.svg"'),
+      `${cart.slug} shows the placeholder despite having photos`,
+    );
+  }
+
+  // Listing pages that lead with photographed carts must show real images.
+  for (const page of ["index.html", join("july-4th-golf-cart-sales-event", "index.html"), join("inventory", "index.html")]) {
+    const html = read(page);
+    const s3 = (html.match(/src="https:\/\/s3\.amazonaws\.com\/prod\.docs\.s3\/carts\/[^"]+"/g) ?? []).length;
+    assert.ok(s3 > 0, `${page} renders no real cart photography`);
+  }
+});
+
+test("image sitemap and product feed carry real photography", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  const withPhotos = inventory.carts.filter((cart) => cart.hasPhotos);
+  const totalPhotos = withPhotos.reduce((sum, cart) => sum + cart.images.length, 0);
+
+  for (const name of ["image-sitemap.xml", "sitemap-images.xml"]) {
+    const xml = read(name);
+    const locs = (xml.match(/<image:loc>https:\/\/s3\.amazonaws\.com[^<]+<\/image:loc>/g) ?? []).length;
+    assert.ok(locs > 0, `${name} lists no real images`);
+    // The sitemap caps at 20 photos per cart, so it can be fewer but never more.
+    assert.ok(locs <= totalPhotos, `${name} lists more images than exist`);
+    assert.ok(locs >= withPhotos.length, `${name} lists fewer images than carts with photos`);
+    assert.ok(!xml.includes("cart-photo-coming-soon"), `${name} lists the placeholder as content`);
+  }
+
+  const feed = read("product_feed.xml");
+  const links = (feed.match(/<g:image_link>https:\/\/s3\.amazonaws\.com[^<]+<\/g:image_link>/g) ?? []).length;
+  assert.equal(links, withPhotos.length, "product feed image count does not match carts with photos");
+});
+
+test("only sellable retail carts are published", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  const notForSale = new Set(["boneyard", "permanent_boneyard", "work_in_progress"]);
+
+  for (const cart of inventory.carts) {
+    const status = String(cart.status ?? "").toLowerCase();
+    assert.ok(
+      !notForSale.has(status),
+      `${cart.slug} is published with status "${cart.status}" — boneyard and work-in-progress units carry internal figures, not asking prices`,
+    );
+    if (cart.inventoryState) {
+      assert.notEqual(cart.inventoryState.isInBoneyard, true, `${cart.slug} is in the boneyard`);
+      assert.notEqual(cart.inventoryState.isService, true, `${cart.slug} is a service unit`);
+      assert.notEqual(cart.inventoryState.isInStock, false, `${cart.slug} is not in stock`);
+    }
+  }
+});
+
+test("published prices come from the DMS retail price", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+
+  for (const cart of inventory.carts) {
+    // A price is either a positive number or absent, never zero or negative.
+    assert.ok(
+      cart.price === null || (typeof cart.price === "number" && cart.price > 0),
+      `${cart.slug} has a nonsensical price: ${cart.price}`,
+    );
+    // Where the DMS sent a retail price, that is the number published.
+    if (cart.rawPricing && typeof cart.rawPricing.retailPrice === "number" && cart.rawPricing.retailPrice > 0) {
+      assert.equal(
+        cart.price,
+        cart.rawPricing.retailPrice,
+        `${cart.slug} publishes ${cart.price} but the DMS retailPrice is ${cart.rawPricing.retailPrice}`,
+      );
+    }
+  }
+
+  // The rendered price on a card must match the record, to the dollar.
+  const sample = inventory.carts.filter((cart) => cart.price > 0).slice(0, 12);
+  for (const cart of sample) {
+    const html = read(join("golfcart", cart.slug, "index.html"));
+    const expected = "$" + Number(cart.price).toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    assert.ok(
+      html.includes(expected),
+      `${cart.slug} page does not show ${expected} for a price of ${cart.price}`,
+    );
+  }
+});
+
+test("no cart lists the same photograph twice", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  for (const cart of inventory.carts) {
+    assert.equal(
+      new Set(cart.images).size,
+      cart.images.length,
+      `${cart.slug} lists a duplicate photo, which would repeat in the gallery`,
+    );
   }
 });

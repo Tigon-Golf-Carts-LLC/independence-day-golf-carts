@@ -72,21 +72,54 @@ export function getFeaturedCarts(key = "national") {
 }
 
 /**
- * Walk /get-carts until the reported total is exhausted. The DMS caps a single
- * response, so the whole catalogue is assembled page by page here.
+ * Walk /get-carts until the catalogue is exhausted.
+ *
+ * The first page's `totalCarts` is treated as a hint, not a stop condition: it
+ * has been observed to disagree with the number of records the endpoint will
+ * actually serve. Paging therefore continues until a short page arrives or a
+ * full page adds nothing new, and records are keyed by `_id` so an unstable
+ * server-side sort cannot produce duplicates.
  */
-export async function getAllCarts({ pageSize = 100, maxPages = 60 } = {}) {
-  const all = [];
-  let total = null;
+export async function getAllCarts({ pageSize = 100, maxPages = 200 } = {}) {
+  const byId = new Map();
+  let reportedTotal = null;
+  let barrenPages = 0;
 
   for (let pageNumber = 0; pageNumber < maxPages; pageNumber += 1) {
     const data = await getCarts({ pageNumber, pageSize });
     const page = Array.isArray(data?.carts) ? data.carts : [];
-    if (total === null) total = Number(data?.totalCarts ?? page.length) || page.length;
-    all.push(...page);
-    process.stderr.write(`  page ${pageNumber}: +${page.length} (${all.length}/${total})\n`);
-    if (page.length === 0 || all.length >= total) break;
+    if (reportedTotal === null) reportedTotal = Number(data?.totalCarts) || null;
+
+    let added = 0;
+    for (const cart of page) {
+      if (!cart?._id || byId.has(cart._id)) continue;
+      byId.set(cart._id, cart);
+      added += 1;
+    }
+    process.stderr.write(
+      `  page ${pageNumber}: ${page.length} returned, ${added} new (${byId.size} total)\n`,
+    );
+
+    if (page.length === 0) break;
+    // A page shorter than requested is the last one.
+    if (page.length < pageSize) break;
+    // A full page of records already seen means paging is not advancing.
+    if (added === 0) {
+      barrenPages += 1;
+      if (barrenPages >= 2) {
+        process.stderr.write("  paging stopped advancing; ending the walk\n");
+        break;
+      }
+    } else {
+      barrenPages = 0;
+    }
   }
 
-  return { carts: all, totalCarts: total ?? all.length };
+  const carts = [...byId.values()];
+  if (reportedTotal !== null && carts.length !== reportedTotal) {
+    process.stderr.write(
+      `  note: collected ${carts.length} carts, endpoint reported ${reportedTotal}\n`,
+    );
+  }
+  return { carts, totalCarts: carts.length, reportedTotal };
 }

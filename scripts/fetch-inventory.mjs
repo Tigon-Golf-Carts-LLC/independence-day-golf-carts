@@ -18,6 +18,7 @@ import { dirname, resolve } from "node:path";
 import { getAllCarts, getStores } from "./lib/dms.mjs";
 import { toSlugPart, toMakeKey, buildCartTitle, isoStamp } from "./lib/util.mjs";
 import { locations as locationSeed, toStateCode } from "../data/locations.mjs";
+import { storeDisplayName } from "../data/site.config.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = resolve(root, "data/inventory.json");
@@ -40,7 +41,8 @@ function mergeStores(dmsStores) {
       ...seed,
       storeId: store?.storeId ?? null,
       storeMongoId: store?._id ?? null,
-      name: store?.name ?? `Independence Day Golf Carts — ${seed.city}, ${seed.stateCode}`,
+      name: storeDisplayName(seed.city, seed.state),
+      dmsName: store?.name ?? null,
       address1: store?.address?.address1 ?? "",
       address2: store?.address?.address2 ?? "",
       postalCode: store?.address?.postalCode ?? "",
@@ -67,7 +69,8 @@ function mergeStores(dmsStores) {
       keywords: [`${city} golf carts`, `${city} ${state} golf cart dealer`],
       storeId: store?.storeId ?? null,
       storeMongoId: store?._id ?? null,
-      name: store?.name ?? `Independence Day Golf Carts — ${city}`,
+      name: storeDisplayName(city, state),
+      dmsName: store?.name ?? null,
       address1: store?.address?.address1 ?? "",
       address2: store?.address?.address2 ?? "",
       postalCode: store?.address?.postalCode ?? "",
@@ -77,6 +80,87 @@ function mergeStores(dmsStores) {
   }
 
   return merged;
+}
+
+/**
+ * Statuses the DMS uses for units that are not sellable retail stock.
+ *
+ * boneyard / permanent_boneyard are parts and scrap carts; work_in_progress
+ * units are still being built or reconditioned. Their `retailPrice` is an
+ * internal figure, not an asking price, so publishing them puts wrong prices
+ * on the site.
+ */
+const NON_RETAIL_STATUS = new Set(["boneyard", "permanent_boneyard", "work_in_progress"]);
+
+/**
+ * Whether a raw DMS record is a cart a customer can actually buy.
+ *
+ * Deliberately conservative: it excludes only what the DMS marks as clearly
+ * not-for-sale. Fields that are false on plainly retail units — isComplete,
+ * rfsStatus.isRFS, advertising.onWebsite — are captured but not filtered on,
+ * because they would exclude sellable stock.
+ */
+function isSellable(raw) {
+  const status = String(raw?.status ?? "").toLowerCase();
+  if (NON_RETAIL_STATUS.has(status)) return false;
+  if (raw?.isInBoneyard === true) return false;
+  if (raw?.isService === true) return false;
+  if (raw?.isInStock === false) return false;
+  return true;
+}
+
+/**
+ * Every scalar field on a raw DMS record whose name looks like money, kept on
+ * the normalised cart as `rawPricing`.
+ *
+ * The site publishes one price, but the DMS may carry several (retail, sale,
+ * MSRP, cost). Capturing them makes it possible to see what is actually
+ * available without another API round trip, and to change which one is
+ * published without re-deriving the whole snapshot.
+ */
+const MONEY_FIELD = /price|cost|msrp|amount|retail|sale|discount|fee|payment|deposit|rebate|invoice/i;
+
+function collectPricing(raw) {
+  const pricing = {};
+  for (const [key, value] of Object.entries(raw ?? {})) {
+    if (!MONEY_FIELD.test(key)) continue;
+    if (value === null || value === undefined || typeof value === "object") continue;
+    pricing[key] = value;
+  }
+  // Nested pricing objects are common; keep them whole.
+  for (const key of ["pricing", "price", "prices", "cost", "financials"]) {
+    if (raw?.[key] && typeof raw[key] === "object" && !Array.isArray(raw[key])) {
+      pricing[key] = raw[key];
+    }
+  }
+  return pricing;
+}
+
+/**
+ * The price the site publishes for a cart.
+ *
+ * `retailPrice` is the documented field and is used wherever it is a positive
+ * number. The fallbacks below cover records where it is missing or zero, in
+ * the order a dealership would advertise them.
+ */
+export function resolvePrice(raw) {
+  const candidates = [
+    raw?.retailPrice,
+    raw?.salePrice,
+    raw?.webPrice,
+    raw?.internetPrice,
+    raw?.listPrice,
+    raw?.askingPrice,
+    raw?.pricing?.retailPrice,
+    raw?.pricing?.salePrice,
+    raw?.pricing?.price,
+    raw?.price,
+  ];
+  for (const value of candidates) {
+    const number = typeof value === "string" ? Number(value.replace(/[^0-9.]/g, "")) : value;
+    if (typeof number === "number" && Number.isFinite(number) && number > 0) return number;
+  }
+  return null;
 }
 
 /** Flatten a raw DMS cart into the shape every template and feed consumes. */
@@ -90,9 +174,13 @@ function normaliseCart(raw, storeById) {
   const storeId = raw?.cartLocation?.locationId || raw?.cartLocation?.latestStoreId || "";
   const store = storeById.get(storeId) ?? null;
 
-  const images = (Array.isArray(raw?.imageUrls) ? raw.imageUrls : []).filter(
-    (name) => typeof name === "string" && name.trim(),
-  );
+  const images = [
+    ...new Set(
+      (Array.isArray(raw?.imageUrls) ? raw.imageUrls : [])
+        .filter((name) => typeof name === "string" && name.trim())
+        .map((name) => name.trim()),
+    ),
+  ];
 
   return {
     id: raw._id,
@@ -103,7 +191,10 @@ function normaliseCart(raw, storeById) {
     modelKey: toSlugPart(model),
     year,
     title: buildCartTitle(make, model, color),
-    price: typeof raw?.retailPrice === "number" ? raw.retailPrice : null,
+    price: resolvePrice(raw),
+    // Everything money-shaped the DMS sent, so the published price can be
+    // re-pointed at a different field without another API round trip.
+    rawPricing: collectPricing(raw),
     isElectric: raw?.isElectric === true,
     isUsed: raw?.isUsed === true,
     condition: raw?.isUsed === true ? "Used" : "New",
@@ -146,6 +237,21 @@ function normaliseCart(raw, storeById) {
     warranty: raw?.warrantyLength ?? "",
     images,
     hasPhotos: images.length > 0,
+    // Inventory state, straight from the DMS. Kept so the sellability rules
+    // above can be reviewed against real data without another API call.
+    inventoryState: {
+      status: raw?.status ?? null,
+      isInStock: raw?.isInStock ?? null,
+      isOnLot: raw?.isOnLot ?? null,
+      isInBoneyard: raw?.isInBoneyard ?? null,
+      isService: raw?.isService ?? null,
+      isComplete: raw?.isComplete ?? null,
+      isRFS: raw?.rfsStatus?.isRFS ?? null,
+      categories: Array.isArray(raw?.categories) ? raw.categories : [],
+      onWebsite: raw?.advertising?.onWebsite ?? null,
+      needOnWebsite: raw?.advertising?.needOnWebsite ?? null,
+      isDraft: raw?.advertising?.isDraft ?? null,
+    },
     storeId: storeId || null,
     locationSlug: store?.slug ?? null,
     city: store?.city ?? "",
@@ -269,7 +375,23 @@ async function main() {
   const stores = mergeStores(source.dmsStores);
   const storeById = new Map(stores.filter((store) => store.storeId).map((store) => [store.storeId, store]));
 
-  const carts = assignSlugs(source.rawCarts.map((raw) => normaliseCart(raw, storeById)));
+  const sellable = source.rawCarts.filter(isSellable);
+  const excluded = source.rawCarts.length - sellable.length;
+  if (excluded > 0) {
+    const reasons = {};
+    for (const raw of source.rawCarts) {
+      if (isSellable(raw)) continue;
+      const key = String(raw?.status ?? "unknown");
+      reasons[key] = (reasons[key] ?? 0) + 1;
+    }
+    process.stderr.write(
+      `\nHeld back ${excluded} non-retail records: ` +
+        Object.entries(reasons).map(([key, count]) => `${key}=${count}`).join(", ") +
+        "\n",
+    );
+  }
+
+  const carts = assignSlugs(sellable.map((raw) => normaliseCart(raw, storeById)));
   carts.sort((a, b) => {
     if (a.hasPhotos !== b.hasPhotos) return a.hasPhotos ? -1 : 1;
     return (b.price ?? 0) - (a.price ?? 0);

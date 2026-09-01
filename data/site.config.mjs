@@ -52,6 +52,17 @@ export const site = {
   hoursSummary: "Monday – Saturday, 9:00 AM – 5:00 PM. Closed Sunday.",
 };
 
+/**
+ * Public display name for a dealership location.
+ *
+ * The DMS returns each store under the parent group's name ("Tigon Hatfield").
+ * This site is branded for the sales event, so the DMS name is never shown —
+ * every location renders through this template instead.
+ */
+export function storeDisplayName(city, state) {
+  return `Independence Golf Carts Sale location In ${city} ${state}`;
+}
+
 /** The sales event this whole site is built around. */
 export const salesEvent = {
   name: "July 4th Golf Cart Sales Event",
