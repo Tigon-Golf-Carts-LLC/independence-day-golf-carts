@@ -33,7 +33,7 @@ export const guides = [
       { h2: "How to lock in July 4th pricing" },
       { list: [
         "Browse live inventory on this site — it refreshes every morning at 1:30 AM Eastern directly from the dealership system.",
-        "Call 1-844-844-6638 with the stock you want. A deposit holds event pricing even if delivery is scheduled after July 8.",
+        "Call 844-456-2228 with the stock you want. A deposit holds event pricing even if delivery is scheduled after July 8.",
         "Ask for the trade appraisal at the same time; trade value stacks on top of event pricing.",
         "Confirm delivery. Delivery is quoted to your address, and most locations can deliver within a few days.",
       ] },
@@ -164,7 +164,7 @@ export const guides = [
         "When can it be delivered, and is delivery included?",
         "Who services the cart afterward, and where is the nearest service location?",
       ] },
-      { p: "Call 1-844-844-6638 with this list in hand and any Independence Day Golf Carts location will walk it with you line by line." },
+      { p: "Call 844-456-2228 with this list in hand and any Independence Day Golf Carts location will walk it with you line by line." },
     ],
   },
 ];

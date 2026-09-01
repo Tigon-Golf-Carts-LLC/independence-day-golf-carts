@@ -2,7 +2,7 @@
   "name": "independence-day-golf-carts",
   "version": "1.0.0",
   "private": true,
-  "description": "Independence Day Golf Carts - July 4th Golf Cart Sales Event. Static site generator with live Tigon DMS inventory.",
+  "description": "Independence Day Golf Carts - July 4th Golf Cart Sales Event. Static site generator with live DMS inventory.",
   "type": "module",
   "engines": {
     "node": ">=20"

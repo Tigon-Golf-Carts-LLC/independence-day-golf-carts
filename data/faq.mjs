@@ -12,7 +12,7 @@ export const faq = [
   },
   {
     q: "What is the Independence Day Golf Cart Sales Event?",
-    a: "It is a nationwide Fourth of July sales event on new and used golf carts. Every cart in inventory is marked with Independence Day pricing, and 0% APR financing for 48 months is available on approved credit. Call 1-844-844-6638 to lock in event pricing on any cart.",
+    a: "It is a nationwide Fourth of July sales event on new and used golf carts. Every cart in inventory is marked with Independence Day pricing, and 0% APR financing for 48 months is available on approved credit. Call 844-456-2228 to lock in event pricing on any cart.",
     topic: "event",
   },
   {
@@ -47,7 +47,7 @@ export const faq = [
   },
   {
     q: "Do you deliver golf carts?",
-    a: "Yes. We deliver locally and ship nationwide. Delivery is quoted per order based on your address and the cart, so call 1-844-844-6638 with your ZIP code for a firm number. With 15 locations across Pennsylvania, New Jersey, Delaware, Virginia, North Carolina, South Carolina, Florida, Indiana, Ohio and Texas, most customers are within delivery range of a store.",
+    a: "Yes. We deliver locally and ship nationwide. Delivery is quoted per order based on your address and the cart, so call 844-456-2228 with your ZIP code for a firm number. With 15 locations across Pennsylvania, New Jersey, Delaware, Virginia, North Carolina, South Carolina, Florida, Indiana, Ohio and Texas, most customers are within delivery range of a store.",
     topic: "delivery",
   },
   {
@@ -77,12 +77,12 @@ export const faq = [
   },
   {
     q: "How do I reach Independence Day Golf Carts?",
-    a: "Call 1-844-844-6638 or use the contact form on this site. Every location is open Monday through Saturday, 9:00 AM to 5:00 PM, and closed on Sunday.",
+    a: "Call 844-456-2228 or use the contact form on this site. Every location is open Monday through Saturday, 9:00 AM to 5:00 PM, and closed on Sunday.",
     topic: "contact",
   },
   {
     q: "How often is inventory on this site updated?",
-    a: "The full inventory is pulled from the Tigon dealer management system every day at 1:30 AM Eastern, so prices, photos, specifications and availability on this site reflect the live dealership stock each morning.",
+    a: "The full inventory is pulled from our dealer management system every day at 1:30 AM Eastern, so prices, photos, specifications and availability on this site reflect the live dealership stock each morning.",
     topic: "inventory",
   },
 ];

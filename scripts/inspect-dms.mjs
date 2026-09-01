@@ -2,7 +2,7 @@
 /**
  * DMS payload inspector.
  *
- * Prints the real shape of a cart record straight from the Tigon DMS: every
+ * Prints the real shape of a cart record straight from the DMS: every
  * top-level key, every price-like field found at any depth with sample values,
  * and a couple of complete raw records.
  *
@@ -47,7 +47,7 @@ function findMoneyFields(value, path = "", found = new Map()) {
 }
 
 async function main() {
-  say(`Fetching ${SAMPLE} carts from the Tigon DMS...\n`);
+  say(`Fetching ${SAMPLE} carts from the DMS...\n`);
   const data = await getCarts({ pageNumber: 0, pageSize: SAMPLE });
   const carts = data?.carts ?? [];
   if (!carts.length) throw new Error("the DMS returned no carts");

@@ -1,7 +1,7 @@
 # Cloudflare Pages configuration.
 #
 # The site is a plain static build in dist/ with optional Pages Functions in
-# functions/ that proxy the Tigon DMS for live inventory checks between the
+# functions/ that proxy the DMS for live inventory checks between the
 # nightly rebuilds. Nothing in functions/ is required for the site to work.
 #
 # Deploy manually:

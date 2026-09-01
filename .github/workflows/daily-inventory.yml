@@ -68,7 +68,7 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Pull live inventory from the Tigon DMS
+      - name: Pull live inventory from the DMS
         if: steps.gate.outputs.proceed == 'true'
         run: npm run fetch
 

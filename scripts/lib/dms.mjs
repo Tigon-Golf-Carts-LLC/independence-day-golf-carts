@@ -1,5 +1,5 @@
 /**
- * Tigon DMS API client.
+ * Dealer management system (DMS) API client.
  *
  * The DMS is public (no key) but every read endpoint except /tigon-stores is a
  * POST. Requests are retried with backoff because the nightly build is

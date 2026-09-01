@@ -1,6 +1,6 @@
 /**
  * Generates scripts/fixtures/inventory.sample.json — synthetic inventory in the
- * raw Tigon DMS response shape, used only for offline development and tests.
+ * raw DMS response shape, used only for offline development and tests.
  * The real site is always built from the live DMS pull in scripts/fetch-inventory.mjs.
  */
 import { writeFileSync } from "node:fs";

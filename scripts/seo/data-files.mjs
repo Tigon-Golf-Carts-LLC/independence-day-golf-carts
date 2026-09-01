@@ -332,7 +332,7 @@ export function buildDataFiles(data) {
     "inventory.json": JSON.stringify(
       {
         generatedAt: data.generatedAt,
-        source: "Tigon DMS",
+        source: "dealer management system",
         refresh: "daily 01:30 America/New_York",
         salesEvent: { name: salesEvent.name, alternateName: salesEvent.altName },
         summary: data.summary,

@@ -241,7 +241,7 @@ export function renderInventoryPage({
 </div>
 
 <div class="wrap" id="results">
-  <div class="inventory-layout" data-inventory data-page-size="${PAGE_SIZE}" data-base-path="${esc(path)}" data-locked='${esc(JSON.stringify(locked))}'>
+  <div class="inventory-layout" data-inventory data-page-size="${PAGE_SIZE}" data-base-path="${esc(path)}" data-phone="${esc(site.phone)}" data-phone-tel="${esc(site.phoneTel)}" data-locked='${esc(JSON.stringify(locked))}'>
     ${filtersPanel(data, locked)}
     <div>
       <div class="results-bar">

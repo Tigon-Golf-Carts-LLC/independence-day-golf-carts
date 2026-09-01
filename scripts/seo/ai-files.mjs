@@ -46,7 +46,7 @@ Price range: ${data.summary.priceMin ? `${formatPriceShort(data.summary.priceMin
 Financing: 0% APR for 48 months on approved credit
 Delivery: local and nationwide, quoted per order by address
 Hours: Mon–Sat 09:00–17:00 local time; closed Sunday (all locations)
-Inventory refresh: daily at 01:30 America/New_York from the Tigon dealer management system
+Inventory refresh: daily at 01:30 America/New_York from the dealer management system
 Data generated: ${isoStamp()}`;
 }
 
@@ -425,7 +425,7 @@ Full text reference  ${site.url}/llms-full.txt
 
 ## Quality indicators
 
-Source of truth:       Tigon dealer management system (live dealership records)
+Source of truth:       dealer management system (live dealership records)
 Update frequency:      daily at 01:30 America/New_York
 Last generated:        ${isoStamp()}
 Structured data:       Schema.org JSON-LD on every page (Product, Vehicle, Offer,
@@ -1358,7 +1358,7 @@ function humansTxt(data) {
   Standards: HTML5, CSS3, ES2018, Schema.org JSON-LD, WCAG 2.2 AA
   Architecture: static site generation, no framework, no client-side routing
   Components: hand-written CSS design system, dependency-free JavaScript
-  Data source: Tigon dealer management system (api.tigondms.com)
+  Data source: dealership management system
   Inventory refresh: daily at 01:30 America/New_York
   Vehicle photography: Amazon S3
   Hosting: Cloudflare Pages / GitHub Pages
