@@ -1,5 +1,20 @@
 {
- "generatedAt": "2026-09-01T19:29:57+00:00",
+ "generatedAt": "2026-09-01T19:39:34+00:00",
+ "fetch": {
+  "rawRecordsFetched": 1349,
+  "reportedTotal": 1349,
+  "published": 238,
+  "excluded": 1111,
+  "exclusionReasons": {
+   "not ready for sale (isRFS false)": 1069,
+   "no photograph": 26,
+   "status: work_in_progress": 12,
+   "status: retail": 3,
+   "status: boneyard": 1
+  },
+  "rfsTrue": 280,
+  "withPublicPhotos": 868
+ },
  "source": "dms-live",
  "summary": {
   "total": 238,
