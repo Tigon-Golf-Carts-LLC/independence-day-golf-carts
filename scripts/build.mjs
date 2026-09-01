@@ -139,7 +139,7 @@ const CATEGORIES = [
     locked: { isNew: true },
     h1: "New Golf Carts for Sale",
     title: `New Golf Carts for Sale — ${data.summary.new} in Stock | ${salesEvent.name}`,
-    description: `${data.summary.new} new golf carts with full factory warranty in the ${salesEvent.name}. Independence Day pricing, 0% APR for 48 months, free delivery.`,
+    description: `${data.summary.new} new golf carts with full factory warranty in the ${salesEvent.name}. Independence Day pricing and 0% APR for 48 months.`,
     intro: `${data.summary.new} brand-new carts with full factory warranty and current-generation battery packs, all at Independence Day event pricing.`,
     keywords: ["new golf carts for sale", "brand new golf cart", "new golf cart prices"],
     copy: `<h2>Buying new during the Independence Day event</h2>
@@ -254,7 +254,7 @@ for (const store of data.stores) {
         path,
         title: `Golf Carts for Sale in ${store.city}, ${store.stateCode} — ${store.cartCount} in Stock`,
         h1: `Golf Carts in ${store.city}, ${store.stateCode}`,
-        description: `${store.cartCount} golf carts in stock in ${store.city}, ${store.state} during the ${salesEvent.name}. 0% APR for 48 months, free local delivery. Call ${site.phone}.`,
+        description: `${store.cartCount} golf carts in stock in ${store.city}, ${store.state} during the ${salesEvent.name}. 0% APR for 48 months, delivery available. Call ${site.phone}.`,
         intro: `${store.cartCount} carts on the floor at ${store.name}, all at Independence Day event pricing. Serving ${(store.serviceArea || []).slice(0, 4).join(", ") || store.state}.`,
         locked: { location: store.slug },
         breadcrumbs: [

@@ -461,11 +461,27 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   background: var(--red-soft); color: var(--red); margin-bottom: 14px;
 }
 .feature h3 { font-size: 1.2rem; margin-bottom: 6px; }
+.feature h3 a { color: var(--ink); text-decoration: none; }
+.feature h3 a:hover { color: var(--red); text-decoration: underline; }
+
+/* Lender cards: the whole card is a click target, the button stays the label. */
+.feature--link { position: relative; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.feature--link:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--red); }
+.feature--link:focus-within { border-color: var(--red); }
+/* Higher specificity than `.feature p`, so the button pins to the card floor
+   and every card in a row aligns regardless of blurb length. */
+.feature--link .feature__cta { margin: auto 0 0; padding-top: 16px; }
+.feature__cta .btn { width: 100%; }
+/* Stretch the button's hit area over the card without trapping the heading link. */
+.feature--link .feature__cta .btn::after { content: ""; position: absolute; inset: 0; }
+.feature--link h3 a { position: relative; z-index: 1; }
 .feature p { margin: 0; font-size: .96rem; color: var(--body); }
 
 .grid-2 { display: grid; gap: 28px; grid-template-columns: 1fr; }
 @media (min-width: 900px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
 .grid-3 { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+.grid-lenders { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+@media (min-width: 1000px) { .grid-lenders { grid-template-columns: repeat(3, 1fr); } }
 
 /* --------------------------------------------------------- breadcrumbs --- */
 

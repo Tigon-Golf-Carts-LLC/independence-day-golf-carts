@@ -256,14 +256,18 @@ export function faqBlock(entries, { title = "Questions &amp; Answers", intro = "
 
 /** Financing partner cards. */
 export function financingGrid() {
-  return `<div class="grid-3">
+  // Each card links straight to that lender's dealer-specific application.
+  // The whole card is a click target; the button is the accessible name.
+  return `<div class="grid-lenders">
 ${financingPartners
   .map(
-    (partner) => `  <div class="feature">
+    (partner) => `  <div class="feature feature--link">
     <div class="feature__icon">${ICONS.tick}</div>
-    <h3>${esc(partner.name)}</h3>
+    <h3><a href="${esc(partner.url)}" rel="noopener nofollow external" target="_blank">${esc(partner.name)}</a></h3>
     <p>${esc(partner.blurb)}</p>
-    <p style="margin-top:14px"><a class="btn btn--outline btn--sm" href="${esc(partner.url)}" rel="noopener nofollow" target="_blank">Apply with ${esc(partner.name)}</a></p>
+    <p class="feature__cta"><a class="btn btn--primary btn--sm" href="${esc(partner.url)}" rel="noopener nofollow external" target="_blank">
+      Apply with ${esc(partner.name)} ${ICONS.external}<span class="visually-hidden"> (opens in a new tab)</span>
+    </a></p>
   </div>`,
   )
   .join("\n")}
@@ -276,7 +280,7 @@ export function valueProps() {
     ["Independence Day Pricing", "Every cart in stock is marked with July 4th event pricing from June 20 through July 8 — the deepest in-stock pricing of the summer."],
     ["0% APR for 48 Months", "Financing on approved credit through six national lenders, with soft-pull prequalification that does not touch your credit score."],
     ["15 Locations, One Inventory", "Shop the combined stock of every Independence Day Golf Carts location and we will move the cart you want to the store nearest you."],
-    ["Free Event Delivery", "Local delivery is included during the sales event, and nationwide shipping is available on request."],
+    ["Delivery Available", "Local and nationwide delivery can be arranged on any cart in stock. Call with your ZIP code for a delivery quote."],
     ["Same-Day Trade Appraisals", "Bring any make in any condition. Trade value stacks on top of event pricing."],
     ["Inventory Updated Daily", "Prices, photos and availability are pulled straight from our dealer management system every morning at 1:30 AM Eastern."],
   ];

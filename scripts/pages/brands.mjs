@@ -88,7 +88,7 @@ export function renderBrandPage(make, data) {
   const path = `/brands/${brandSlug(make.key)}/`;
 
   const copy = `<h2>${esc(make.label)} golf carts in the ${esc(salesEvent.name)}</h2>
-<p>We have ${stock.length} ${esc(make.label)} cart${stock.length === 1 ? "" : "s"} in stock${prices.length ? `, priced from ${formatPriceShort(Math.min(...prices))} to ${formatPriceShort(Math.max(...prices))}` : ""} — ${electric} electric and ${stock.length - electric} gas. Every one carries Independence Day event pricing from June 20 through July 8, with 0% APR financing for 48 months on approved credit and free local delivery.</p>
+<p>We have ${stock.length} ${esc(make.label)} cart${stock.length === 1 ? "" : "s"} in stock${prices.length ? `, priced from ${formatPriceShort(Math.min(...prices))} to ${formatPriceShort(Math.max(...prices))}` : ""} — ${electric} electric and ${stock.length - electric} gas. Every one carries Independence Day event pricing from June 20 through July 8, with 0% APR financing for 48 months on approved credit.</p>
 ${models.length ? `<h3>${esc(make.label)} models in stock</h3>\n<ul>\n${models.map((model) => `  <li>${esc(make.label)} ${esc(model)}</li>`).join("\n")}\n</ul>` : ""}
 ${cities.length ? `<h3>Where to find them</h3>\n<p>${esc(make.label)} carts are currently on the floor at ${esc(cities.slice(0, 8).join(", "))}${cities.length > 8 ? " and other locations" : ""}. If the configuration you want is at another store we will transfer it — call ${esc(site.phone)}.</p>` : ""}
 <h3>Buying a ${esc(make.label)} during the July 4th event</h3>
@@ -118,7 +118,7 @@ ${cities.length ? `<h3>Where to find them</h3>\n<p>${esc(make.label)} carts are 
     path,
     title: `${make.label} Golf Carts for Sale — ${stock.length} in Stock | ${salesEvent.name}`,
     h1: `${make.label} Golf Carts for Sale`,
-    description: `${stock.length} ${make.label} golf carts in stock${prices.length ? ` from ${formatPriceShort(Math.min(...prices))}` : ""} during the ${salesEvent.name}. 0% APR for 48 months, free delivery. Call ${site.phone}.`,
+    description: `${stock.length} ${make.label} golf carts in stock${prices.length ? ` from ${formatPriceShort(Math.min(...prices))}` : ""} during the ${salesEvent.name}. 0% APR for 48 months, delivery available. Call ${site.phone}.`,
     intro: `${stock.length} ${make.label} cart${stock.length === 1 ? "" : "s"} in stock across ${data.stores.length} locations, all at Independence Day event pricing.`,
     locked: { make: make.key },
     breadcrumbs: [

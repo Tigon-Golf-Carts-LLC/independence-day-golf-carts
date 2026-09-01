@@ -55,8 +55,8 @@ function vehicleFaq(cart) {
     {
       q: `Where is this cart located and can it be delivered?`,
       a: cart.city
-        ? `This cart is in stock at our ${cart.city}, ${cart.stateCode} location. Local delivery is free during the ${salesEvent.name}, and nationwide shipping is available for a quote. We can also transfer it to whichever of our 15 locations is closest to you.`
-        : `Call ${site.phone} and we will confirm which of our 15 locations has this cart and arrange delivery. Local delivery is free during the ${salesEvent.name}.`,
+        ? `This cart is in stock at our ${cart.city}, ${cart.stateCode} location. Local and nationwide delivery can be arranged and is quoted to your ZIP code. We can also transfer it to whichever of our 15 locations is closest to you.`
+        : `Call ${site.phone} and we will confirm which of our 15 locations has this cart and arrange delivery, quoted to your ZIP code.`,
     },
   ];
 
@@ -130,7 +130,7 @@ export function renderVehiclePage({ cart, data, related }) {
       <div class="panel" style="margin-top:28px">
         <h2 style="font-size:1.5rem">About this ${esc(cart.title)}</h2>
         <p>${esc(description)}</p>
-        <p>Every cart on our lot is inspected before it reaches the sales floor, and this one is covered by ${cart.warranty ? `a ${esc(cart.warranty)} warranty` : "our standard dealer inspection"}. During the ${esc(salesEvent.name)} — June 20 through July 8 — this cart carries Independence Day pricing, 0% APR financing for 48 months on approved credit, and free local delivery.</p>
+        <p>Every cart on our lot is inspected before it reaches the sales floor, and this one is covered by ${cart.warranty ? `a ${esc(cart.warranty)} warranty` : "our standard dealer inspection"}. During the ${esc(salesEvent.name)} — June 20 through July 8 — this cart carries Independence Day pricing and 0% APR financing for 48 months on approved credit.</p>
       </div>
 
       ${specSections(cart).map((section) => `<div class="panel">${specTable(section)}</div>`).join("\n      ")}
@@ -166,7 +166,7 @@ export function renderVehiclePage({ cart, data, related }) {
         <a class="btn btn--outline btn--block" href="/contact/?cart=${esc(cart.slug)}">Request More Photos</a>
         <a class="btn btn--outline btn--block" href="/trade-in/">Value My Trade</a>
         <ul class="offer-list" style="margin-top:18px">
-          <li>${ICONS.tick}<span>Free local delivery during the event</span></li>
+          <li>${ICONS.tick}<span>Local and nationwide delivery available</span></li>
           <li>${ICONS.tick}<span>Same-day trade appraisal</span></li>
           <li>${ICONS.tick}<span>Dealer inspected before sale</span></li>
           <li>${ICONS.tick}<span>Nationwide shipping available</span></li>

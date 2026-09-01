@@ -93,7 +93,7 @@ ${heroStats(data)
 ${salesEvent.offers.map((offer) => `        <li>${ICONS.tick}<span>${esc(offer)}</span></li>`).join("\n")}
       </ul>
       <a class="btn btn--primary btn--block btn--lg" href="${site.phoneTel}">${ICONS.phone} Call to Lock In Event Pricing</a>
-      <p class="note" style="text-align:center;margin:12px 0 0">Open 7 days &middot; Free local delivery during the event</p>
+      <p class="note" style="text-align:center;margin:12px 0 0">Mon–Sat 9AM–5PM &middot; Delivery available nationwide</p>
     </div>
   </div>
 </section>`;
@@ -220,7 +220,7 @@ ${ctaBand()}`;
 
   return renderPage({
     title: `July 4th Golf Cart Sales Event ${new Date().getUTCFullYear()} | Independence Day Golf Carts`,
-    description: `Shop the July 4th Golf Cart Sales Event — ${data.summary.total} new and used golf carts with Independence Day pricing, 0% APR for 48 months and free delivery. ${data.stores.length} locations. Call ${site.phone}.`,
+    description: `Shop the July 4th Golf Cart Sales Event — ${data.summary.total} new and used golf carts with Independence Day pricing and 0% APR for 48 months. ${data.stores.length} locations. Call ${site.phone}.`,
     path,
     body,
     breadcrumbs: [{ href: "/", label: "Home" }],
@@ -285,7 +285,7 @@ ${salesEvent.offers.map((offer) => `          <li>${esc(offer)}</li>`).join("\n"
               <tr><th scope="row">Carts on sale</th><td>${data.summary.total}</td></tr>
               <tr><th scope="row">Locations</th><td>${data.stores.length}</td></tr>
               <tr><th scope="row">Financing</th><td>0% APR for 48 months (OAC)</td></tr>
-              <tr><th scope="row">Delivery</th><td>Free locally during the event</td></tr>
+              <tr><th scope="row">Delivery</th><td>Local &amp; nationwide, quoted</td></tr>
               <tr><th scope="row">Trade-ins</th><td>Appraised same day, any make</td></tr>
               <tr><th scope="row">Phone</th><td><a href="${site.phoneTel}">${esc(site.phone)}</a></td></tr>
             </tbody>
@@ -349,7 +349,7 @@ ${ctaBand({ title: `Shop the ${name}` })}`;
 
   return renderPage({
     title: `${name} ${new Date().getUTCFullYear()} — ${data.summary.total} Carts on Sale | ${site.name}`,
-    description: `The ${name} runs June 20 – July 8. Independence Day pricing on all ${data.summary.total} new and used golf carts, 0% APR for 48 months, free delivery, ${data.stores.length} locations. Call ${site.phone}.`,
+    description: `The ${name} runs June 20 – July 8. Independence Day pricing on all ${data.summary.total} new and used golf carts, 0% APR for 48 months, ${data.stores.length} locations. Call ${site.phone}.`,
     path,
     body,
     breadcrumbs: [

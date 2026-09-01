@@ -161,8 +161,8 @@ export function renderLocationPage(store, data) {
     {
       q: `What areas does the ${store.city} store serve?`,
       a: (store.serviceArea || []).length
-        ? `Our ${store.city}, ${store.stateCode} location serves ${store.serviceArea.join(", ")} and the surrounding ${store.region || store.state} area. Free local delivery is included during the sales event.`
-        : `Our ${store.city}, ${store.stateCode} location serves ${store.state} and the surrounding region, with free local delivery during the sales event.`,
+        ? `Our ${store.city}, ${store.stateCode} location serves ${store.serviceArea.join(", ")} and the surrounding ${store.region || store.state} area. Delivery can be arranged and is quoted to your ZIP code.`
+        : `Our ${store.city}, ${store.stateCode} location serves ${store.state} and the surrounding region, with delivery quoted to your ZIP code.`,
     },
     {
       q: `Can I get a cart from another location delivered to ${store.city}?`,
@@ -188,7 +188,7 @@ export function renderLocationPage(store, data) {
       <div class="prose">
         <h2>About the ${esc(store.city)} location</h2>
         <p>Our ${esc(store.city)}, ${esc(store.stateCode)} store carries new and used golf carts from ${data.facets.makes.slice(0, 6).map((make) => make.label).join(", ")} and more, including electric and gas models, lifted carts and street legal LSVs. Every cart is inspected before it reaches the sales floor.</p>
-        <p>During the ${esc(salesEvent.name)}, all inventory here carries Independence Day pricing, local delivery is free, and trade-ins are appraised the same day. Financing at 0% APR for 48 months is available on approved credit through six national lenders.</p>
+        <p>During the ${esc(salesEvent.name)}, all inventory here carries Independence Day pricing and trade-ins are appraised the same day. Financing at 0% APR for 48 months is available on approved credit through six national lenders, and delivery can be arranged to your address.</p>
         ${
           (store.serviceArea || []).length
             ? `<h3>Areas we serve from ${esc(store.city)}</h3>
@@ -271,7 +271,7 @@ ${ctaBand({ title: `Shop the July 4th event in ${store.city}` })}`;
   return renderPage({
     title: `Golf Carts in ${store.city}, ${store.stateCode} — ${salesEvent.name} | ${site.name}`,
     description: clamp(
-      `${store.name} — ${stock.length ? `${stock.length} golf carts in stock` : "golf carts"} in ${store.city}, ${store.state}. July 4th event pricing, 0% APR for 48 months, free local delivery. Call ${site.phone}.`,
+      `${store.name} — ${stock.length ? `${stock.length} golf carts in stock` : "golf carts"} in ${store.city}, ${store.state}. July 4th event pricing, 0% APR for 48 months, delivery available. Call ${site.phone}.`,
     ),
     path,
     body,
