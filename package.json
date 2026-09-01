@@ -1,0 +1,25 @@
+{
+  "name": "independence-day-golf-carts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Independence Day Golf Carts - July 4th Golf Cart Sales Event. Static site generator with live Tigon DMS inventory.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "fetch": "node scripts/fetch-inventory.mjs",
+    "fetch:fixture": "node scripts/fetch-inventory.mjs --fixture",
+    "assets": "node scripts/make-assets.mjs",
+    "build": "node scripts/build.mjs",
+    "build:live": "node scripts/build.mjs --require-live",
+    "build:full": "npm run fetch && npm run build",
+    "build:deploy": "npm run fetch && npm run build:live && npm test",
+    "dev": "node scripts/build.mjs && npx --yes http-server dist -p 5000 -a 0.0.0.0 -c-1",
+    "serve": "npx --yes http-server dist -p 5000 -a 0.0.0.0 -c-1",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

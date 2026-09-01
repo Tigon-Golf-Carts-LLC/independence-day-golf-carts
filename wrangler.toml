@@ -1,0 +1,24 @@
+# Cloudflare Pages configuration.
+#
+# The site is a plain static build in dist/ with optional Pages Functions in
+# functions/ that proxy the Tigon DMS for live inventory checks between the
+# nightly rebuilds. Nothing in functions/ is required for the site to work.
+#
+# Deploy manually:
+#   npm run build:full
+#   npx wrangler pages deploy dist --project-name=independence-day-golf-carts
+#
+# Or connect the GitHub repo in the Cloudflare dashboard with:
+#   Build command:       npm run build
+#   Build output dir:    dist
+#   Root directory:      /
+#   Node version:        22
+
+name = "independence-day-golf-carts"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+[vars]
+SITE_URL = "https://independencedaygolfcarts.com"
+DMS_BASE_URL = "https://api.tigondms.com/wp-website"
