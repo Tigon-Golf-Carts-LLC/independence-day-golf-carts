@@ -365,8 +365,8 @@ async function loadSource() {
   const dmsStores = await getStores();
   process.stderr.write(`  ${Array.isArray(dmsStores) ? dmsStores.length : 0} stores\n`);
   process.stderr.write("Fetching inventory from the DMS...\n");
-  const { carts } = await getAllCarts({ pageSize: 100 });
-  return { rawCarts: carts, dmsStores };
+  const { carts, reportedTotal } = await getAllCarts({ pageSize: 100 });
+  return { rawCarts: carts, dmsStores, reportedTotal };
 }
 
 async function main() {
@@ -417,14 +417,39 @@ async function main() {
     store.cartCount = carts.filter((cart) => cart.locationSlug === store.slug).length;
   }
 
+  const exclusionReasons = {};
+  for (const raw of source.rawCarts) {
+    if (isSellable(raw)) continue;
+    const key =
+      raw?.rfsStatus?.isRFS !== true
+        ? "not ready for sale (isRFS false)"
+        : publicImages(raw).length === 0
+          ? "no photograph"
+          : `status: ${raw?.status ?? "unknown"}`;
+    exclusionReasons[key] = (exclusionReasons[key] ?? 0) + 1;
+  }
+
   const snapshot = {
     generatedAt: isoStamp(),
+    // Visible in the committed snapshot so the size of the catalogue and the
+    // effect of each rule can be reviewed without re-reading a CI log.
+    fetch: {
+      rawRecordsFetched: source.rawCarts.length,
+      reportedTotal: source.reportedTotal ?? null,
+      published: 0,
+      excluded: source.rawCarts.length - sellable.length,
+      exclusionReasons,
+      rfsTrue: source.rawCarts.filter((raw) => raw?.rfsStatus?.isRFS === true).length,
+      withPublicPhotos: source.rawCarts.filter((raw) => publicImages(raw).length > 0).length,
+    },
     source: useFixture ? "fixture" : "dms-live",
     summary: summarise(carts),
     facets: buildFacets(carts),
     stores,
     carts,
   };
+
+  snapshot.fetch.published = carts.length;
 
   writeFileSync(OUTPUT, JSON.stringify(snapshot, null, 1) + "\n", "utf8");
   process.stderr.write(

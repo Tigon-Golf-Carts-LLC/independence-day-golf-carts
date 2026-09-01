@@ -100,13 +100,20 @@ export async function getAllCarts({ pageSize = 100, maxPages = 200 } = {}) {
       `  page ${pageNumber}: ${page.length} returned, ${added} new (${byId.size} total)\n`,
     );
 
-    if (page.length === 0) break;
-    // A page shorter than requested is the last one.
-    if (page.length < pageSize) break;
-    // A full page of records already seen means paging is not advancing.
+    // Only an empty page, or repeated pages that add nothing, end the walk.
+    //
+    // A short page is NOT treated as the last one. The endpoint has been seen
+    // to return fewer records than requested mid-catalogue, and stopping there
+    // silently truncated the inventory — a known-retail cart was missing from
+    // the fetch entirely.
+    if (page.length === 0) {
+      barrenPages += 1;
+      if (barrenPages >= 2) break;
+      continue;
+    }
     if (added === 0) {
       barrenPages += 1;
-      if (barrenPages >= 2) {
+      if (barrenPages >= 3) {
         process.stderr.write("  paging stopped advancing; ending the walk\n");
         break;
       }
@@ -116,9 +123,10 @@ export async function getAllCarts({ pageSize = 100, maxPages = 200 } = {}) {
   }
 
   const carts = [...byId.values()];
+  process.stderr.write(`  collected ${carts.length} records\n`);
   if (reportedTotal !== null && carts.length !== reportedTotal) {
     process.stderr.write(
-      `  note: collected ${carts.length} carts, endpoint reported ${reportedTotal}\n`,
+      `  note: endpoint reported totalCarts=${reportedTotal}, walk collected ${carts.length}\n`,
     );
   }
   return { carts, totalCarts: carts.length, reportedTotal };
