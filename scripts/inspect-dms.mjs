@@ -13,7 +13,7 @@
  *   npm run inspect -- 100     # a larger sample
  */
 
-import { getCarts } from "./lib/dms.mjs";
+import { getCarts, getCartById } from "./lib/dms.mjs";
 
 const SAMPLE = Number.parseInt(process.argv[2], 10) || 25;
 const MONEYISH = /price|cost|msrp|amount|retail|sale|discount|fee|payment|deposit|value|total|rebate|invoice/i;
@@ -91,6 +91,51 @@ async function main() {
   say(`  null or zero    : ${carts.length - numeric.length}/${carts.length}`);
   if (numeric.length) say(`  range           : ${Math.min(...numeric)} – ${Math.max(...numeric)}`);
   say("");
+
+  // /get-carts is a list endpoint; /get-cart-by-id may carry fields it omits,
+  // including pricing. Any difference between them is reported here.
+  say("== LIST ENDPOINT vs DETAIL ENDPOINT ==");
+  for (const cart of carts.slice(0, 3)) {
+    say(`  cart ${cart._id}  (${cart?.cartType?.make ?? "?"} ${cart?.cartType?.model ?? ""})`);
+    let detail;
+    try {
+      const response = await getCartById(cart._id);
+      detail = response?.cart ?? response;
+    } catch (error) {
+      say(`    detail fetch failed: ${error.message}`);
+      continue;
+    }
+    if (!detail || typeof detail !== "object") {
+      say("    detail endpoint returned nothing usable");
+      continue;
+    }
+
+    const listKeys = new Set(Object.keys(cart));
+    const detailKeys = new Set(Object.keys(detail));
+    const onlyDetail = [...detailKeys].filter((key) => !listKeys.has(key));
+    const onlyList = [...listKeys].filter((key) => !detailKeys.has(key));
+    if (onlyDetail.length) say(`    fields ONLY on the detail record: ${onlyDetail.join(", ")}`);
+    if (onlyList.length) say(`    fields ONLY on the list record:   ${onlyList.join(", ")}`);
+
+    const differing = [];
+    for (const key of listKeys) {
+      if (!detailKeys.has(key)) continue;
+      const a = JSON.stringify(cart[key]);
+      const b = JSON.stringify(detail[key]);
+      if (a !== b) differing.push(`${key}: list=${String(a).slice(0, 60)} detail=${String(b).slice(0, 60)}`);
+    }
+    if (differing.length) {
+      say("    fields whose VALUE differs between endpoints:");
+      for (const line of differing) say(`      ${line}`);
+    } else if (!onlyDetail.length && !onlyList.length) {
+      say("    identical on both endpoints");
+    }
+
+    say(`    list retailPrice=${JSON.stringify(cart.retailPrice)}  detail retailPrice=${JSON.stringify(detail.retailPrice)}`);
+    const detailMoney = findMoneyFields(detail, "", new Map());
+    say(`    money-like fields on the detail record: ${[...detailMoney.keys()].join(", ") || "none"}`);
+    say("");
+  }
 
   say("== TWO COMPLETE RAW RECORDS ==");
   for (const cart of carts.slice(0, 2)) {
