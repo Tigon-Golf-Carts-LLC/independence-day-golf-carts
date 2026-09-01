@@ -82,6 +82,60 @@ function mergeStores(dmsStores) {
   return merged;
 }
 
+/**
+ * Every scalar field on a raw DMS record whose name looks like money, kept on
+ * the normalised cart as `rawPricing`.
+ *
+ * The site publishes one price, but the DMS may carry several (retail, sale,
+ * MSRP, cost). Capturing them makes it possible to see what is actually
+ * available without another API round trip, and to change which one is
+ * published without re-deriving the whole snapshot.
+ */
+const MONEY_FIELD = /price|cost|msrp|amount|retail|sale|discount|fee|payment|deposit|rebate|invoice/i;
+
+function collectPricing(raw) {
+  const pricing = {};
+  for (const [key, value] of Object.entries(raw ?? {})) {
+    if (!MONEY_FIELD.test(key)) continue;
+    if (value === null || value === undefined || typeof value === "object") continue;
+    pricing[key] = value;
+  }
+  // Nested pricing objects are common; keep them whole.
+  for (const key of ["pricing", "price", "prices", "cost", "financials"]) {
+    if (raw?.[key] && typeof raw[key] === "object" && !Array.isArray(raw[key])) {
+      pricing[key] = raw[key];
+    }
+  }
+  return pricing;
+}
+
+/**
+ * The price the site publishes for a cart.
+ *
+ * `retailPrice` is the documented field and is used wherever it is a positive
+ * number. The fallbacks below cover records where it is missing or zero, in
+ * the order a dealership would advertise them.
+ */
+export function resolvePrice(raw) {
+  const candidates = [
+    raw?.retailPrice,
+    raw?.salePrice,
+    raw?.webPrice,
+    raw?.internetPrice,
+    raw?.listPrice,
+    raw?.askingPrice,
+    raw?.pricing?.retailPrice,
+    raw?.pricing?.salePrice,
+    raw?.pricing?.price,
+    raw?.price,
+  ];
+  for (const value of candidates) {
+    const number = typeof value === "string" ? Number(value.replace(/[^0-9.]/g, "")) : value;
+    if (typeof number === "number" && Number.isFinite(number) && number > 0) return number;
+  }
+  return null;
+}
+
 /** Flatten a raw DMS cart into the shape every template and feed consumes. */
 function normaliseCart(raw, storeById) {
   const make = raw?.cartType?.make?.trim() || "";
@@ -106,7 +160,10 @@ function normaliseCart(raw, storeById) {
     modelKey: toSlugPart(model),
     year,
     title: buildCartTitle(make, model, color),
-    price: typeof raw?.retailPrice === "number" ? raw.retailPrice : null,
+    price: resolvePrice(raw),
+    // Everything money-shaped the DMS sent, so the published price can be
+    // re-pointed at a different field without another API round trip.
+    rawPricing: collectPricing(raw),
     isElectric: raw?.isElectric === true,
     isUsed: raw?.isUsed === true,
     condition: raw?.isUsed === true ? "Used" : "New",

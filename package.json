@@ -9,6 +9,7 @@
   },
   "scripts": {
     "fetch": "node scripts/fetch-inventory.mjs",
+    "inspect": "node scripts/inspect-dms.mjs",
     "fetch:fixture": "node scripts/fetch-inventory.mjs --fixture",
     "assets": "node scripts/make-assets.mjs",
     "build": "node scripts/build.mjs",
