@@ -458,3 +458,66 @@ test("image sitemap and product feed carry real photography", () => {
   const links = (feed.match(/<g:image_link>https:\/\/s3\.amazonaws\.com[^<]+<\/g:image_link>/g) ?? []).length;
   assert.equal(links, withPhotos.length, "product feed image count does not match carts with photos");
 });
+
+test("only sellable retail carts are published", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  const notForSale = new Set(["boneyard", "permanent_boneyard", "work_in_progress"]);
+
+  for (const cart of inventory.carts) {
+    const status = String(cart.status ?? "").toLowerCase();
+    assert.ok(
+      !notForSale.has(status),
+      `${cart.slug} is published with status "${cart.status}" — boneyard and work-in-progress units carry internal figures, not asking prices`,
+    );
+    if (cart.inventoryState) {
+      assert.notEqual(cart.inventoryState.isInBoneyard, true, `${cart.slug} is in the boneyard`);
+      assert.notEqual(cart.inventoryState.isService, true, `${cart.slug} is a service unit`);
+      assert.notEqual(cart.inventoryState.isInStock, false, `${cart.slug} is not in stock`);
+    }
+  }
+});
+
+test("published prices come from the DMS retail price", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+
+  for (const cart of inventory.carts) {
+    // A price is either a positive number or absent, never zero or negative.
+    assert.ok(
+      cart.price === null || (typeof cart.price === "number" && cart.price > 0),
+      `${cart.slug} has a nonsensical price: ${cart.price}`,
+    );
+    // Where the DMS sent a retail price, that is the number published.
+    if (cart.rawPricing && typeof cart.rawPricing.retailPrice === "number" && cart.rawPricing.retailPrice > 0) {
+      assert.equal(
+        cart.price,
+        cart.rawPricing.retailPrice,
+        `${cart.slug} publishes ${cart.price} but the DMS retailPrice is ${cart.rawPricing.retailPrice}`,
+      );
+    }
+  }
+
+  // The rendered price on a card must match the record, to the dollar.
+  const sample = inventory.carts.filter((cart) => cart.price > 0).slice(0, 12);
+  for (const cart of sample) {
+    const html = read(join("golfcart", cart.slug, "index.html"));
+    const expected = "$" + Number(cart.price).toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    assert.ok(
+      html.includes(expected),
+      `${cart.slug} page does not show ${expected} for a price of ${cart.price}`,
+    );
+  }
+});
+
+test("no cart lists the same photograph twice", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  for (const cart of inventory.carts) {
+    assert.equal(
+      new Set(cart.images).size,
+      cart.images.length,
+      `${cart.slug} lists a duplicate photo, which would repeat in the gallery`,
+    );
+  }
+});

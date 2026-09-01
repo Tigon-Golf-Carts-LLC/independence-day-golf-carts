@@ -83,6 +83,33 @@ function mergeStores(dmsStores) {
 }
 
 /**
+ * Statuses the DMS uses for units that are not sellable retail stock.
+ *
+ * boneyard / permanent_boneyard are parts and scrap carts; work_in_progress
+ * units are still being built or reconditioned. Their `retailPrice` is an
+ * internal figure, not an asking price, so publishing them puts wrong prices
+ * on the site.
+ */
+const NON_RETAIL_STATUS = new Set(["boneyard", "permanent_boneyard", "work_in_progress"]);
+
+/**
+ * Whether a raw DMS record is a cart a customer can actually buy.
+ *
+ * Deliberately conservative: it excludes only what the DMS marks as clearly
+ * not-for-sale. Fields that are false on plainly retail units — isComplete,
+ * rfsStatus.isRFS, advertising.onWebsite — are captured but not filtered on,
+ * because they would exclude sellable stock.
+ */
+function isSellable(raw) {
+  const status = String(raw?.status ?? "").toLowerCase();
+  if (NON_RETAIL_STATUS.has(status)) return false;
+  if (raw?.isInBoneyard === true) return false;
+  if (raw?.isService === true) return false;
+  if (raw?.isInStock === false) return false;
+  return true;
+}
+
+/**
  * Every scalar field on a raw DMS record whose name looks like money, kept on
  * the normalised cart as `rawPricing`.
  *
@@ -147,9 +174,13 @@ function normaliseCart(raw, storeById) {
   const storeId = raw?.cartLocation?.locationId || raw?.cartLocation?.latestStoreId || "";
   const store = storeById.get(storeId) ?? null;
 
-  const images = (Array.isArray(raw?.imageUrls) ? raw.imageUrls : []).filter(
-    (name) => typeof name === "string" && name.trim(),
-  );
+  const images = [
+    ...new Set(
+      (Array.isArray(raw?.imageUrls) ? raw.imageUrls : [])
+        .filter((name) => typeof name === "string" && name.trim())
+        .map((name) => name.trim()),
+    ),
+  ];
 
   return {
     id: raw._id,
@@ -206,6 +237,21 @@ function normaliseCart(raw, storeById) {
     warranty: raw?.warrantyLength ?? "",
     images,
     hasPhotos: images.length > 0,
+    // Inventory state, straight from the DMS. Kept so the sellability rules
+    // above can be reviewed against real data without another API call.
+    inventoryState: {
+      status: raw?.status ?? null,
+      isInStock: raw?.isInStock ?? null,
+      isOnLot: raw?.isOnLot ?? null,
+      isInBoneyard: raw?.isInBoneyard ?? null,
+      isService: raw?.isService ?? null,
+      isComplete: raw?.isComplete ?? null,
+      isRFS: raw?.rfsStatus?.isRFS ?? null,
+      categories: Array.isArray(raw?.categories) ? raw.categories : [],
+      onWebsite: raw?.advertising?.onWebsite ?? null,
+      needOnWebsite: raw?.advertising?.needOnWebsite ?? null,
+      isDraft: raw?.advertising?.isDraft ?? null,
+    },
     storeId: storeId || null,
     locationSlug: store?.slug ?? null,
     city: store?.city ?? "",
@@ -329,7 +375,23 @@ async function main() {
   const stores = mergeStores(source.dmsStores);
   const storeById = new Map(stores.filter((store) => store.storeId).map((store) => [store.storeId, store]));
 
-  const carts = assignSlugs(source.rawCarts.map((raw) => normaliseCart(raw, storeById)));
+  const sellable = source.rawCarts.filter(isSellable);
+  const excluded = source.rawCarts.length - sellable.length;
+  if (excluded > 0) {
+    const reasons = {};
+    for (const raw of source.rawCarts) {
+      if (isSellable(raw)) continue;
+      const key = String(raw?.status ?? "unknown");
+      reasons[key] = (reasons[key] ?? 0) + 1;
+    }
+    process.stderr.write(
+      `\nHeld back ${excluded} non-retail records: ` +
+        Object.entries(reasons).map(([key, count]) => `${key}=${count}`).join(", ") +
+        "\n",
+    );
+  }
+
+  const carts = assignSlugs(sellable.map((raw) => normaliseCart(raw, storeById)));
   carts.sort((a, b) => {
     if (a.hasPhotos !== b.hasPhotos) return a.hasPhotos ? -1 : 1;
     return (b.price ?? 0) - (a.price ?? 0);
