@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, resolve, join } from "node:path";
 
 import { site } from "../data/site.config.mjs";
+import { toStateCode, locations as locationSeed } from "../data/locations.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = resolve(root, "dist");
@@ -249,5 +250,41 @@ test("no page leaks a template placeholder", () => {
     for (const marker of ["undefined", "[object Object]", "${", "NaN"]) {
       assert.ok(!html.includes(marker), `${file.replace(DIST, "dist")} contains "${marker}"`);
     }
+  }
+});
+
+test("state names resolve to real USPS codes", () => {
+  // "New Jersey".slice(0, 2) is "NE", which is Nebraska. Truncation is never
+  // a valid way to derive a state code.
+  for (const [name, code] of [
+    ["New Jersey", "NJ"], ["Texas", "TX"], ["Ohio", "OH"], ["Nebraska", "NE"],
+    ["Pennsylvania", "PA"], ["Delaware", "DE"], ["North Carolina", "NC"],
+    ["South Carolina", "SC"], ["Vermont", "VT"], ["Indiana", "IN"],
+  ]) {
+    assert.equal(toStateCode(name), code, `${name} should resolve to ${code}`);
+  }
+  assert.equal(toStateCode("NJ"), "NJ", "an existing code passes through");
+  assert.equal(toStateCode("new jersey"), "NJ", "matching is case-insensitive");
+  assert.equal(toStateCode(""), "", "an unknown value yields an empty string");
+
+  for (const location of locationSeed) {
+    assert.equal(
+      toStateCode(location.state),
+      location.stateCode,
+      `${location.city}: stateCode ${location.stateCode} does not match state ${location.state}`,
+    );
+  }
+});
+
+test("every generated location page has usable geo data", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  for (const store of inventory.stores) {
+    assert.ok(store.city && store.state, `store ${store.slug} is missing city or state`);
+    assert.match(store.stateCode, /^[A-Z]{2}$/, `store ${store.slug} has a malformed state code: ${store.stateCode}`);
+    assert.equal(
+      toStateCode(store.state),
+      store.stateCode,
+      `store ${store.slug} state "${store.state}" does not match code "${store.stateCode}"`,
+    );
   }
 });

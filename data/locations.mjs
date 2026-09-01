@@ -48,14 +48,14 @@ export const locations = [
   {
     slug: "ocean-view",
     city: "Ocean View",
-    state: "Delaware",
-    stateCode: "DE",
-    lat: 38.5451,
-    lng: -75.0899,
-    county: "Sussex County",
-    region: "Delaware Beaches",
-    serviceArea: ["Sussex County", "Bethany Beach", "Rehoboth Beach", "Fenwick Island", "Millville", "Selbyville"],
-    keywords: ["Ocean View DE golf carts", "Bethany Beach golf cart sale", "Delaware beach street legal LSV"],
+    state: "New Jersey",
+    stateCode: "NJ",
+    lat: 39.2073,
+    lng: -74.7268,
+    county: "Cape May County",
+    region: "Cape May",
+    serviceArea: ["Cape May County", "Sea Isle City", "Avalon", "Stone Harbor", "Ocean City", "Dennis Township", "Woodbine"],
+    keywords: ["Ocean View NJ golf carts", "Cape May County golf cart dealer", "Sea Isle City July 4th golf cart sale"],
   },
   {
     slug: "rio-grande",
@@ -90,20 +90,8 @@ export const locations = [
     lng: -75.4585,
     county: "Monroe County",
     region: "Pocono Mountains",
-    serviceArea: ["Monroe County", "Blakeslee", "Tannersville", "Mount Pocono", "Stroudsburg"],
+    serviceArea: ["Monroe County", "Blakeslee", "Tannersville", "Mount Pocono", "Stroudsburg", "Scotrun", "Swiftwater", "Bushkill"],
     keywords: ["Long Pond PA golf carts", "Pocono golf cart dealer", "Poconos July 4th golf cart sale"],
-  },
-  {
-    slug: "pocono",
-    city: "Pocono",
-    state: "Pennsylvania",
-    stateCode: "PA",
-    lat: 41.1195,
-    lng: -75.3624,
-    county: "Monroe County",
-    region: "Pocono Mountains",
-    serviceArea: ["Monroe County", "Mount Pocono", "Scotrun", "Swiftwater", "Bushkill"],
-    keywords: ["Pocono golf carts", "Mount Pocono golf cart sales event", "Pennsylvania mountain golf carts"],
   },
   {
     slug: "scranton-wilkes-barre",
@@ -180,19 +168,56 @@ export const locations = [
   {
     slug: "swanton",
     city: "Swanton",
-    state: "Vermont",
-    stateCode: "VT",
-    lat: 44.9184,
-    lng: -73.1240,
-    county: "Franklin County",
-    region: "Lake Champlain",
-    serviceArea: ["Franklin County", "St. Albans", "Burlington", "Highgate", "Alburgh"],
-    keywords: ["Swanton VT golf carts", "Vermont golf cart dealer", "Lake Champlain Independence Day cart sale"],
+    state: "Ohio",
+    stateCode: "OH",
+    lat: 41.5878,
+    lng: -83.8916,
+    county: "Fulton County",
+    region: "Greater Toledo",
+    serviceArea: ["Fulton County", "Lucas County", "Toledo", "Maumee", "Sylvania", "Delta", "Wauseon", "Holland"],
+    keywords: ["Swanton OH golf carts", "Toledo golf cart dealer", "Northwest Ohio July 4th golf cart sale"],
+  },
+  {
+    slug: "wichita-falls",
+    city: "Wichita Falls",
+    state: "Texas",
+    stateCode: "TX",
+    lat: 33.9137,
+    lng: -98.4934,
+    county: "Wichita County",
+    region: "North Texas",
+    serviceArea: ["Wichita County", "Sheppard Air Force Base", "Burkburnett", "Iowa Park", "Henrietta", "Vernon", "Bowie"],
+    keywords: ["Wichita Falls golf carts", "North Texas golf cart dealer", "Texas Independence Day golf cart sale"],
   },
 ];
 
-export const stateAbbreviations = Object.fromEntries(
-  locations.map((location) => [location.state, location.stateCode]),
-);
+/**
+ * Full US state name -> USPS code. Needed because a DMS store can appear in a
+ * state we have not seeded, and the code cannot be derived by truncating the
+ * name ("New Jersey" is NJ, not NE; "Texas" is TX, not TE).
+ */
+export const stateAbbreviations = {
+  Alabama: "AL", Alaska: "AK", Arizona: "AZ", Arkansas: "AR", California: "CA",
+  Colorado: "CO", Connecticut: "CT", Delaware: "DE", Florida: "FL", Georgia: "GA",
+  Hawaii: "HI", Idaho: "ID", Illinois: "IL", Indiana: "IN", Iowa: "IA",
+  Kansas: "KS", Kentucky: "KY", Louisiana: "LA", Maine: "ME", Maryland: "MD",
+  Massachusetts: "MA", Michigan: "MI", Minnesota: "MN", Mississippi: "MS",
+  Missouri: "MO", Montana: "MT", Nebraska: "NE", Nevada: "NV",
+  "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+  "North Carolina": "NC", "North Dakota": "ND", Ohio: "OH", Oklahoma: "OK",
+  Oregon: "OR", Pennsylvania: "PA", "Rhode Island": "RI", "South Carolina": "SC",
+  "South Dakota": "SD", Tennessee: "TN", Texas: "TX", Utah: "UT", Vermont: "VT",
+  Virginia: "VA", Washington: "WA", "West Virginia": "WV", Wisconsin: "WI",
+  Wyoming: "WY", "District of Columbia": "DC", "Puerto Rico": "PR",
+};
+
+/** Resolve a state name or code to its USPS two-letter code. */
+export function toStateCode(state) {
+  const value = String(state ?? "").trim();
+  if (/^[A-Za-z]{2}$/.test(value)) return value.toUpperCase();
+  return stateAbbreviations[value] ?? stateAbbreviations[
+    Object.keys(stateAbbreviations).find((name) => name.toLowerCase() === value.toLowerCase()) ?? ""
+  ] ?? "";
+}
 
 export default locations;

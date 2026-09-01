@@ -82,24 +82,44 @@ jobs:
         if: steps.gate.outputs.proceed == 'true'
         run: npm test
 
+      # Upload before committing: the deploy must not be blocked by a snapshot
+      # commit that races another push to main.
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.gate.outputs.proceed == 'true'
+        with:
+          path: dist
+
       - name: Commit the refreshed inventory snapshot
         if: steps.gate.outputs.proceed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           if git diff --quiet -- data/inventory.json; then
             echo "Inventory is unchanged since the last run."
-          else
-            CARTS=$(node -p "require('./data/inventory.json').summary.total")
-            git add data/inventory.json
-            git commit -m "Daily inventory refresh: ${CARTS} carts in stock"
-            git push
+            exit 0
           fi
 
-      - uses: actions/upload-pages-artifact@v3
-        if: steps.gate.outputs.proceed == 'true'
-        with:
-          path: dist
+          CARTS=$(node -p "require('./data/inventory.json').summary.total")
+          git add data/inventory.json
+          git commit -m "Daily inventory refresh: ${CARTS} carts in stock"
+
+          # main can have moved since checkout — a merge landed, or this is a
+          # re-run of a run whose earlier attempt already pushed. Rebase onto
+          # the current tip and retry rather than failing the job.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Snapshot pushed on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected; rebasing onto the latest main and retrying."
+            git pull --rebase --autostash origin main || {
+              echo "::warning::Could not rebase onto main. Leaving the snapshot uncommitted; the site still deploys from this run's build."
+              exit 0
+            }
+          done
+
+          echo "::warning::Could not push the inventory snapshot after 3 attempts. The site still deploys from this run's build."
 
   deploy-github-pages:
     name: Deploy to GitHub Pages

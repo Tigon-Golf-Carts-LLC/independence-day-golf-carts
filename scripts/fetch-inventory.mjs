@@ -17,7 +17,7 @@ import { dirname, resolve } from "node:path";
 
 import { getAllCarts, getStores } from "./lib/dms.mjs";
 import { toSlugPart, toMakeKey, buildCartTitle, isoStamp } from "./lib/util.mjs";
-import { locations as locationSeed } from "../data/locations.mjs";
+import { locations as locationSeed, toStateCode } from "../data/locations.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = resolve(root, "data/inventory.json");
@@ -58,7 +58,7 @@ function mergeStores(dmsStores) {
       slug: toSlugPart(`${city}-${state}`) || toSlugPart(store.storeId),
       city,
       state,
-      stateCode: (state || "").slice(0, 2).toUpperCase(),
+      stateCode: toStateCode(state),
       lat: null,
       lng: null,
       county: "",
