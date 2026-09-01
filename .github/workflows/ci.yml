@@ -1,0 +1,36 @@
+name: Build and verify
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # Pull rules pull live data; if the DMS is unreachable from CI the
+      # committed snapshot is used instead, so the build always runs.
+      - name: Refresh inventory (falls back to the committed snapshot)
+        run: npm run fetch
+        continue-on-error: true
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify
+        run: npm test
+
+      - name: Report build size
+        run: |
+          echo "### Build output" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Files: $(find dist -type f | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- HTML pages: $(find dist -name '*.html' | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Total size: $(du -sh dist | cut -f1)" >> "$GITHUB_STEP_SUMMARY"

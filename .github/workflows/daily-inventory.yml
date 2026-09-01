@@ -1,0 +1,156 @@
+name: Daily inventory refresh and deploy
+
+# The dealership inventory is pulled every day at 1:30 AM Eastern.
+#
+# GitHub's scheduler only understands UTC, and 1:30 AM Eastern is 05:30 UTC
+# during EDT and 06:30 UTC during EST. Both times are scheduled and the first
+# job step checks the actual New York clock, so exactly one run per day does the
+# work and the other exits immediately.
+on:
+  schedule:
+    - cron: "30 5 * * *"   # 01:30 America/New_York while EDT is in effect
+    - cron: "30 6 * * *"   # 01:30 America/New_York while EST is in effect
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Run even if it is not 1:30 AM Eastern"
+        type: boolean
+        default: true
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/inventory.json"
+      - "**.md"
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  refresh:
+    name: Fetch inventory and build
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.gate.outputs.proceed }}
+    steps:
+      - name: Decide whether this run is the 1:30 AM Eastern one
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "Triggered by ${{ github.event_name }} — proceeding."
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          NY_TIME=$(TZ=America/New_York date +%H:%M)
+          echo "Current America/New_York time: $NY_TIME"
+          # Allow a window, because scheduled runs can start several minutes late.
+          case "$NY_TIME" in
+            01:2*|01:3*|01:4*|01:5*)
+              echo "Inside the 1:30 AM Eastern window — proceeding."
+              echo "proceed=true" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "Not the 1:30 AM Eastern window — this is the duplicate DST schedule. Skipping."
+              echo "proceed=false" >> "$GITHUB_OUTPUT" ;;
+          esac
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.proceed == 'true'
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.proceed == 'true'
+        with:
+          node-version: "22"
+
+      - name: Pull live inventory from the Tigon DMS
+        if: steps.gate.outputs.proceed == 'true'
+        run: npm run fetch
+
+      # --require-live aborts if the fetch above fell back to a non-DMS snapshot,
+      # so the development fixture can never be published as real inventory.
+      - name: Build the static site
+        if: steps.gate.outputs.proceed == 'true'
+        run: npm run build:live
+
+      - name: Verify the build
+        if: steps.gate.outputs.proceed == 'true'
+        run: npm test
+
+      - name: Commit the refreshed inventory snapshot
+        if: steps.gate.outputs.proceed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/inventory.json; then
+            echo "Inventory is unchanged since the last run."
+          else
+            CARTS=$(node -p "require('./data/inventory.json').summary.total")
+            git add data/inventory.json
+            git commit -m "Daily inventory refresh: ${CARTS} carts in stock"
+            git push
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.gate.outputs.proceed == 'true'
+        with:
+          path: dist
+
+  deploy-github-pages:
+    name: Deploy to GitHub Pages
+    needs: refresh
+    if: needs.refresh.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-cloudflare-pages:
+    name: Deploy to Cloudflare Pages
+    needs: refresh
+    if: needs.refresh.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Rebuild from the committed snapshot
+        run: |
+          git pull --ff-only || true
+          npm run build:live
+
+      # Skipped automatically until CLOUDFLARE_API_TOKEN is added to repo secrets.
+      - name: Publish to Cloudflare Pages
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        run: npx --yes wrangler@3 pages deploy dist --project-name=independence-day-golf-carts --branch=main --commit-dirty=true
+
+  ping-search-engines:
+    name: Notify search engines
+    needs: [refresh, deploy-github-pages]
+    if: needs.refresh.outputs.proceed == 'true' && github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit the sitemap to IndexNow
+        continue-on-error: true
+        run: |
+          # IndexNow is honoured by Bing, Yandex, Seznam and Naver.
+          curl -sS -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json" \
+            -d '{"host":"independencedaygolfcarts.com","key":"${{ secrets.INDEXNOW_KEY }}","keyLocation":"https://independencedaygolfcarts.com/${{ secrets.INDEXNOW_KEY }}.txt","urlList":["https://independencedaygolfcarts.com/","https://independencedaygolfcarts.com/inventory/","https://independencedaygolfcarts.com/july-4th-golf-cart-sales-event/"]}' \
+            || echo "IndexNow submission skipped (no key configured)."

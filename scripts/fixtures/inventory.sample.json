@@ -1,0 +1,6510 @@
+{
+ "note": "SYNTHETIC DEVELOPMENT FIXTURE - not real inventory",
+ "stores": [
+  {
+   "_id": "store_mongo_001",
+   "storeId": "IDGC001",
+   "name": "Independence Day Golf Carts — Hatfield",
+   "address": {
+    "address1": "100 Sample Fixture Road",
+    "address2": "",
+    "city": "Hatfield",
+    "state": "Pennsylvania",
+    "postalCode": "10000",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_002",
+   "storeId": "IDGC002",
+   "name": "Independence Day Golf Carts — Bayville",
+   "address": {
+    "address1": "107 Sample Fixture Road",
+    "address2": "",
+    "city": "Bayville",
+    "state": "New Jersey",
+    "postalCode": "10137",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_003",
+   "storeId": "IDGC003",
+   "name": "Independence Day Golf Carts — Dover",
+   "address": {
+    "address1": "114 Sample Fixture Road",
+    "address2": "",
+    "city": "Dover",
+    "state": "Delaware",
+    "postalCode": "10274",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_004",
+   "storeId": "IDGC004",
+   "name": "Independence Day Golf Carts — Ocean View",
+   "address": {
+    "address1": "121 Sample Fixture Road",
+    "address2": "",
+    "city": "Ocean View",
+    "state": "Delaware",
+    "postalCode": "10411",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_005",
+   "storeId": "IDGC005",
+   "name": "Independence Day Golf Carts — Rio Grande",
+   "address": {
+    "address1": "128 Sample Fixture Road",
+    "address2": "",
+    "city": "Rio Grande",
+    "state": "New Jersey",
+    "postalCode": "10548",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_006",
+   "storeId": "IDGC006",
+   "name": "Independence Day Golf Carts — Waretown",
+   "address": {
+    "address1": "135 Sample Fixture Road",
+    "address2": "",
+    "city": "Waretown",
+    "state": "New Jersey",
+    "postalCode": "10685",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_007",
+   "storeId": "IDGC007",
+   "name": "Independence Day Golf Carts — Long Pond",
+   "address": {
+    "address1": "142 Sample Fixture Road",
+    "address2": "",
+    "city": "Long Pond",
+    "state": "Pennsylvania",
+    "postalCode": "10822",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_008",
+   "storeId": "IDGC008",
+   "name": "Independence Day Golf Carts — Pocono",
+   "address": {
+    "address1": "149 Sample Fixture Road",
+    "address2": "",
+    "city": "Pocono",
+    "state": "Pennsylvania",
+    "postalCode": "10959",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_009",
+   "storeId": "IDGC009",
+   "name": "Independence Day Golf Carts — Scranton",
+   "address": {
+    "address1": "156 Sample Fixture Road",
+    "address2": "",
+    "city": "Scranton",
+    "state": "Pennsylvania",
+    "postalCode": "11096",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_010",
+   "storeId": "IDGC010",
+   "name": "Independence Day Golf Carts — Gloucester Point",
+   "address": {
+    "address1": "163 Sample Fixture Road",
+    "address2": "",
+    "city": "Gloucester Point",
+    "state": "Virginia",
+    "postalCode": "11233",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_011",
+   "storeId": "IDGC011",
+   "name": "Independence Day Golf Carts — Raleigh",
+   "address": {
+    "address1": "170 Sample Fixture Road",
+    "address2": "",
+    "city": "Raleigh",
+    "state": "North Carolina",
+    "postalCode": "11370",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_012",
+   "storeId": "IDGC012",
+   "name": "Independence Day Golf Carts — Orangeburg",
+   "address": {
+    "address1": "177 Sample Fixture Road",
+    "address2": "",
+    "city": "Orangeburg",
+    "state": "South Carolina",
+    "postalCode": "11507",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_013",
+   "storeId": "IDGC013",
+   "name": "Independence Day Golf Carts — Lecanto",
+   "address": {
+    "address1": "184 Sample Fixture Road",
+    "address2": "",
+    "city": "Lecanto",
+    "state": "Florida",
+    "postalCode": "11644",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_014",
+   "storeId": "IDGC014",
+   "name": "Independence Day Golf Carts — South Bend",
+   "address": {
+    "address1": "191 Sample Fixture Road",
+    "address2": "",
+    "city": "South Bend",
+    "state": "Indiana",
+    "postalCode": "11781",
+    "country": "USA"
+   }
+  },
+  {
+   "_id": "store_mongo_015",
+   "storeId": "IDGC015",
+   "name": "Independence Day Golf Carts — Swanton",
+   "address": {
+    "address1": "198 Sample Fixture Road",
+    "address2": "",
+    "city": "Swanton",
+    "state": "Vermont",
+    "postalCode": "11918",
+    "country": "USA"
+   }
+  }
+ ],
+ "carts": [
+  {
+   "_id": "fixture00000000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "Rover XL",
+    "year": "2022"
+   },
+   "retailPrice": 19065,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC007",
+    "locationDescription": "Long Pond, Pennsylvania",
+    "latestStoreId": "IDGC007"
+   },
+   "serialNo": "SN100000",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-0-0.jpg",
+    "fixture-0-1.jpg",
+    "fixture-0-2.jpg",
+    "fixture-0-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00010000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2022"
+   },
+   "retailPrice": 18905,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC003",
+    "locationDescription": "Dover, Delaware",
+    "latestStoreId": "IDGC003"
+   },
+   "serialNo": "SN100001",
+   "vinNo": "VIN900001",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00020000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2023"
+   },
+   "retailPrice": 13835,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100002",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00030000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Liberty",
+    "year": "2022"
+   },
+   "retailPrice": 9110,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100003",
+   "vinNo": "VIN900003",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 1771,
+   "hour": 46,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00040000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "TXT",
+    "year": "2026"
+   },
+   "retailPrice": 12150,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "14",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC005",
+    "locationDescription": "Rio Grande, New Jersey",
+    "latestStoreId": "IDGC005"
+   },
+   "serialNo": "SN100004",
+   "vinNo": "VIN900004",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-4-0.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00050000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2023"
+   },
+   "retailPrice": 7935,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100005",
+   "vinNo": "VIN900005",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 3243,
+   "hour": 492,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00060000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Precedent",
+    "year": "2023"
+   },
+   "retailPrice": 11070,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100006",
+   "vinNo": "VIN900006",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-6-0.jpg",
+    "fixture-6-1.jpg",
+    "fixture-6-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00070000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Liberty",
+    "year": "2025"
+   },
+   "retailPrice": 17705,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC012",
+    "locationDescription": "Orangeburg, South Carolina",
+    "latestStoreId": "IDGC012"
+   },
+   "serialNo": "SN100007",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00080000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "D5 Ranger 4",
+    "year": "2026"
+   },
+   "retailPrice": 4845,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC014",
+    "locationDescription": "South Bend, Indiana",
+    "latestStoreId": "IDGC014"
+   },
+   "serialNo": "SN100008",
+   "vinNo": "VIN900008",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 1406,
+   "hour": 166,
+   "imageUrls": [
+    "fixture-8-0.jpg",
+    "fixture-8-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00090000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "D5 Ranger 4",
+    "year": "2026"
+   },
+   "retailPrice": 16890,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Trojan",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100009",
+   "vinNo": "VIN900009",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00100000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2026"
+   },
+   "retailPrice": 7370,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC015",
+    "locationDescription": "Swanton, Vermont",
+    "latestStoreId": "IDGC015"
+   },
+   "serialNo": "SN100010",
+   "vinNo": "VIN900010",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 1195,
+   "hour": 6,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00110000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2026"
+   },
+   "retailPrice": 7710,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100011",
+   "vinNo": "VIN900011",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 1081,
+   "hour": 326,
+   "imageUrls": [
+    "fixture-11-0.jpg",
+    "fixture-11-1.jpg",
+    "fixture-11-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00120000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2024"
+   },
+   "retailPrice": 18230,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100012",
+   "vinNo": "VIN900012",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00130000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Express S4",
+    "year": "2024"
+   },
+   "retailPrice": 16310,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "2"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC011",
+    "locationDescription": "Raleigh, North Carolina",
+    "latestStoreId": "IDGC011"
+   },
+   "serialNo": "SN100013",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-13-0.jpg",
+    "fixture-13-1.jpg",
+    "fixture-13-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00140000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2022"
+   },
+   "retailPrice": 20650,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC005",
+    "locationDescription": "Rio Grande, New Jersey",
+    "latestStoreId": "IDGC005"
+   },
+   "serialNo": "SN100014",
+   "vinNo": "VIN900014",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00150000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Villager 6",
+    "year": "2026"
+   },
+   "retailPrice": 14535,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC014",
+    "locationDescription": "South Bend, Indiana",
+    "latestStoreId": "IDGC014"
+   },
+   "serialNo": "SN100015",
+   "vinNo": "VIN900015",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-15-0.jpg",
+    "fixture-15-1.jpg",
+    "fixture-15-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00160000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 6",
+    "year": "2026"
+   },
+   "retailPrice": 14500,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC001",
+    "locationDescription": "Hatfield, Pennsylvania",
+    "latestStoreId": "IDGC001"
+   },
+   "serialNo": "SN100016",
+   "vinNo": "VIN900016",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00170000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "City Sport",
+    "year": "2023"
+   },
+   "retailPrice": 9080,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100017",
+   "vinNo": "VIN900017",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 1227,
+   "hour": 547,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00180000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "EV Nomad",
+    "year": "2025"
+   },
+   "retailPrice": 8545,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100018",
+   "vinNo": "VIN900018",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 3894,
+   "hour": 369,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00190000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2023"
+   },
+   "retailPrice": 19700,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC001",
+    "locationDescription": "Hatfield, Pennsylvania",
+    "latestStoreId": "IDGC001"
+   },
+   "serialNo": "SN100019",
+   "vinNo": "VIN900019",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-19-0.jpg",
+    "fixture-19-1.jpg",
+    "fixture-19-2.jpg",
+    "fixture-19-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00200000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "D5 Ranger 4",
+    "year": "2025"
+   },
+   "retailPrice": 19575,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Dakota Lithium",
+    "type": "Lead Acid",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100020",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-20-0.jpg",
+    "fixture-20-1.jpg",
+    "fixture-20-2.jpg",
+    "fixture-20-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00210000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "Nomad XL",
+    "year": "2025"
+   },
+   "retailPrice": 5255,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC014",
+    "locationDescription": "South Bend, Indiana",
+    "latestStoreId": "IDGC014"
+   },
+   "serialNo": "SN100021",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 2685,
+   "hour": 449,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00220000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Beyond 4",
+    "year": "2022"
+   },
+   "retailPrice": 15875,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Trojan",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC003",
+    "locationDescription": "Dover, Delaware",
+    "latestStoreId": "IDGC003"
+   },
+   "serialNo": "SN100022",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00230000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Umax Rally",
+    "year": "2024"
+   },
+   "retailPrice": 16195,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100023",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00240000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Adventurer",
+    "year": "2026"
+   },
+   "retailPrice": 10395,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100024",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00250000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Onward 4",
+    "year": "2024"
+   },
+   "retailPrice": 5355,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Trojan",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC015",
+    "locationDescription": "Swanton, Vermont",
+    "latestStoreId": "IDGC015"
+   },
+   "serialNo": "SN100025",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 3227,
+   "hour": 459,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00260000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 6",
+    "year": "2025"
+   },
+   "retailPrice": 5095,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100026",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 3393,
+   "hour": 535,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00270000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2026"
+   },
+   "retailPrice": 11295,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100027",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00280000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "Nomad XL",
+    "year": "2022"
+   },
+   "retailPrice": 15435,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Trojan",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC003",
+    "locationDescription": "Dover, Delaware",
+    "latestStoreId": "IDGC003"
+   },
+   "serialNo": "SN100028",
+   "vinNo": "VIN900028",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-28-0.jpg",
+    "fixture-28-1.jpg",
+    "fixture-28-2.jpg",
+    "fixture-28-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00290000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Precedent",
+    "year": "2025"
+   },
+   "retailPrice": 18015,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC005",
+    "locationDescription": "Rio Grande, New Jersey",
+    "latestStoreId": "IDGC005"
+   },
+   "serialNo": "SN100029",
+   "vinNo": "VIN900029",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00300000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2023"
+   },
+   "retailPrice": 18810,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC002",
+    "locationDescription": "Bayville, New Jersey",
+    "latestStoreId": "IDGC002"
+   },
+   "serialNo": "SN100030",
+   "vinNo": "VIN900030",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-30-0.jpg",
+    "fixture-30-1.jpg",
+    "fixture-30-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00310000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2022"
+   },
+   "retailPrice": 7510,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100031",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 2856,
+   "hour": 822,
+   "imageUrls": [
+    "fixture-31-0.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00320000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "Classic 4 Plus",
+    "year": "2026"
+   },
+   "retailPrice": 13480,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC007",
+    "locationDescription": "Long Pond, Pennsylvania",
+    "latestStoreId": "IDGC007"
+   },
+   "serialNo": "SN100032",
+   "vinNo": "VIN900032",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-32-0.jpg",
+    "fixture-32-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00330000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Drive2 QuieTech",
+    "year": "2026"
+   },
+   "retailPrice": 15265,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100033",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-33-0.jpg",
+    "fixture-33-1.jpg",
+    "fixture-33-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00340000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2026"
+   },
+   "retailPrice": 19475,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100034",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-34-0.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00350000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Express S4",
+    "year": "2024"
+   },
+   "retailPrice": 8790,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC015",
+    "locationDescription": "Swanton, Vermont",
+    "latestStoreId": "IDGC015"
+   },
+   "serialNo": "SN100035",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 2197,
+   "hour": 372,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00360000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Onward 4",
+    "year": "2022"
+   },
+   "retailPrice": 10020,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC012",
+    "locationDescription": "Orangeburg, South Carolina",
+    "latestStoreId": "IDGC012"
+   },
+   "serialNo": "SN100036",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-36-0.jpg",
+    "fixture-36-1.jpg",
+    "fixture-36-2.jpg",
+    "fixture-36-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00370000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2025"
+   },
+   "retailPrice": 14330,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC006",
+    "locationDescription": "Waretown, New Jersey",
+    "latestStoreId": "IDGC006"
+   },
+   "serialNo": "SN100037",
+   "vinNo": "VIN900037",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00380000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "TXT",
+    "year": "2022"
+   },
+   "retailPrice": 17105,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100038",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00390000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Umax Rally",
+    "year": "2023"
+   },
+   "retailPrice": 8215,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC002",
+    "locationDescription": "Bayville, New Jersey",
+    "latestStoreId": "IDGC002"
+   },
+   "serialNo": "SN100039",
+   "vinNo": "VIN900039",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 3970,
+   "hour": 845,
+   "imageUrls": [
+    "fixture-39-0.jpg",
+    "fixture-39-1.jpg",
+    "fixture-39-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00400000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "D5 Maverick 4",
+    "year": "2023"
+   },
+   "retailPrice": 13355,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Dakota Lithium",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100040",
+   "vinNo": "VIN900040",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-40-0.jpg",
+    "fixture-40-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00410000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2024"
+   },
+   "retailPrice": 5155,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100041",
+   "vinNo": "VIN900041",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 2504,
+   "hour": 808,
+   "imageUrls": [
+    "fixture-41-0.jpg",
+    "fixture-41-1.jpg",
+    "fixture-41-2.jpg",
+    "fixture-41-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00420000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2022"
+   },
+   "retailPrice": 12785,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Eco Battery",
+    "type": "Lead Acid",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC012",
+    "locationDescription": "Orangeburg, South Carolina",
+    "latestStoreId": "IDGC012"
+   },
+   "serialNo": "SN100042",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00430000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "D5 Maverick 4",
+    "year": "2026"
+   },
+   "retailPrice": 7590,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Trojan",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100043",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 2194,
+   "hour": 748,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00440000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2024"
+   },
+   "retailPrice": 8925,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC001",
+    "locationDescription": "Hatfield, Pennsylvania",
+    "latestStoreId": "IDGC001"
+   },
+   "serialNo": "SN100044",
+   "vinNo": "VIN900044",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 3989,
+   "hour": 237,
+   "imageUrls": [
+    "fixture-44-0.jpg",
+    "fixture-44-1.jpg",
+    "fixture-44-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00450000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i40",
+    "year": "2026"
+   },
+   "retailPrice": 19945,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100045",
+   "vinNo": "VIN900045",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-45-0.jpg",
+    "fixture-45-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00460000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Adventurer",
+    "year": "2025"
+   },
+   "retailPrice": 13095,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100046",
+   "vinNo": "VIN900046",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-46-0.jpg",
+    "fixture-46-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00470000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Villager 6",
+    "year": "2026"
+   },
+   "retailPrice": 9340,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC011",
+    "locationDescription": "Raleigh, North Carolina",
+    "latestStoreId": "IDGC011"
+   },
+   "serialNo": "SN100047",
+   "vinNo": "VIN900047",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 103,
+   "hour": 282,
+   "imageUrls": [
+    "fixture-47-0.jpg",
+    "fixture-47-1.jpg",
+    "fixture-47-2.jpg",
+    "fixture-47-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00480000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 6",
+    "year": "2022"
+   },
+   "retailPrice": 15545,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC005",
+    "locationDescription": "Rio Grande, New Jersey",
+    "latestStoreId": "IDGC005"
+   },
+   "serialNo": "SN100048",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00490000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2024"
+   },
+   "retailPrice": 9605,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100049",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00500000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "Rover XL",
+    "year": "2025"
+   },
+   "retailPrice": 6510,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC011",
+    "locationDescription": "Raleigh, North Carolina",
+    "latestStoreId": "IDGC011"
+   },
+   "serialNo": "SN100050",
+   "vinNo": "VIN900050",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 245,
+   "hour": 61,
+   "imageUrls": [
+    "fixture-50-0.jpg",
+    "fixture-50-1.jpg",
+    "fixture-50-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00510000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "Nomad XL",
+    "year": "2026"
+   },
+   "retailPrice": 10820,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC002",
+    "locationDescription": "Bayville, New Jersey",
+    "latestStoreId": "IDGC002"
+   },
+   "serialNo": "SN100051",
+   "vinNo": "VIN900051",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-51-0.jpg",
+    "fixture-51-1.jpg",
+    "fixture-51-2.jpg",
+    "fixture-51-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00520000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Drive2 QuieTech",
+    "year": "2026"
+   },
+   "retailPrice": 13130,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100052",
+   "vinNo": "VIN900052",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00530000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2025"
+   },
+   "retailPrice": 6325,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC005",
+    "locationDescription": "Rio Grande, New Jersey",
+    "latestStoreId": "IDGC005"
+   },
+   "serialNo": "SN100053",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 2790,
+   "hour": 5,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00540000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Umax Rally",
+    "year": "2025"
+   },
+   "retailPrice": 17110,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "14",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC002",
+    "locationDescription": "Bayville, New Jersey",
+    "latestStoreId": "IDGC002"
+   },
+   "serialNo": "SN100054",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-54-0.jpg",
+    "fixture-54-1.jpg",
+    "fixture-54-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00550000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "Classic 4 Plus",
+    "year": "2024"
+   },
+   "retailPrice": 18990,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC007",
+    "locationDescription": "Long Pond, Pennsylvania",
+    "latestStoreId": "IDGC007"
+   },
+   "serialNo": "SN100055",
+   "vinNo": "VIN900055",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-55-0.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00560000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 6",
+    "year": "2022"
+   },
+   "retailPrice": 13005,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100056",
+   "vinNo": "VIN900056",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00570000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2023"
+   },
+   "retailPrice": 12555,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Dakota Lithium",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC007",
+    "locationDescription": "Long Pond, Pennsylvania",
+    "latestStoreId": "IDGC007"
+   },
+   "serialNo": "SN100057",
+   "vinNo": "VIN900057",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00580000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2026"
+   },
+   "retailPrice": 20650,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100058",
+   "vinNo": "VIN900058",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-58-0.jpg",
+    "fixture-58-1.jpg",
+    "fixture-58-2.jpg",
+    "fixture-58-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00590000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i20",
+    "year": "2024"
+   },
+   "retailPrice": 10925,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC001",
+    "locationDescription": "Hatfield, Pennsylvania",
+    "latestStoreId": "IDGC001"
+   },
+   "serialNo": "SN100059",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-59-0.jpg",
+    "fixture-59-1.jpg",
+    "fixture-59-2.jpg",
+    "fixture-59-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00600000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Beyond 4",
+    "year": "2023"
+   },
+   "retailPrice": 14620,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Trojan",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100060",
+   "vinNo": "VIN900060",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-60-0.jpg",
+    "fixture-60-1.jpg",
+    "fixture-60-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00610000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "Forester 6",
+    "year": "2022"
+   },
+   "retailPrice": 18310,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100061",
+   "vinNo": "VIN900061",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-61-0.jpg",
+    "fixture-61-1.jpg",
+    "fixture-61-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00620000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Villager 6",
+    "year": "2026"
+   },
+   "retailPrice": 14580,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Trojan",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC003",
+    "locationDescription": "Dover, Delaware",
+    "latestStoreId": "IDGC003"
+   },
+   "serialNo": "SN100062",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00630000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 6",
+    "year": "2024"
+   },
+   "retailPrice": 9285,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC011",
+    "locationDescription": "Raleigh, North Carolina",
+    "latestStoreId": "IDGC011"
+   },
+   "serialNo": "SN100063",
+   "vinNo": "VIN900063",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 2250,
+   "hour": 544,
+   "imageUrls": [
+    "fixture-63-0.jpg",
+    "fixture-63-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00640000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2026"
+   },
+   "retailPrice": 12405,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Dakota Lithium",
+    "type": "Lead Acid",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC012",
+    "locationDescription": "Orangeburg, South Carolina",
+    "latestStoreId": "IDGC012"
+   },
+   "serialNo": "SN100064",
+   "vinNo": "VIN900064",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-64-0.jpg",
+    "fixture-64-1.jpg",
+    "fixture-64-2.jpg",
+    "fixture-64-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00650000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2023"
+   },
+   "retailPrice": 7215,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100065",
+   "vinNo": "VIN900065",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 219,
+   "hour": 280,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00660000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Liberty",
+    "year": "2024"
+   },
+   "retailPrice": 16330,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100066",
+   "vinNo": "VIN900066",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-66-0.jpg",
+    "fixture-66-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00670000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "Nomad XL",
+    "year": "2024"
+   },
+   "retailPrice": 21145,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Eco Battery",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100067",
+   "vinNo": "VIN900067",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-67-0.jpg",
+    "fixture-67-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00680000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i40",
+    "year": "2024"
+   },
+   "retailPrice": 9020,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC002",
+    "locationDescription": "Bayville, New Jersey",
+    "latestStoreId": "IDGC002"
+   },
+   "serialNo": "SN100068",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 102,
+   "hour": 210,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00690000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "Forester 6",
+    "year": "2023"
+   },
+   "retailPrice": 13430,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100069",
+   "vinNo": "VIN900069",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00700000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Drive2 QuieTech",
+    "year": "2022"
+   },
+   "retailPrice": 8010,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "2"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC015",
+    "locationDescription": "Swanton, Vermont",
+    "latestStoreId": "IDGC015"
+   },
+   "serialNo": "SN100070",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 2536,
+   "hour": 741,
+   "imageUrls": [
+    "fixture-70-0.jpg",
+    "fixture-70-1.jpg",
+    "fixture-70-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00710000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "D5 Ranger 4",
+    "year": "2026"
+   },
+   "retailPrice": 19975,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100071",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00720000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i40",
+    "year": "2026"
+   },
+   "retailPrice": 11205,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100072",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-72-0.jpg",
+    "fixture-72-1.jpg",
+    "fixture-72-2.jpg",
+    "fixture-72-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00730000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "EV Nomad",
+    "year": "2025"
+   },
+   "retailPrice": 4625,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100073",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 3966,
+   "hour": 843,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00740000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Precedent",
+    "year": "2025"
+   },
+   "retailPrice": 7470,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100074",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 581,
+   "hour": 693,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00750000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Drive2 QuieTech",
+    "year": "2023"
+   },
+   "retailPrice": 14745,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC005",
+    "locationDescription": "Rio Grande, New Jersey",
+    "latestStoreId": "IDGC005"
+   },
+   "serialNo": "SN100075",
+   "vinNo": "VIN900075",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00760000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i40",
+    "year": "2023"
+   },
+   "retailPrice": 18930,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC011",
+    "locationDescription": "Raleigh, North Carolina",
+    "latestStoreId": "IDGC011"
+   },
+   "serialNo": "SN100076",
+   "vinNo": "VIN900076",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00770000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i20",
+    "year": "2026"
+   },
+   "retailPrice": null,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100077",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00780000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2025"
+   },
+   "retailPrice": 6645,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Eco Battery",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100078",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 1636,
+   "hour": 75,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00790000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Precedent",
+    "year": "2025"
+   },
+   "retailPrice": 21610,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Eco Battery",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC007",
+    "locationDescription": "Long Pond, Pennsylvania",
+    "latestStoreId": "IDGC007"
+   },
+   "serialNo": "SN100079",
+   "vinNo": "VIN900079",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00800000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2026"
+   },
+   "retailPrice": 5820,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC014",
+    "locationDescription": "South Bend, Indiana",
+    "latestStoreId": "IDGC014"
+   },
+   "serialNo": "SN100080",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 3972,
+   "hour": 563,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00810000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Drive2 QuieTech",
+    "year": "2023"
+   },
+   "retailPrice": 21510,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC006",
+    "locationDescription": "Waretown, New Jersey",
+    "latestStoreId": "IDGC006"
+   },
+   "serialNo": "SN100081",
+   "vinNo": "VIN900081",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00820000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i40",
+    "year": "2022"
+   },
+   "retailPrice": 9245,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC011",
+    "locationDescription": "Raleigh, North Carolina",
+    "latestStoreId": "IDGC011"
+   },
+   "serialNo": "SN100082",
+   "vinNo": "VIN900082",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 767,
+   "hour": 712,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00830000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Umax Rally",
+    "year": "2022"
+   },
+   "retailPrice": 15830,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC007",
+    "locationDescription": "Long Pond, Pennsylvania",
+    "latestStoreId": "IDGC007"
+   },
+   "serialNo": "SN100083",
+   "vinNo": "VIN900083",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00840000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i20",
+    "year": "2026"
+   },
+   "retailPrice": 12580,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Dakota Lithium",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC002",
+    "locationDescription": "Bayville, New Jersey",
+    "latestStoreId": "IDGC002"
+   },
+   "serialNo": "SN100084",
+   "vinNo": "VIN900084",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00850000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "TXT",
+    "year": "2024"
+   },
+   "retailPrice": 19140,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100085",
+   "vinNo": "VIN900085",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-85-0.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00860000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Beyond 4",
+    "year": "2023"
+   },
+   "retailPrice": 16245,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC007",
+    "locationDescription": "Long Pond, Pennsylvania",
+    "latestStoreId": "IDGC007"
+   },
+   "serialNo": "SN100086",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-86-0.jpg",
+    "fixture-86-1.jpg",
+    "fixture-86-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00870000000000000",
+   "cartType": {
+    "make": "Club Car",
+    "model": "Precedent",
+    "year": "2022"
+   },
+   "retailPrice": 14295,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100087",
+   "vinNo": "VIN900087",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00880000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i20",
+    "year": "2026"
+   },
+   "retailPrice": 4270,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC002",
+    "locationDescription": "Bayville, New Jersey",
+    "latestStoreId": "IDGC002"
+   },
+   "serialNo": "SN100088",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 961,
+   "hour": 330,
+   "imageUrls": [
+    "fixture-88-0.jpg",
+    "fixture-88-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00890000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Valor",
+    "year": "2022"
+   },
+   "retailPrice": 15005,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "14",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100089",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00900000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2023"
+   },
+   "retailPrice": 11150,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC015",
+    "locationDescription": "Swanton, Vermont",
+    "latestStoreId": "IDGC015"
+   },
+   "serialNo": "SN100090",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-90-0.jpg",
+    "fixture-90-1.jpg",
+    "fixture-90-2.jpg",
+    "fixture-90-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00910000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "Forester 6",
+    "year": "2022"
+   },
+   "retailPrice": 13950,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Dakota Lithium",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100091",
+   "vinNo": "VIN900091",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00920000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i60L",
+    "year": "2026"
+   },
+   "retailPrice": 10595,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC012",
+    "locationDescription": "Orangeburg, South Carolina",
+    "latestStoreId": "IDGC012"
+   },
+   "serialNo": "SN100092",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00930000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "D5 Ranger 4",
+    "year": "2025"
+   },
+   "retailPrice": 9260,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "14",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC006",
+    "locationDescription": "Waretown, New Jersey",
+    "latestStoreId": "IDGC006"
+   },
+   "serialNo": "SN100093",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 2742,
+   "hour": 290,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00940000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "EV Nomad",
+    "year": "2025"
+   },
+   "retailPrice": 6585,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100094",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 830,
+   "hour": 126,
+   "imageUrls": [
+    "fixture-94-0.jpg",
+    "fixture-94-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00950000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "Classic 4 Plus",
+    "year": "2024"
+   },
+   "retailPrice": 21150,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Trojan",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC001",
+    "locationDescription": "Hatfield, Pennsylvania",
+    "latestStoreId": "IDGC001"
+   },
+   "serialNo": "SN100095",
+   "vinNo": "VIN900095",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-95-0.jpg",
+    "fixture-95-1.jpg",
+    "fixture-95-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00960000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2025"
+   },
+   "retailPrice": 8760,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC014",
+    "locationDescription": "South Bend, Indiana",
+    "latestStoreId": "IDGC014"
+   },
+   "serialNo": "SN100096",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 2268,
+   "hour": 723,
+   "imageUrls": [
+    "fixture-96-0.jpg",
+    "fixture-96-1.jpg",
+    "fixture-96-2.jpg",
+    "fixture-96-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00970000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i20",
+    "year": "2026"
+   },
+   "retailPrice": 7160,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100097",
+   "vinNo": "VIN900097",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 3588,
+   "hour": 319,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00980000000000000",
+   "cartType": {
+    "make": "ICON",
+    "model": "i40",
+    "year": "2026"
+   },
+   "retailPrice": 12595,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Dakota Lithium",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100098",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-98-0.jpg",
+    "fixture-98-1.jpg",
+    "fixture-98-2.jpg",
+    "fixture-98-3.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture00990000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2023"
+   },
+   "retailPrice": 7605,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC015",
+    "locationDescription": "Swanton, Vermont",
+    "latestStoreId": "IDGC015"
+   },
+   "serialNo": "SN100099",
+   "vinNo": "VIN900099",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 2547,
+   "hour": 417,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01000000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Express S4",
+    "year": "2024"
+   },
+   "retailPrice": 9995,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC014",
+    "locationDescription": "South Bend, Indiana",
+    "latestStoreId": "IDGC014"
+   },
+   "serialNo": "SN100100",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-100-0.jpg",
+    "fixture-100-1.jpg",
+    "fixture-100-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01010000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2026"
+   },
+   "retailPrice": 8570,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC005",
+    "locationDescription": "Rio Grande, New Jersey",
+    "latestStoreId": "IDGC005"
+   },
+   "serialNo": "SN100101",
+   "vinNo": "VIN900101",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 2639,
+   "hour": 249,
+   "imageUrls": [
+    "fixture-101-0.jpg",
+    "fixture-101-1.jpg",
+    "fixture-101-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01020000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Umax Rally",
+    "year": "2024"
+   },
+   "retailPrice": 18170,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100102",
+   "vinNo": "VIN900102",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01030000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "City Sport",
+    "year": "2022"
+   },
+   "retailPrice": 15765,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC002",
+    "locationDescription": "Bayville, New Jersey",
+    "latestStoreId": "IDGC002"
+   },
+   "serialNo": "SN100103",
+   "vinNo": "VIN900103",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01040000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Umax Rally",
+    "year": "2026"
+   },
+   "retailPrice": null,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "2"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "14",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100104",
+   "vinNo": "VIN900104",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-104-0.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01050000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "TXT",
+    "year": "2026"
+   },
+   "retailPrice": 9810,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100105",
+   "vinNo": "VIN900105",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-105-0.jpg",
+    "fixture-105-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01060000000000000",
+   "cartType": {
+    "make": "Evolution",
+    "model": "Classic 4 Plus",
+    "year": "2024"
+   },
+   "retailPrice": 8035,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC001",
+    "locationDescription": "Hatfield, Pennsylvania",
+    "latestStoreId": "IDGC001"
+   },
+   "serialNo": "SN100106",
+   "vinNo": "VIN900106",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 2554,
+   "hour": 759,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01070000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Valor",
+    "year": "2026"
+   },
+   "retailPrice": 4440,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Gray",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Honda",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100107",
+   "vinNo": "VIN900107",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 811,
+   "hour": 157,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01080000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "Rover XL",
+    "year": "2026"
+   },
+   "retailPrice": 11050,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Gray",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "4"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "72",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC015",
+    "locationDescription": "Swanton, Vermont",
+    "latestStoreId": "IDGC015"
+   },
+   "serialNo": "SN100108",
+   "vinNo": "VIN900108",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01090000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2022"
+   },
+   "retailPrice": 10630,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Eco Battery",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100109",
+   "vinNo": "VIN900109",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-109-0.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01100000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2025"
+   },
+   "retailPrice": 16580,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sky Blue",
+    "seatColor": "Two Tone",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "All Terrain",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "RoyPow",
+    "type": "Lithium",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "8 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC004",
+    "locationDescription": "Ocean View, Delaware",
+    "latestStoreId": "IDGC004"
+   },
+   "serialNo": "SN100110",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01110000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Liberty",
+    "year": "2022"
+   },
+   "retailPrice": 14125,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Navy",
+    "seatColor": "Black",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "Street",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "4"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100111",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01120000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "TXT",
+    "year": "2025"
+   },
+   "retailPrice": 6925,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "EFI 401cc",
+    "horsepower": "12",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC001",
+    "locationDescription": "Hatfield, Pennsylvania",
+    "latestStoreId": "IDGC001"
+   },
+   "serialNo": "SN100112",
+   "vinNo": "VIN900112",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 816,
+   "hour": 332,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01130000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2023"
+   },
+   "retailPrice": 6740,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Street",
+    "hasSoundSystem": false,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2024",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC010",
+    "locationDescription": "Gloucester Point, Virginia",
+    "latestStoreId": "IDGC010"
+   },
+   "serialNo": "SN100113",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 1498,
+   "hour": 707,
+   "imageUrls": [
+    "fixture-113-0.jpg",
+    "fixture-113-1.jpg",
+    "fixture-113-2.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01140000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Drive2 QuieTech",
+    "year": "2023"
+   },
+   "retailPrice": 18900,
+   "isElectric": false,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Red",
+    "seatColor": "Tan",
+    "driveTrain": "4WD",
+    "tireRimSize": "14",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "14",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC013",
+    "locationDescription": "Lecanto, Florida",
+    "latestStoreId": "IDGC013"
+   },
+   "serialNo": "SN100114",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [
+    "fixture-114-0.jpg",
+    "fixture-114-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01150000000000000",
+   "cartType": {
+    "make": "Denago",
+    "model": "City Sport",
+    "year": "2025"
+   },
+   "retailPrice": 14875,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Champagne",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": true,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2026",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "105",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC009",
+    "locationDescription": "Scranton, Pennsylvania",
+    "latestStoreId": "IDGC009"
+   },
+   "serialNo": "SN100115",
+   "vinNo": "VIN900115",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "1 Year",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01160000000000000",
+   "cartType": {
+    "make": "Yamaha",
+    "model": "Umax Rally",
+    "year": "2025"
+   },
+   "retailPrice": null,
+   "isElectric": true,
+   "isUsed": false,
+   "cartAttributes": {
+    "cartColor": "Sandstone",
+    "seatColor": "Tan",
+    "driveTrain": "2WD",
+    "tireRimSize": "12",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": false,
+    "passengers": "8"
+   },
+   "battery": {
+    "year": "2023",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC005",
+    "locationDescription": "Rio Grande, New Jersey",
+    "latestStoreId": "IDGC005"
+   },
+   "serialNo": "SN100116",
+   "vinNo": "",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 0,
+   "hour": 0,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01170000000000000",
+   "cartType": {
+    "make": "Bintelli",
+    "model": "Nemesis 4",
+    "year": "2026"
+   },
+   "retailPrice": null,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Forest Green",
+    "seatColor": "Gray",
+    "driveTrain": "2WD",
+    "tireRimSize": "15",
+    "tireType": "Turf",
+    "hasSoundSystem": false,
+    "isLifted": true,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2022",
+    "brand": "Dakota Lithium",
+    "type": "Lithium",
+    "ampHours": "205",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "5 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC006",
+    "locationDescription": "Waretown, New Jersey",
+    "latestStoreId": "IDGC006"
+   },
+   "serialNo": "SN100117",
+   "vinNo": "VIN900117",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 3839,
+   "hour": 714,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01180000000000000",
+   "cartType": {
+    "make": "E-Z-GO",
+    "model": "Liberty",
+    "year": "2026"
+   },
+   "retailPrice": 7125,
+   "isElectric": false,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "White",
+    "seatColor": "Two Tone",
+    "driveTrain": "4WD",
+    "tireRimSize": "15",
+    "tireType": "All Terrain",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": true,
+    "hasExtendedTop": false,
+    "passengers": "2"
+   },
+   "battery": null,
+   "engine": {
+    "make": "Kawasaki",
+    "horsepower": "10",
+    "stroke": "4"
+   },
+   "cartLocation": {
+    "locationId": "IDGC007",
+    "locationDescription": "Long Pond, Pennsylvania",
+    "latestStoreId": "IDGC007"
+   },
+   "serialNo": "SN100118",
+   "vinNo": "VIN900118",
+   "title": {
+    "isStreetLegal": true,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "2 Years",
+   "odometer": 3613,
+   "hour": 471,
+   "imageUrls": [],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  },
+  {
+   "_id": "fixture01190000000000000",
+   "cartType": {
+    "make": "Advanced EV",
+    "model": "Advent 4",
+    "year": "2022"
+   },
+   "retailPrice": null,
+   "isElectric": true,
+   "isUsed": true,
+   "cartAttributes": {
+    "cartColor": "Black",
+    "seatColor": "Black",
+    "driveTrain": "2WD",
+    "tireRimSize": "14",
+    "tireType": "Turf",
+    "hasSoundSystem": true,
+    "isLifted": false,
+    "hasHitch": false,
+    "hasExtendedTop": true,
+    "passengers": "6"
+   },
+   "battery": {
+    "year": "2025",
+    "brand": "RoyPow",
+    "type": "Lead Acid",
+    "ampHours": "160",
+    "batteryVoltage": "51.2",
+    "packVoltage": "48",
+    "warrantyLength": "3 Years"
+   },
+   "engine": null,
+   "cartLocation": {
+    "locationId": "IDGC008",
+    "locationDescription": "Pocono, Pennsylvania",
+    "latestStoreId": "IDGC008"
+   },
+   "serialNo": "SN100119",
+   "vinNo": "VIN900119",
+   "title": {
+    "isStreetLegal": false,
+    "isTitleInPossession": true
+   },
+   "warrantyLength": "3 Years",
+   "odometer": 3014,
+   "hour": 261,
+   "imageUrls": [
+    "fixture-119-0.jpg",
+    "fixture-119-1.jpg"
+   ],
+   "internalCartImageUrls": [
+    "internal-not-public.jpg"
+   ],
+   "status": "Available"
+  }
+ ]
+}
