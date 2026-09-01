@@ -1,18 +1,18 @@
 {
- "generatedAt": "2026-09-01T16:58:59+00:00",
+ "generatedAt": "2026-09-01T17:48:47+00:00",
  "source": "tigon-dms",
  "summary": {
-  "total": 1350,
+  "total": 1351,
   "new": 736,
-  "used": 614,
-  "electric": 1175,
+  "used": 615,
+  "electric": 1176,
   "gas": 175,
   "streetLegal": 683,
   "lifted": 789,
-  "withPhotos": 869,
+  "withPhotos": 870,
   "priceMin": 500,
   "priceMax": 17845,
-  "priceCount": 1350
+  "priceCount": 1351
  },
  "facets": {
   "makes": [
@@ -34,7 +34,7 @@
    {
     "key": "club_car",
     "label": "Club Car",
-    "count": 359
+    "count": 360
    },
    {
     "key": "cushman",
@@ -597,7 +597,7 @@
    {
     "key": "tempo",
     "label": "Tempo",
-    "count": 200,
+    "count": 201,
     "makeKey": "club_car"
    },
    {
@@ -762,7 +762,7 @@
    {
     "key": "gray",
     "label": "Gray",
-    "count": 185
+    "count": 186
    },
    {
     "key": "green",
@@ -934,7 +934,7 @@
    {
     "key": "4-passenger",
     "label": "4 Passenger",
-    "count": 1039
+    "count": 1040
    },
    {
     "key": "6-passenger",
@@ -951,7 +951,7 @@
    {
     "key": "2x4",
     "label": "2X4",
-    "count": 1294
+    "count": 1295
    },
    {
     "key": "4x4",
@@ -968,7 +968,7 @@
    {
     "key": "lead",
     "label": "Lead",
-    "count": 379
+    "count": 380
    },
    {
     "key": "lithium",
@@ -1008,7 +1008,7 @@
    "postalCode": "19440",
    "country": "USA",
    "inDms": true,
-   "cartCount": 249
+   "cartCount": 250
   },
   {
    "slug": "bayville",
@@ -1200,7 +1200,7 @@
    "postalCode": "18334",
    "country": "USA",
    "inDms": true,
-   "cartCount": 119
+   "cartCount": 115
   },
   {
    "slug": "scranton-wilkes-barre",
@@ -3932,7 +3932,7 @@
   },
   {
    "id": "6a8468c8f8c4f6e3d534b589",
-   "slug": "denago-rover-xl6-scarlet-long-pond-pennsylvania-usa-01",
+   "slug": "denago-rover-xl6-scarlet-long-pond-pennsylvania-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL6",
@@ -40320,7 +40320,7 @@
   },
   {
    "id": "6a848938378715fcdef16d39",
-   "slug": "club-car-tempo-gray-long-pond-pennsylvania-usa-06",
+   "slug": "club-car-tempo-gray-long-pond-pennsylvania-usa-05",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -41126,7 +41126,7 @@
   },
   {
    "id": "6a7cb04e414460a9de375dff",
-   "slug": "club-car-tempo-gray-long-pond-pennsylvania-usa-05",
+   "slug": "club-car-tempo-gray-long-pond-pennsylvania-usa-04",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -41246,6 +41246,68 @@
    "stateCode": "TX",
    "country": "USA",
    "storeName": "Tigon Wichita Falls",
+   "locationDescription": ""
+  },
+  {
+   "id": "6a7c902e414460a9de34e149",
+   "slug": "club-car-tempo-gray-long-pond-pennsylvania-usa-03",
+   "make": "Club Car",
+   "makeKey": "club_car",
+   "model": "Tempo",
+   "modelKey": "tempo",
+   "year": "2020",
+   "title": "Club Car Tempo Gray",
+   "price": 5800,
+   "isElectric": true,
+   "isUsed": true,
+   "condition": "Used",
+   "fuel": "Electric",
+   "status": "retail",
+   "color": "Gray",
+   "colorKey": "gray",
+   "seatColor": "Black",
+   "driveTrain": "2X4",
+   "tireType": "All-Terrain",
+   "tireRimSize": "14",
+   "passengers": "4 Passenger",
+   "hasSoundSystem": false,
+   "isLifted": true,
+   "hasHitch": false,
+   "hasExtendedTop": false,
+   "isStreetLegal": false,
+   "battery": {
+    "type": "Lead",
+    "brand": "Tigon",
+    "year": "2026",
+    "ampHours": "",
+    "packVoltage": "48",
+    "batteryVoltage": "8",
+    "warrantyLength": "1 year"
+   },
+   "engine": {
+    "make": "",
+    "horsepower": "",
+    "stroke": ""
+   },
+   "vin": "",
+   "serial": "BN2013-059274",
+   "odometer": null,
+   "hours": null,
+   "warranty": "90 days",
+   "images": [
+    "f41844f8-a051-70ad-9948-4d0b97a27924-1788283514280.jpg",
+    "f41844f8-a051-70ad-9948-4d0b97a27924-1788283514286.jpg",
+    "f41844f8-a051-70ad-9948-4d0b97a27924-1788283514290.jpg",
+    "f41844f8-a051-70ad-9948-4d0b97a27924-1788283514293.jpg"
+   ],
+   "hasPhotos": true,
+   "storeId": "T3",
+   "locationSlug": "long-pond",
+   "city": "Long Pond",
+   "state": "Pennsylvania",
+   "stateCode": "PA",
+   "country": "USA",
+   "storeName": "Tigon Long Pond",
    "locationDescription": ""
   },
   {
@@ -57715,7 +57777,7 @@
   },
   {
    "id": "6a846769f8c4f6e3d534795e",
-   "slug": "denago-rover-xl6-lava-long-pond-pennsylvania-usa",
+   "slug": "denago-rover-xl6-lava-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL6",
@@ -57761,18 +57823,18 @@
    "warranty": "2 years",
    "images": [],
    "hasPhotos": false,
-   "storeId": "T3",
-   "locationSlug": "long-pond",
-   "city": "Long Pond",
-   "state": "Pennsylvania",
-   "stateCode": "PA",
+   "storeId": "Other",
+   "locationSlug": null,
+   "city": "",
+   "state": "",
+   "stateCode": "",
    "country": "USA",
-   "storeName": "Tigon Long Pond",
+   "storeName": "",
    "locationDescription": ""
   },
   {
    "id": "6a8463f9f8c4f6e3d5343dad",
-   "slug": "denago-rover-xl6-scarlet-long-pond-pennsylvania-usa",
+   "slug": "denago-rover-xl6-scarlet-usa",
    "make": "Denago",
    "makeKey": "denago",
    "model": "Rover XL6",
@@ -57818,13 +57880,13 @@
    "warranty": "2 years",
    "images": [],
    "hasPhotos": false,
-   "storeId": "T3",
-   "locationSlug": "long-pond",
-   "city": "Long Pond",
-   "state": "Pennsylvania",
-   "stateCode": "PA",
+   "storeId": "Other",
+   "locationSlug": null,
+   "city": "",
+   "state": "",
+   "stateCode": "",
    "country": "USA",
-   "storeName": "Tigon Long Pond",
+   "storeName": "",
    "locationDescription": ""
   },
   {
@@ -72079,7 +72141,7 @@
   },
   {
    "id": "6a79cedaabf2084b48929437",
-   "slug": "yamaha-g29-white-long-pond-pennsylvania-usa-10",
+   "slug": "yamaha-g29-white-usa",
    "make": "Yamaha",
    "makeKey": "yamaha",
    "model": "G29",
@@ -72125,13 +72187,13 @@
    "warranty": "90 days",
    "images": [],
    "hasPhotos": false,
-   "storeId": "T3",
-   "locationSlug": "long-pond",
-   "city": "Long Pond",
-   "state": "Pennsylvania",
-   "stateCode": "PA",
+   "storeId": "Other",
+   "locationSlug": null,
+   "city": "",
+   "state": "",
+   "stateCode": "",
    "country": "USA",
-   "storeName": "Tigon Long Pond",
+   "storeName": "",
    "locationDescription": ""
   },
   {
@@ -73728,63 +73790,6 @@
    "stateCode": "NJ",
    "country": "USA",
    "storeName": "Tigon Ocean View",
-   "locationDescription": ""
-  },
-  {
-   "id": "6a7c902e414460a9de34e149",
-   "slug": "club-car-tempo-gray-long-pond-pennsylvania-usa-04",
-   "make": "Club Car",
-   "makeKey": "club_car",
-   "model": "Tempo",
-   "modelKey": "tempo",
-   "year": "2020",
-   "title": "Club Car Tempo Gray",
-   "price": 5800,
-   "isElectric": true,
-   "isUsed": true,
-   "condition": "Used",
-   "fuel": "Electric",
-   "status": "retail",
-   "color": "Gray",
-   "colorKey": "gray",
-   "seatColor": "Black",
-   "driveTrain": "2X4",
-   "tireType": "All-Terrain",
-   "tireRimSize": "14",
-   "passengers": "4 Passenger",
-   "hasSoundSystem": false,
-   "isLifted": true,
-   "hasHitch": false,
-   "hasExtendedTop": false,
-   "isStreetLegal": false,
-   "battery": {
-    "type": "Lead",
-    "brand": "Tigon",
-    "year": "2026",
-    "ampHours": "",
-    "packVoltage": "48",
-    "batteryVoltage": "8",
-    "warrantyLength": "1 year"
-   },
-   "engine": {
-    "make": "",
-    "horsepower": "",
-    "stroke": ""
-   },
-   "vin": "",
-   "serial": "BN2013-059274",
-   "odometer": null,
-   "hours": null,
-   "warranty": "90 days",
-   "images": [],
-   "hasPhotos": false,
-   "storeId": "T3",
-   "locationSlug": "long-pond",
-   "city": "Long Pond",
-   "state": "Pennsylvania",
-   "stateCode": "PA",
-   "country": "USA",
-   "storeName": "Tigon Long Pond",
    "locationDescription": ""
   },
   {
@@ -78121,7 +78126,7 @@
   },
   {
    "id": "6a96ec64b0e9a1ad0213e941",
-   "slug": "club-car-tempo-gray-hatfield-pennsylvania-usa-11",
+   "slug": "club-car-tempo-gray-hatfield-pennsylvania-usa-12",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -78178,7 +78183,7 @@
   },
   {
    "id": "6a96b7a4b0e9a1ad02112a17",
-   "slug": "club-car-tempo-gray-hatfield-pennsylvania-usa-10",
+   "slug": "club-car-tempo-gray-hatfield-pennsylvania-usa-11",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -78219,6 +78224,63 @@
    },
    "vin": "",
    "serial": "BN2024-084967",
+   "odometer": null,
+   "hours": null,
+   "warranty": "90 days",
+   "images": [],
+   "hasPhotos": false,
+   "storeId": "T1",
+   "locationSlug": "hatfield",
+   "city": "Hatfield",
+   "state": "Pennsylvania",
+   "stateCode": "PA",
+   "country": "USA",
+   "storeName": "Tigon Hatfield",
+   "locationDescription": ""
+  },
+  {
+   "id": "6a963b31b0e9a1ad0210eb30",
+   "slug": "club-car-tempo-gray-hatfield-pennsylvania-usa-10",
+   "make": "Club Car",
+   "makeKey": "club_car",
+   "model": "Tempo",
+   "modelKey": "tempo",
+   "year": "2020",
+   "title": "Club Car Tempo Gray",
+   "price": 3800,
+   "isElectric": true,
+   "isUsed": true,
+   "condition": "Used",
+   "fuel": "Electric",
+   "status": "retail",
+   "color": "Gray",
+   "colorKey": "gray",
+   "seatColor": "Black",
+   "driveTrain": "2X4",
+   "tireType": "Street Tire",
+   "tireRimSize": "8",
+   "passengers": "4 Passenger",
+   "hasSoundSystem": false,
+   "isLifted": false,
+   "hasHitch": false,
+   "hasExtendedTop": false,
+   "isStreetLegal": false,
+   "battery": {
+    "type": "Lead",
+    "brand": "Tigon",
+    "year": "2026",
+    "ampHours": "",
+    "packVoltage": "48",
+    "batteryVoltage": "12",
+    "warrantyLength": "1 year"
+   },
+   "engine": {
+    "make": "",
+    "horsepower": "",
+    "stroke": ""
+   },
+   "vin": "",
+   "serial": "BN2024-084906",
    "odometer": null,
    "hours": null,
    "warranty": "90 days",
@@ -79147,7 +79209,7 @@
   },
   {
    "id": "6a6b8954dd72950471012d43",
-   "slug": "club-car-tempo-gray-long-pond-pennsylvania-usa-03",
+   "slug": "club-car-tempo-gray-usa",
    "make": "Club Car",
    "makeKey": "club_car",
    "model": "Tempo",
@@ -79193,13 +79255,13 @@
    "warranty": "90 days",
    "images": [],
    "hasPhotos": false,
-   "storeId": "T3",
-   "locationSlug": "long-pond",
-   "city": "Long Pond",
-   "state": "Pennsylvania",
-   "stateCode": "PA",
+   "storeId": "Other",
+   "locationSlug": null,
+   "city": "",
+   "state": "",
+   "stateCode": "",
    "country": "USA",
-   "storeName": "Tigon Long Pond",
+   "storeName": "",
    "locationDescription": ""
   },
   {
