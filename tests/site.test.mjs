@@ -176,6 +176,20 @@ test("inventory feeds agree with the generated vehicle pages", () => {
         `unexpected image URL on ${cart.slug}: ${url}`,
       );
     }
+    // A cart the DMS gave photos for must publish those photos, not the placeholder.
+    if (cart.hasPhotos) {
+      assert.equal(
+        cart.imageUrls.length,
+        cart.images.length,
+        `${cart.slug} has ${cart.images.length} photos but publishes ${cart.imageUrls.length}`,
+      );
+      for (const url of cart.imageUrls) {
+        assert.ok(
+          url.startsWith("https://s3.amazonaws.com/prod.docs.s3/carts/"),
+          `${cart.slug} has photos but published a placeholder: ${url}`,
+        );
+      }
+    }
   }
 });
 
@@ -395,4 +409,52 @@ test("locations are named for the sales event, never the DMS parent group", () =
   function expectedName(store) {
     return storeDisplayName(store.city, store.state);
   }
+});
+
+test("carts with photos render those photos, not the placeholder", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  const withPhotos = inventory.carts.filter((cart) => cart.hasPhotos);
+  assert.ok(withPhotos.length > 0, "expected at least one cart with photography");
+
+  // Vehicle pages must use the real S3 file as the gallery hero and the OG image.
+  for (const cart of withPhotos.slice(0, 15)) {
+    const html = read(join("golfcart", cart.slug, "index.html"));
+    const expected = `https://s3.amazonaws.com/prod.docs.s3/carts/${cart.images[0]}`;
+    assert.ok(html.includes(`src="${expected}"`), `${cart.slug} gallery does not show its first photo`);
+    assert.ok(
+      html.includes(`<meta property="og:image" content="${expected}">`),
+      `${cart.slug} og:image is not its own photo`,
+    );
+    assert.ok(
+      !html.includes('data-gallery-main src="/images/cart-photo-coming-soon.svg"'),
+      `${cart.slug} shows the placeholder despite having photos`,
+    );
+  }
+
+  // Listing pages that lead with photographed carts must show real images.
+  for (const page of ["index.html", join("july-4th-golf-cart-sales-event", "index.html"), join("inventory", "index.html")]) {
+    const html = read(page);
+    const s3 = (html.match(/src="https:\/\/s3\.amazonaws\.com\/prod\.docs\.s3\/carts\/[^"]+"/g) ?? []).length;
+    assert.ok(s3 > 0, `${page} renders no real cart photography`);
+  }
+});
+
+test("image sitemap and product feed carry real photography", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  const withPhotos = inventory.carts.filter((cart) => cart.hasPhotos);
+  const totalPhotos = withPhotos.reduce((sum, cart) => sum + cart.images.length, 0);
+
+  for (const name of ["image-sitemap.xml", "sitemap-images.xml"]) {
+    const xml = read(name);
+    const locs = (xml.match(/<image:loc>https:\/\/s3\.amazonaws\.com[^<]+<\/image:loc>/g) ?? []).length;
+    assert.ok(locs > 0, `${name} lists no real images`);
+    // The sitemap caps at 20 photos per cart, so it can be fewer but never more.
+    assert.ok(locs <= totalPhotos, `${name} lists more images than exist`);
+    assert.ok(locs >= withPhotos.length, `${name} lists fewer images than carts with photos`);
+    assert.ok(!xml.includes("cart-photo-coming-soon"), `${name} lists the placeholder as content`);
+  }
+
+  const feed = read("product_feed.xml");
+  const links = (feed.match(/<g:image_link>https:\/\/s3\.amazonaws\.com[^<]+<\/g:image_link>/g) ?? []).length;
+  assert.equal(links, withPhotos.length, "product feed image count does not match carts with photos");
 });

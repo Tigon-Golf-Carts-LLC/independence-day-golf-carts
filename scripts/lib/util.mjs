@@ -64,11 +64,28 @@ export function cartImageUrl(filename) {
   return S3_CARTS_URL + String(filename).replace(/^\/+/, "");
 }
 
-/** All public gallery images for a cart, or the placeholder when the DMS has none. */
+/**
+ * All public gallery images for a cart, or the placeholder when there are none.
+ *
+ * Normalised carts (the shape everything downstream uses) hold the S3 filenames
+ * on `images`. Raw DMS records call the same field `imageUrls`, so both are
+ * accepted — reading only the raw name silently produced placeholders on every
+ * server-rendered page.
+ */
 export function cartImages(cart) {
-  const urls = Array.isArray(cart?.imageUrls) ? cart.imageUrls.filter(Boolean) : [];
+  const source = Array.isArray(cart?.images)
+    ? cart.images
+    : Array.isArray(cart?.imageUrls)
+      ? cart.imageUrls
+      : [];
+  const urls = source.filter(Boolean);
   if (urls.length === 0) return [PLACEHOLDER_IMAGE];
   return urls.map(cartImageUrl);
+}
+
+/** True when a cart has at least one public photograph. */
+export function hasRealPhotos(cart) {
+  return cartImages(cart)[0] !== PLACEHOLDER_IMAGE;
 }
 
 /** "Denago Nomad XL Gray" from make / model / color, skipping whatever is missing. */
