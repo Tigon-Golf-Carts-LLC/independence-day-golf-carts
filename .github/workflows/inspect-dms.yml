@@ -1,6 +1,6 @@
 name: Inspect DMS payload
 
-# Prints the real shape of a cart record from the Tigon DMS into the job
+# Prints the real shape of a cart record from the DMS into the job
 # summary. Run this whenever a field on the site disagrees with the dealership
 # system and you need to see what the API actually sends.
 on:

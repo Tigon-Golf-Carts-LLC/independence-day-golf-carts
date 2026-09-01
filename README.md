@@ -2,9 +2,9 @@
 
 The website for **[independencedaygolfcarts.com](https://independencedaygolfcarts.com)** — the
 **July 4th Golf Cart Sales Event** / **Independence Day Golf Cart Sales Event** for
-Tigon Golf Carts LLC.
+Independence Day Golf Carts.
 
-Live dealership inventory is pulled from the Tigon DMS every day at **1:30 AM Eastern**,
+Live dealership inventory is pulled from the DMS every day at **1:30 AM Eastern**,
 the whole site is pre-rendered to static HTML, and the result deploys to
 **GitHub Pages** and/or **Cloudflare Pages**.
 
@@ -33,7 +33,7 @@ runtime, and no JavaScript requirement to read any content.
 ```bash
 npm install          # only devDependency is playwright, used to render icons
 
-npm run fetch        # pull live inventory from the Tigon DMS -> data/inventory.json
+npm run fetch        # pull live inventory from the DMS -> data/inventory.json
 npm run build        # render the whole site -> dist/
 npm test             # verify the build (links, sitemaps, schema, feeds)
 
@@ -55,7 +55,7 @@ Fake inventory cannot reach production.
 
 | Script | What it does |
 | --- | --- |
-| `npm run fetch` | Pull all carts and stores from the Tigon DMS, normalise, assign slugs, write `data/inventory.json` |
+| `npm run fetch` | Pull all carts and stores from the DMS, normalise, assign slugs, write `data/inventory.json` |
 | `npm run fetch:fixture` | Same, from synthetic offline data (development only) |
 | `npm run build` | Render `dist/` from the snapshot |
 | `npm run build:live` | As above, but abort if the snapshot is not live DMS data |
@@ -70,7 +70,7 @@ Fake inventory cannot reach production.
 ## Data flow
 
 ```
-Tigon DMS  ──►  scripts/fetch-inventory.mjs  ──►  data/inventory.json  ──►  scripts/build.mjs  ──►  dist/
+DMS        ──►  scripts/fetch-inventory.mjs  ──►  data/inventory.json  ──►  scripts/build.mjs  ──►  dist/
 api.tigondms.com     normalise, slug,              committed snapshot        static site           deploy
 /wp-website          merge store geo data          (the fallback)            generation
 ```
@@ -219,4 +219,4 @@ search-console setup.
 
 ## Contact
 
-**1-844-844-6638** · sales@independencedaygolfcarts.com
+**844-456-2228** · sales@independencedaygolfcarts.com

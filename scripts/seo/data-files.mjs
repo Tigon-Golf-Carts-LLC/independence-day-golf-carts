@@ -332,12 +332,14 @@ export function buildDataFiles(data) {
     "inventory.json": JSON.stringify(
       {
         generatedAt: data.generatedAt,
-        source: "Tigon DMS",
+        source: "dealer management system",
         refresh: "daily 01:30 America/New_York",
         salesEvent: { name: salesEvent.name, alternateName: salesEvent.altName },
         summary: data.summary,
         facets: data.facets,
-        stores: data.stores,
+        // dmsName is stripped: the store list is published verbatim and must not
+        // carry the dealer group's internal naming.
+        stores: data.stores.map(({ dmsName, ...store }) => store),
         carts: data.carts.map((cart) => ({
           ...cart,
           url: `${site.url}/golfcart/${cart.slug}/`,

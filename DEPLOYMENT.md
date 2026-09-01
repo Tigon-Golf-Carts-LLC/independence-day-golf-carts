@@ -46,7 +46,7 @@ npx wrangler pages deploy dist --project-name=independence-day-golf-carts
 
 ### Pages Functions
 
-`functions/api/*` proxies the Tigon DMS so a Cloudflare deployment can answer live
+`functions/api/*` proxies the DMS so a Cloudflare deployment can answer live
 availability questions between nightly rebuilds, with CORS enabled:
 
 | Endpoint | Proxies |

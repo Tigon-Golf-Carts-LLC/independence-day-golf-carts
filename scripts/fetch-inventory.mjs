@@ -2,7 +2,7 @@
 /**
  * Nightly inventory sync (runs at 1:30 AM America/New_York via GitHub Actions).
  *
- * Pulls every cart and store from the Tigon DMS, normalises the payload,
+ * Pulls every cart and store from the dealer management system, normalises it,
  * assigns stable SEO slugs, and writes data/inventory.json. That snapshot is
  * committed so the site can always be rebuilt — on Cloudflare Pages, on GitHub
  * Pages, or locally — without depending on the DMS being reachable.
@@ -42,7 +42,6 @@ function mergeStores(dmsStores) {
       storeId: store?.storeId ?? null,
       storeMongoId: store?._id ?? null,
       name: storeDisplayName(seed.city, seed.state),
-      dmsName: store?.name ?? null,
       address1: store?.address?.address1 ?? "",
       address2: store?.address?.address2 ?? "",
       postalCode: store?.address?.postalCode ?? "",
@@ -70,7 +69,6 @@ function mergeStores(dmsStores) {
       storeId: store?.storeId ?? null,
       storeMongoId: store?._id ?? null,
       name: storeDisplayName(city, state),
-      dmsName: store?.name ?? null,
       address1: store?.address?.address1 ?? "",
       address2: store?.address?.address2 ?? "",
       postalCode: store?.address?.postalCode ?? "",
@@ -215,7 +213,10 @@ function normaliseCart(raw, storeById) {
     battery: raw?.battery
       ? {
           type: raw.battery.type ?? "",
-          brand: raw.battery.brand ?? "",
+          // The DMS carries a battery brand sharing the parent group's name.
+          // It is omitted rather than renamed: dropping a field is accurate,
+          // substituting a different manufacturer would not be.
+          brand: /tigon/i.test(String(raw.battery.brand ?? "")) ? "" : (raw.battery.brand ?? ""),
           year: raw.battery.year ?? "",
           ampHours: raw.battery.ampHours ?? "",
           packVoltage: raw.battery.packVoltage ?? "",
@@ -350,10 +351,10 @@ async function loadSource() {
     const fixture = JSON.parse(readFileSync(FIXTURE, "utf8"));
     return { rawCarts: fixture.carts, dmsStores: fixture.stores };
   }
-  process.stderr.write("Fetching stores from Tigon DMS...\n");
+  process.stderr.write("Fetching stores from the DMS...\n");
   const dmsStores = await getStores();
   process.stderr.write(`  ${Array.isArray(dmsStores) ? dmsStores.length : 0} stores\n`);
-  process.stderr.write("Fetching inventory from Tigon DMS...\n");
+  process.stderr.write("Fetching inventory from the DMS...\n");
   const { carts } = await getAllCarts({ pageSize: 100 });
   return { rawCarts: carts, dmsStores };
 }
@@ -403,7 +404,7 @@ async function main() {
 
   const snapshot = {
     generatedAt: isoStamp(),
-    source: useFixture ? "fixture" : "tigon-dms",
+    source: useFixture ? "fixture" : "dms-live",
     summary: summarise(carts),
     facets: buildFacets(carts),
     stores,

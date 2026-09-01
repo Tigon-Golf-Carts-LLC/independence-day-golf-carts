@@ -4,7 +4,7 @@
  * City / state / coordinates / service areas are maintained here because they
  * drive geo SEO files that must exist even when the build runs offline.
  * Street addresses, postal codes, store names and store IDs are authoritative
- * in the Tigon DMS (`GET /tigon-stores`) and are merged over this seed by
+ * in the DMS (`GET /tigon-stores`) and are merged over this seed by
  * scripts/fetch-inventory.mjs on every daily build.
  */
 

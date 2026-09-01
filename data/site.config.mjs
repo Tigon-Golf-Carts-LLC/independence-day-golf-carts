@@ -7,7 +7,7 @@
 export const site = {
   name: "Independence Day Golf Carts",
   shortName: "Independence Day Carts",
-  legalName: "Tigon Golf Carts LLC",
+  legalName: "Independence Day Golf Carts",
   domain: "independencedaygolfcarts.com",
   url: "https://independencedaygolfcarts.com",
   tagline: "The July 4th Golf Cart Sales Event",
@@ -16,9 +16,9 @@ export const site = {
     "Independence Day Golf Carts hosts the nation's biggest July 4th Golf Cart Sales Event — Independence Day pricing on new and used electric and gas golf carts, street legal LSVs and lifted carts, with 0% APR financing across 15 dealership locations.",
   shortDescription:
     "July 4th Golf Cart Sales Event — Independence Day savings on new & used golf carts with 0% APR financing.",
-  phone: "1-844-844-6638",
-  phoneE164: "+18448446638",
-  phoneTel: "tel:1-844-844-6638",
+  phone: "844-456-2228",
+  phoneE164: "+18444562228",
+  phoneTel: "tel:+18444562228",
   email: "sales@independencedaygolfcarts.com",
   securityEmail: "security@independencedaygolfcarts.com",
   privacyEmail: "privacy@independencedaygolfcarts.com",
@@ -55,8 +55,8 @@ export const site = {
 /**
  * Public display name for a dealership location.
  *
- * The DMS returns each store under the parent group's name ("Tigon Hatfield").
- * This site is branded for the sales event, so the DMS name is never shown —
+ * The dealer management system returns each store under the parent group's
+ * name. This site is branded for the sales event, so that name is never shown —
  * every location renders through this template instead.
  */
 export function storeDisplayName(city, state) {

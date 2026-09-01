@@ -72,10 +72,10 @@ if (!existsSync(snapshotPath)) {
 const data = JSON.parse(readFileSync(snapshotPath, "utf8"));
 
 // Production deploys must never publish the development fixture as real stock.
-if (process.argv.includes("--require-live") && data.source !== "tigon-dms") {
+if (process.argv.includes("--require-live") && data.source !== "dms-live") {
   process.stderr.write(
     `Refusing to build: data/inventory.json has source "${data.source}", not live DMS data.\n` +
-      "Run `npm run fetch` against the Tigon DMS before deploying.\n",
+      "Run `npm run fetch` against the live DMS before deploying.\n",
   );
   process.exit(1);
 }

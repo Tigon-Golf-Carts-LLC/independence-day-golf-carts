@@ -12,6 +12,9 @@
   var root = document.querySelector("[data-inventory]");
   var PAGE_SIZE = parseInt(root.getAttribute("data-page-size"), 10) || 24;
   var BASE_PATH = root.getAttribute("data-base-path") || "/inventory/";
+  // Read from the server-rendered container so the number lives in one place.
+  var PHONE_TEL = root.getAttribute("data-phone-tel") || "tel:+18444562228";
+  var PHONE_DISPLAY = root.getAttribute("data-phone") || "844-456-2228";
   var LOCKED = JSON.parse(root.getAttribute("data-locked") || "{}");
   var PLACEHOLDER = "/images/cart-photo-coming-soon.svg";
   var S3 = "https://s3.amazonaws.com/prod.docs.s3/carts/";
@@ -197,7 +200,7 @@
         "</div>" +
         '<div class="cart-card__cta">' +
           '<a class="btn btn--outline btn--sm" href="/golfcart/' + escapeHtml(cart.sg) + '/">View Details</a>' +
-          '<a class="btn btn--primary btn--sm" href="tel:1-844-844-6638" aria-label="Call about the ' + escapeHtml(cart.t) + '">' + PHONE_ICON + '</a>' +
+          '<a class="btn btn--primary btn--sm" href="' + escapeHtml(PHONE_TEL) + '" aria-label="Call about the ' + escapeHtml(cart.t) + '">' + PHONE_ICON + '</a>' +
         "</div>" +
       "</div></article>";
   }
@@ -212,7 +215,7 @@
     if (slice.length === 0) {
       grid.className = "";
       grid.innerHTML = '<div class="empty-state"><h3>No carts match those filters right now</h3>' +
-        '<p>Try clearing a filter, or call <a href="tel:1-844-844-6638">1-844-844-6638</a> — we will find the cart you are after across all 15 locations.</p></div>';
+        '<p>Try clearing a filter, or call <a href="' + escapeHtml(PHONE_TEL) + '">' + escapeHtml(PHONE_DISPLAY) + '</a> — we will find the cart you are after across all 15 locations.</p></div>';
     } else {
       grid.className = "grid-carts";
       grid.innerHTML = slice.map(function (cart, index) { return cardHtml(cart, index < 4); }).join("");

@@ -1,5 +1,5 @@
 /**
- * Shared helper for the Cloudflare Pages Functions that proxy the Tigon DMS.
+ * Shared helper for the Cloudflare Pages Functions that proxy the DMS.
  *
  * The site itself is fully static and does not need these endpoints — they
  * exist so a deployment on Cloudflare Pages can answer "is this cart still

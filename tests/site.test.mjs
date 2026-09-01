@@ -521,3 +521,47 @@ test("no cart lists the same photograph twice", () => {
     );
   }
 });
+
+test("the parent group name appears nowhere a visitor can read it", () => {
+  // The only permitted occurrences are inside the lender application URLs the
+  // dealership supplied: BLI's dealer account path and Univest's campaign
+  // tracking. Changing either breaks the application or loses attribution.
+  const allowed = [/blirentals\.com\/app\/TIGON_GOLFCARTS_LLC/g, /utm_source=TIGON\+Golf\+Carts/g];
+
+  const checked = allFiles.filter((file) => /\.(html|txt|json|xml|jsonld|geojson|kml|webmanifest|css|js)$/.test(file));
+  const offenders = [];
+  for (const file of checked) {
+    let contents = readFileSync(file, "utf8");
+    for (const pattern of allowed) contents = contents.replace(pattern, "");
+    // The escaped form of the Univest URL appears in HTML attributes.
+    contents = contents.replace(/utm_source=TIGON\+Golf\+Carts/g, "");
+    if (/tigon/i.test(contents)) {
+      const sample = contents.match(/.{0,40}tigon.{0,40}/i)?.[0] ?? "";
+      offenders.push(`${file.replace(DIST, "dist")}: …${sample.trim()}…`);
+    }
+  }
+  assert.deepEqual(offenders.slice(0, 8), [], `parent group name is still published:\n${offenders.slice(0, 8).join("\n")}`);
+});
+
+test("one phone number is used everywhere", () => {
+  assert.equal(site.phone, "844-456-2228");
+  assert.equal(site.phoneE164, "+18444562228");
+  assert.equal(site.phoneTel, "tel:+18444562228");
+
+  const stale = [];
+  const checked = allFiles.filter((file) => /\.(html|txt|json|xml|jsonld|svg|css|js|webmanifest)$/.test(file));
+  for (const file of checked) {
+    const contents = readFileSync(file, "utf8");
+    // Any 844 number that is not the current one, in any common separator style.
+    for (const match of contents.matchAll(/\b(?:1[-. ]?)?\(?8\d{2}\)?[-. ]?\d{3}[-. ]?\d{4}\b/g)) {
+      const digits = match[0].replace(/\D/g, "").replace(/^1/, "");
+      if (digits !== "8444562228") stale.push(`${file.replace(DIST, "dist")}: ${match[0]}`);
+    }
+  }
+  assert.deepEqual(stale.slice(0, 8), [], `a stale phone number is published:\n${stale.slice(0, 8).join("\n")}`);
+
+  // The number must actually reach the pages, not just the config.
+  const home = read("index.html");
+  assert.ok(home.includes(site.phone), "home page does not show the phone number");
+  assert.ok(home.includes(site.phoneTel), "home page has no click-to-call link");
+});
