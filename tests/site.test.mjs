@@ -496,18 +496,30 @@ test("published prices come from the DMS retail price", () => {
     }
   }
 
-  // The rendered price on a card must match the record, to the dollar.
-  const sample = inventory.carts.filter((cart) => cart.price > 0).slice(0, 12);
-  for (const cart of sample) {
+  // The rendered price must be the DMS price exactly — cents included, never
+  // rounded. Fractional prices are checked explicitly because rounding them is
+  // the failure mode that reads as "the price is wrong".
+  const fractional = inventory.carts.filter((cart) => cart.price > 0 && !Number.isInteger(cart.price));
+  const whole = inventory.carts.filter((cart) => cart.price > 0 && Number.isInteger(cart.price)).slice(0, 10);
+
+  for (const cart of [...fractional, ...whole]) {
     const html = read(join("golfcart", cart.slug, "index.html"));
+    const hasCents = !Number.isInteger(cart.price);
     const expected = "$" + Number(cart.price).toLocaleString("en-US", {
-      minimumFractionDigits: 2,
+      minimumFractionDigits: hasCents ? 2 : 0,
       maximumFractionDigits: 2,
     });
     assert.ok(
-      html.includes(expected),
-      `${cart.slug} page does not show ${expected} for a price of ${cart.price}`,
+      html.includes(`>${expected}<`),
+      `${cart.slug} should render ${expected} for a DMS price of ${cart.price}`,
     );
+    if (hasCents) {
+      const rounded = "$" + Math.round(cart.price).toLocaleString("en-US");
+      assert.ok(
+        !html.includes(`>${rounded}<`),
+        `${cart.slug} publishes ${rounded}, rounding away the cents on a DMS price of ${cart.price}`,
+      );
+    }
   }
 });
 
@@ -564,4 +576,31 @@ test("one phone number is used everywhere", () => {
   const home = read("index.html");
   assert.ok(home.includes(site.phone), "home page does not show the phone number");
   assert.ok(home.includes(site.phoneTel), "home page has no click-to-call link");
+});
+
+test("listing cards show the same price as the vehicle page", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  const byId = new Map(inventory.carts.map((cart) => [cart.id, cart]));
+
+  // Every card the server renders across the listing pages, checked against
+  // the record it came from. Card and detail page must agree exactly.
+  for (const page of ["index.html", join("inventory", "index.html"), join("new", "index.html"),
+                      join("used", "index.html"), join("july-4th-golf-cart-sales-event", "index.html")]) {
+    const html = read(page);
+    const rendered = [...html.matchAll(/data-testid="text-price-([a-f0-9]{24})">([^<]+)</g)];
+    assert.ok(rendered.length > 0, `${page} renders no priced cards`);
+
+    for (const [, id, shown] of rendered) {
+      const cart = byId.get(id);
+      if (!cart) continue;
+      const hasCents = !Number.isInteger(cart.price);
+      const expected = cart.price > 0
+        ? "$" + Number(cart.price).toLocaleString("en-US", {
+            minimumFractionDigits: hasCents ? 2 : 0,
+            maximumFractionDigits: 2,
+          })
+        : "Call for Price";
+      assert.equal(shown, expected, `${page} shows ${shown} for ${cart.slug}, DMS price is ${cart.price}`);
+    }
+  }
 });

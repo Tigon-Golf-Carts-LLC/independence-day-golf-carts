@@ -36,20 +36,30 @@ export function toMakeKey(value) {
     .replace(/[^a-z0-9]/g, "_");
 }
 
-/** "$12,995.00", or "Call for Price" when the DMS has no retail price set. */
+/**
+ * The DMS price, exactly as it is set, or "Call for Price" when there is none.
+ *
+ * Cents are shown only when the price actually has them. Most carts are priced
+ * in whole dollars and read better as "$12,995" than "$12,995.00"; a handful
+ * carry cents, and rounding those would publish a price the dealership is not
+ * asking. One formatter is used everywhere so a card and a vehicle page can
+ * never disagree.
+ */
 export function formatPrice(price) {
-  if (!price || Number(price) <= 0) return "Call for Price";
+  const value = Number(price);
+  if (!value || !Number.isFinite(value) || value <= 0) return "Call for Price";
+  const hasCents = !Number.isInteger(value);
   return (
     "$" +
-    Number(price).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+    value.toLocaleString("en-US", {
+      minimumFractionDigits: hasCents ? 2 : 0,
+      maximumFractionDigits: 2,
+    })
   );
 }
 
-/** "$12,995" — no cents, for headlines and badges. */
-export function formatPriceShort(price) {
-  if (!price || Number(price) <= 0) return "Call for Price";
-  return "$" + Math.round(Number(price)).toLocaleString("en-US");
-}
+/** Alias kept for call sites that read as a short/headline price. */
+export const formatPriceShort = formatPrice;
 
 /** Monthly payment at 0% APR over 48 months. */
 export function monthlyPayment(price, months = 48) {

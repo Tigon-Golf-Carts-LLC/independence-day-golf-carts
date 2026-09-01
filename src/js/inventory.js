@@ -157,8 +157,14 @@
   /* ------------------------------------------------------------- render */
 
   function money(value) {
-    if (!value) return "Call for Price";
-    return "$" + Math.round(value).toLocaleString("en-US");
+    if (!value || value <= 0) return "Call for Price";
+    // Mirrors formatPrice() on the server: cents only when the price has them,
+    // never rounded away.
+    var hasCents = value % 1 !== 0;
+    return "$" + value.toLocaleString("en-US", {
+      minimumFractionDigits: hasCents ? 2 : 0,
+      maximumFractionDigits: 2
+    });
   }
 
   function escapeHtml(value) {
