@@ -441,6 +441,28 @@ async function main() {
       exclusionReasons,
       rfsTrue: source.rawCarts.filter((raw) => raw?.rfsStatus?.isRFS === true).length,
       withPublicPhotos: source.rawCarts.filter((raw) => publicImages(raw).length > 0).length,
+      // How many carts each candidate rule set would publish. The catalogue
+      // cannot satisfy both "only isRFS true" and "at least 600 listings" at
+      // once, so these make the trade-off explicit rather than guessed at.
+      candidateCounts: (() => {
+        const photo = (raw) => publicImages(raw).length > 0;
+        const rfs = (raw) => raw?.rfsStatus?.isRFS === true;
+        const retailStatus = (raw) => !NON_RETAIL_STATUS.has(String(raw?.status ?? "").toLowerCase());
+        const inStock = (raw) =>
+          raw?.isInBoneyard !== true && raw?.isService !== true && raw?.isInStock !== false;
+        const count = (predicate) => source.rawCarts.filter(predicate).length;
+        return {
+          "photo only": count(photo),
+          "photo + retail status": count((raw) => photo(raw) && retailStatus(raw)),
+          "photo + retail status + in stock": count((raw) => photo(raw) && retailStatus(raw) && inStock(raw)),
+          "photo + isRFS": count((raw) => photo(raw) && rfs(raw)),
+          "photo + isRFS + retail status + in stock (current)":
+            count((raw) => photo(raw) && rfs(raw) && retailStatus(raw) && inStock(raw)),
+          "onWebsite true": count((raw) => raw?.advertising?.onWebsite === true),
+          "photo + onWebsite true": count((raw) => photo(raw) && raw?.advertising?.onWebsite === true),
+          "photo + isComplete true": count((raw) => photo(raw) && raw?.isComplete === true),
+        };
+      })(),
     },
     source: useFixture ? "fixture" : "dms-live",
     summary: summarise(carts),
