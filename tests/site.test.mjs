@@ -459,11 +459,21 @@ test("image sitemap and product feed carry real photography", () => {
   assert.equal(links, withPhotos.length, "product feed image count does not match carts with photos");
 });
 
-test("only sellable retail carts are published", () => {
+test("only carts that are ready for sale and photographed are published", () => {
   const inventory = JSON.parse(read("inventory.json"));
   const notForSale = new Set(["boneyard", "permanent_boneyard", "work_in_progress"]);
 
   for (const cart of inventory.carts) {
+    // The dealership's two decisive rules.
+    assert.equal(
+      cart.inventoryState?.isRFS,
+      true,
+      `${cart.slug} is published but is not ready for sale (isRFS ${cart.inventoryState?.isRFS})`,
+    );
+    assert.ok(
+      Array.isArray(cart.images) && cart.images.length > 0,
+      `${cart.slug} is published with no photograph`,
+    );
     const status = String(cart.status ?? "").toLowerCase();
     assert.ok(
       !notForSale.has(status),
@@ -602,5 +612,26 @@ test("listing cards show the same price as the vehicle page", () => {
         : "Call for Price";
       assert.equal(shown, expected, `${page} shows ${shown} for ${cart.slug}, DMS price is ${cart.price}`);
     }
+  }
+});
+
+test("no page shows the photo placeholder for a listed cart", () => {
+  // Every published cart has photography now, so the placeholder should never
+  // stand in for a listing. It stays in the build only as a runtime fallback
+  // if an S3 object disappears between builds.
+  const inventory = JSON.parse(read("inventory.json"));
+  assert.equal(
+    inventory.carts.filter((cart) => !cart.hasPhotos).length,
+    0,
+    "a cart without photography reached the published catalogue",
+  );
+
+  for (const page of ["index.html", join("inventory", "index.html"),
+                      join("july-4th-golf-cart-sales-event", "index.html")]) {
+    const html = read(page);
+    assert.ok(
+      !/<img src="\/images\/cart-photo-coming-soon/.test(html),
+      `${page} renders a placeholder in place of a cart photograph`,
+    );
   }
 });
