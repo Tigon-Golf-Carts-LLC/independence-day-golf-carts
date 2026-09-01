@@ -57,7 +57,8 @@ for (let index = 0; index < 120; index += 1) {
   const hasPhotos = rand() < 0.35;
 
   carts.push({
-    _id: `fixture${String(index).padStart(4, "0")}0000000000000000`.slice(0, 24),
+    // Mirror the DMS: a 24-character hex ObjectId.
+    _id: `fedc${String(index).padStart(4, "0")}${"abcdef0123456789".repeat(2)}`.slice(0, 24),
     cartType: { make: brand.make, model, year: String(2022 + Math.floor(rand() * 5)) },
     retailPrice: rand() < 0.08 ? null : Math.round(basePrice / 5) * 5,
     isElectric,
@@ -94,6 +95,15 @@ for (let index = 0; index < 120; index += 1) {
     serialNo: `SN${String(100000 + index)}`,
     vinNo: rand() < 0.6 ? `VIN${String(900000 + index)}` : "",
     title: { isStreetLegal: rand() < 0.4, isTitleInPossession: true },
+    // Only carts that are ready for sale and photographed are published, so the
+    // fixture has to carry the flag or offline builds come out empty.
+    rfsStatus: { isRFS: hasPhotos && rand() < 0.85, notRFSOption: null, notRFSDescription: null },
+    isInStock: true,
+    isOnLot: true,
+    isInBoneyard: false,
+    isService: false,
+    isComplete: true,
+    advertising: { onWebsite: true, needOnWebsite: false, isDraft: false },
     warrantyLength: pick(["1 Year", "2 Years", "3 Years", ""]),
     odometer: isUsed ? Math.round(rand() * 4000) : 0,
     hour: isUsed ? Math.round(rand() * 900) : 0,

@@ -591,14 +591,17 @@ test("one phone number is used everywhere", () => {
 test("listing cards show the same price as the vehicle page", () => {
   const inventory = JSON.parse(read("inventory.json"));
   const byId = new Map(inventory.carts.map((cart) => [cart.id, cart]));
+  // A category can legitimately be empty (no used stock, say), so cards are
+  // counted across all listing pages rather than required on each one.
+  let checkedCards = 0;
 
   // Every card the server renders across the listing pages, checked against
   // the record it came from. Card and detail page must agree exactly.
   for (const page of ["index.html", join("inventory", "index.html"), join("new", "index.html"),
                       join("used", "index.html"), join("july-4th-golf-cart-sales-event", "index.html")]) {
     const html = read(page);
-    const rendered = [...html.matchAll(/data-testid="text-price-([a-f0-9]{24})">([^<]+)</g)];
-    assert.ok(rendered.length > 0, `${page} renders no priced cards`);
+    const rendered = [...html.matchAll(/data-testid="text-price-([^"]+)">([^<]+)</g)];
+    checkedCards += rendered.length;
 
     for (const [, id, shown] of rendered) {
       const cart = byId.get(id);
@@ -613,6 +616,7 @@ test("listing cards show the same price as the vehicle page", () => {
       assert.equal(shown, expected, `${page} shows ${shown} for ${cart.slug}, DMS price is ${cart.price}`);
     }
   }
+  assert.ok(checkedCards > 0, "no priced cards were rendered on any listing page");
 });
 
 test("no page shows the photo placeholder for a listed cart", () => {
