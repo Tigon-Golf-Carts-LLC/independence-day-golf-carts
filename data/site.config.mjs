@@ -163,4 +163,19 @@ export const S3_CARTS_URL = "https://s3.amazonaws.com/prod.docs.s3/carts/";
 export const PLACEHOLDER_IMAGE = "/images/cart-photo-coming-soon.svg";
 export const DMS_BASE_URL = "https://api.tigondms.com/wp-website";
 
+/**
+ * TIGON IOT "Webhook Flows" lead capture.
+ *
+ * The webhook key is a credential and this repository is public, so it is
+ * NOT stored here. It is read at build time from the TIGON_WEBHOOK_KEY
+ * environment variable (a GitHub Actions secret / Cloudflare Pages variable).
+ * The signing secret never reaches the build at all — it lives only in the
+ * Cloudflare Pages Function environment (functions/api/lead.js).
+ */
+export const leadForm = {
+  formName: "Contact form",
+  webhookBase: "https://tigoniot.com/hooks/",
+  maxFileMb: 10,
+};
+
 export default site;

@@ -441,7 +441,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 }
 .cart-card__price { font: 700 1.5rem/1 var(--font-display); color: var(--red); }
 .cart-card__mo { font-size: .8rem; color: var(--muted); }
-.cart-card__cta { margin-top: 12px; display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.cart-card__cta { margin-top: 12px; display: grid; grid-template-columns: 1fr auto auto; gap: 8px; }
 
 .empty-state {
   text-align: center; padding: 56px 24px; background: var(--surface);
@@ -710,3 +710,37 @@ select.field { cursor: pointer; }
   .site-header, .topbar, .site-footer, .ctaband, .navtoggle, .filters { display: none !important; }
   body { color: #000; background: #fff; font-size: 12pt; }
 }
+
+/* ------------------------------------------------------ lead form + modal --- */
+
+.lead-form__grid { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
+.lead-form__field { flex: 1 1 100%; display: flex; flex-direction: column; gap: 5px; min-width: 0; margin: 0; }
+.lead-form__field--half { flex: 1 1 210px; }
+.lead-form__field > label, .lead-form__photos legend { font-weight: 600; font-size: .9rem; color: var(--ink); }
+.lead-form__req { color: var(--red); }
+.lead-form .field[readonly] { background: var(--surface-2); color: var(--muted); cursor: not-allowed; }
+.lead-form .field[aria-invalid="true"], .lead-form input[type="file"][aria-invalid="true"] { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-soft); }
+.lead-form__photos { border: 1px dashed var(--line-strong); border-radius: var(--radius); padding: 10px 14px 12px; gap: 8px; }
+.lead-form__photos legend { padding: 0 6px; }
+.lead-form__file { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: .9rem; color: var(--body); }
+.lead-form__file span { min-width: 60px; font-weight: 600; }
+.lead-form__file input { font: inherit; max-width: 100%; }
+.lead-form__hp { position: absolute !important; left: -9999px !important; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.lead-form__msg { min-height: 1.4em; margin: 12px 0 8px; font-weight: 600; }
+.lead-form__msg[data-kind="success"] { color: var(--success); }
+.lead-form__msg[data-kind="error"] { color: var(--red); }
+.lead-form button[disabled] { opacity: .65; cursor: wait; transform: none; }
+
+.lead-modal {
+  width: min(680px, calc(100vw - 24px)); max-height: calc(100vh - 24px); padding: 0;
+  border: 0; border-radius: var(--radius-lg); background: var(--card); color: var(--body); box-shadow: var(--shadow-lg);
+}
+.lead-modal::backdrop { background: rgba(7, 26, 56, .62); }
+.lead-modal__inner { position: relative; padding: 28px 26px 22px; }
+.lead-modal__close {
+  position: absolute; top: 10px; right: 12px; width: 40px; height: 40px; border: 0; border-radius: 50%;
+  background: var(--surface); color: var(--ink); font-size: 1.6rem; line-height: 1; cursor: pointer;
+}
+.lead-modal__close:hover { background: var(--red-soft); color: var(--red); }
+.lead-modal__cart { margin: 0 0 8px; padding: 8px 12px; border-radius: var(--radius); background: var(--navy-soft); color: var(--ink); font-weight: 600; }
+@media (max-width: 620px) { .lead-modal__inner { padding: 24px 16px 18px; } }

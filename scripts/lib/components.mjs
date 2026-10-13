@@ -3,6 +3,7 @@
 import { site, salesEvent, financingPartners, storeDisplayName } from "../../data/site.config.mjs";
 import { esc, formatPrice, formatPriceShort, monthlyPayment, cartImages, clamp } from "./util.mjs";
 import { ICONS } from "./layout.mjs";
+import { leadOpenAttrs } from "./lead-form.mjs";
 
 /** One inventory tile. `eager` skips lazy-loading for above-the-fold images. */
 export function cartCard(cart, { eager = false } = {}) {
@@ -43,6 +44,7 @@ export function cartCard(cart, { eager = false } = {}) {
     </div>
     <div class="cart-card__cta">
       <a class="btn btn--outline btn--sm" href="/golfcart/${esc(cart.slug)}/">View Details</a>
+      <a class="btn btn--navy btn--sm" ${leadOpenAttrs(cart)} aria-label="Get a quote on the ${esc(cart.title)}">${ICONS.mail}</a>
       <a class="btn btn--primary btn--sm" href="${site.phoneTel}" aria-label="Call about the ${esc(cart.title)}">${ICONS.phone}</a>
     </div>
   </div>
@@ -227,6 +229,7 @@ export function ctaBand({
     <p>${esc(text)}</p>
     <div class="btn-row">
       <a class="btn btn--primary btn--lg" href="${site.phoneTel}">${ICONS.phone} ${esc(primaryLabel)}</a>
+      <a class="btn btn--ghost-light btn--lg" ${leadOpenAttrs()}>${ICONS.mail} Get a Quote</a>
       <a class="btn btn--ghost-light btn--lg" href="/inventory/">Browse All Inventory</a>
     </div>
   </div>

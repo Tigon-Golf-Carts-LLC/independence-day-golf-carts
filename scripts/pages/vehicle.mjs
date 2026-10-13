@@ -8,6 +8,7 @@ import { site, salesEvent, storeDisplayName } from "../../data/site.config.mjs";
 import { esc, clamp, formatPrice, formatPriceShort, monthlyPayment, cartImages } from "../lib/util.mjs";
 import { renderPage, ICONS, abs } from "../lib/layout.mjs";
 import { cartCard, cartSchema, cartDescription, cartProperties, ctaBand } from "../lib/components.mjs";
+import { leadOpenAttrs } from "../lib/lead-form.mjs";
 
 /** Split the flat property list into the tables shown on the page. */
 function specSections(cart) {
@@ -163,7 +164,8 @@ export function renderVehiclePage({ cart, data, related }) {
         }
         <a class="btn btn--primary btn--block btn--lg" href="${site.phoneTel}">${ICONS.phone} Call ${esc(site.phone)}</a>
         <a class="btn btn--navy btn--block" href="/financing/">Apply Now — 0% Financing</a>
-        <a class="btn btn--outline btn--block" href="/contact/?cart=${esc(cart.slug)}">Request More Photos</a>
+        <a class="btn btn--primary btn--block" ${leadOpenAttrs(cart)} data-testid="button-check-availability">${ICONS.mail} Check Availability &amp; Get a Quote</a>
+        <a class="btn btn--outline btn--block" ${leadOpenAttrs(cart)}>Request More Photos</a>
         <a class="btn btn--outline btn--block" href="/trade-in/">Value My Trade</a>
         <ul class="offer-list" style="margin-top:18px">
           <li>${ICONS.tick}<span>Local and nationwide delivery available</span></li>
