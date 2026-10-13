@@ -7,6 +7,7 @@ import { site, salesEvent, financingPartners, keywords } from "../../data/site.c
 import { esc, clamp, rfc822 } from "../lib/util.mjs";
 import { renderPage, ICONS, abs, YEAR } from "../lib/layout.mjs";
 import { ctaBand, financingGrid, valueProps } from "../lib/components.mjs";
+import { leadFormHtml, leadOpenAttrs } from "../lib/lead-form.mjs";
 import { faq } from "../../data/faq.mjs";
 import { guides } from "../../data/guides.mjs";
 
@@ -19,6 +20,7 @@ function simplePage({ data, path, title, h1, description, lede, body, pageKeywor
     ${lede ? `<p class="page-head__lede">${esc(lede)}</p>` : ""}
     <div class="btn-row" style="margin-top:20px">
       <a class="btn btn--primary" href="${site.phoneTel}">${ICONS.phone} Call ${esc(site.phone)}</a>
+      <a class="btn btn--navy" ${leadOpenAttrs()}>${ICONS.mail} Send a Message</a>
       <a class="btn btn--outline" href="/inventory/">Browse Inventory</a>
     </div>
   </div>
@@ -221,25 +223,17 @@ ${site.hoursDisplay.map((row) => `            <tr><th scope="row">${esc(row.labe
         <h3 style="margin-top:24px">Email</h3>
         <p><a href="mailto:${esc(site.email)}">${esc(site.email)}</a></p>
       </div>
-      <div class="panel">
+      <div class="panel" id="contact-form">
         <h2 style="margin-top:0">Send a message</h2>
-        <p class="note">This form opens your email client with the details pre-filled — no data is sent to a third party.</p>
-        <form action="mailto:${esc(site.email)}" method="post" enctype="text/plain">
-          <p><label class="check" style="display:block"><span>Your name</span></label>
-             <input class="field" type="text" name="name" autocomplete="name" required></p>
-          <p><label class="check" style="display:block"><span>Phone</span></label>
-             <input class="field" type="tel" name="phone" autocomplete="tel"></p>
-          <p><label class="check" style="display:block"><span>Email</span></label>
-             <input class="field" type="email" name="email" autocomplete="email" required></p>
-          <p><label class="check" style="display:block"><span>Which location?</span></label>
-             <select class="field" name="location">
-               <option value="">No preference</option>
-${data.stores.map((store) => `               <option value="${esc(store.city)}, ${esc(store.stateCode)}">${esc(store.city)}, ${esc(store.stateCode)}</option>`).join("\n")}
-             </select></p>
-          <p><label class="check" style="display:block"><span>What are you looking for?</span></label>
-             <textarea class="field" name="message" rows="5" placeholder="Stock number, cart type, budget, delivery ZIP…"></textarea></p>
-          <p><button class="btn btn--primary btn--block btn--lg" type="submit">Send message</button></p>
-        </form>
+        <p class="note">A product specialist will reply the same business day. Fields marked * are required.</p>
+        <p><a class="btn btn--navy btn--block" href="${site.phoneTel}">${ICONS.phone} Call Now ${esc(site.phone)}</a></p>
+        ${leadFormHtml({ id: "contact-form-lead", extra: `<div class="lead-form__field">
+          <label for="contact-form-location">Preferred location</label>
+          <select class="field" name="location" id="contact-form-location">
+            <option value="">No preference</option>
+${data.stores.map((store) => `            <option value="${esc(store.city)}, ${esc(store.stateCode)}">${esc(store.city)}, ${esc(store.stateCode)}</option>`).join("\n")}
+          </select>
+        </div>` })}
       </div>
     </div>
   </div>

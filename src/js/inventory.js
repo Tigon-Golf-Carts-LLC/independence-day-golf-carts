@@ -22,6 +22,10 @@
     'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
     '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>';
 
+  var MAIL_ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>';
+
   var countEl = document.querySelector("[data-inventory-count]");
   var pagerEl = document.querySelector("[data-inventory-pager]");
   var sortEl = document.querySelector("[data-inventory-sort]");
@@ -206,6 +210,10 @@
         "</div>" +
         '<div class="cart-card__cta">' +
           '<a class="btn btn--outline btn--sm" href="/golfcart/' + escapeHtml(cart.sg) + '/">View Details</a>' +
+          '<a class="btn btn--navy btn--sm" href="/contact/?cart=' + escapeHtml(cart.sg) + '#contact-form" data-lead-open' +
+            ' data-brand="' + escapeHtml(cart.mkl) + '" data-model="' + escapeHtml(cart.mdl) + '" data-vin="' + escapeHtml(cart.vin) +
+            '" data-sku="' + escapeHtml(cart.sk) + '" data-title="' + escapeHtml((cart.y ? cart.y + " " : "") + cart.t) +
+            '" aria-label="Get a quote on the ' + escapeHtml(cart.t) + '">' + MAIL_ICON + '</a>' +
           '<a class="btn btn--primary btn--sm" href="' + escapeHtml(PHONE_TEL) + '" aria-label="Call about the ' + escapeHtml(cart.t) + '">' + PHONE_ICON + '</a>' +
         "</div>" +
       "</div></article>";

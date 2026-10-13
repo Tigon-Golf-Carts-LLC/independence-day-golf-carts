@@ -74,8 +74,11 @@ jobs:
 
       # --require-live aborts if the fetch above fell back to a non-DMS snapshot,
       # so the development fixture can never be published as real inventory.
+      # The lead-form webhook key is a repository secret, never committed.
       - name: Build the static site
         if: steps.gate.outputs.proceed == 'true'
+        env:
+          TIGON_WEBHOOK_KEY: ${{ secrets.TIGON_WEBHOOK_KEY }}
         run: npm run build:live
 
       - name: Verify the build
@@ -150,7 +153,12 @@ jobs:
         with:
           node-version: "22"
 
+      # Set the repository variable TIGON_LEAD_VIA_PROXY to 1 to send Cloudflare
+      # visitors' leads through the signing function in functions/api/lead.js.
       - name: Rebuild from the committed snapshot
+        env:
+          TIGON_WEBHOOK_KEY: ${{ secrets.TIGON_WEBHOOK_KEY }}
+          TIGON_LEAD_VIA_PROXY: ${{ vars.TIGON_LEAD_VIA_PROXY }}
         run: |
           git pull --ff-only || true
           npm run build:live

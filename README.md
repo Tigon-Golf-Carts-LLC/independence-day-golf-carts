@@ -21,6 +21,7 @@ the whole site is pre-rendered to static HTML, and the result deploys to
 | Location pages | one per dealership, plus a per-location inventory page |
 | Guides | five long-form articles under `/guides/` |
 | Utility pages | financing, about, contact, service, trade-in, delivery, FAQ, HTML sitemap, privacy, terms, accessibility, 404 |
+| Lead forms | site-wide *Get a Quote* modal, per-cart quote buttons and the contact form, sent to the lead system; see [LEAD-FORMS.md](LEAD-FORMS.md) |
 | SEO / AI files | 100+ generated files — see [SEO and AI files](#seo-and-ai-files) |
 
 Every page is real HTML on disk. There is no client-side routing, no framework

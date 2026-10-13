@@ -548,7 +548,8 @@ test("the parent group name appears nowhere a visitor can read it", () => {
   // The only permitted occurrences are inside the lender application URLs the
   // dealership supplied: BLI's dealer account path and Univest's campaign
   // tracking. Changing either breaks the application or loses attribution.
-  const allowed = [/blirentals\.com\/app\/TIGON_GOLFCARTS_LLC/g, /utm_source=TIGON\+Golf\+Carts/g];
+  // The lead-form webhook address is the third: the browser posts leads to it.
+  const allowed = [/blirentals\.com\/app\/TIGON_GOLFCARTS_LLC/g, /utm_source=TIGON\+Golf\+Carts/g, /https:\/\/tigoniot\.com\/hooks\/[A-Za-z0-9_-]+/g];
 
   const checked = allFiles.filter((file) => /\.(html|txt|json|xml|jsonld|geojson|kml|webmanifest|css|js)$/.test(file));
   const offenders = [];
@@ -638,4 +639,39 @@ test("no page shows the photo placeholder for a listed cart", () => {
       `${page} renders a placeholder in place of a cart photograph`,
     );
   }
+});
+
+test("every page carries the lead modal, and the contact page the lead form", () => {
+  const names = ["form_name", "first_name", "last_name", "phone1", "phone2", "address", "email", "zip_code", "model", "brand",
+    "vin_number", "sku_number", "url", "comments", "image_1", "image_2", "image_3", "referrer", "utm_source", "utm_medium",
+    "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid", "ga_client_id", "website"];
+  const pages = allFiles.filter((file) => file.endsWith(".html"));
+  for (const file of pages) {
+    const html = readFileSync(file, "utf8");
+    assert.ok(html.includes('id="lead-modal"'), `${file.replace(DIST, "dist")} has no lead modal`);
+    assert.ok(html.includes("/js/lead-form.js"), `${file.replace(DIST, "dist")} does not load the lead form script`);
+  }
+  const contact = read(join("contact", "index.html"));
+  const form = contact.match(/<form[^>]*id="contact-form-lead"[\s\S]*?<\/form>/)?.[0] ?? "";
+  assert.ok(form, "contact page has no lead form");
+  assert.ok(!contact.includes("mailto:" + site.email + '" method'), "contact page still posts to mailto");
+  for (const name of names) assert.ok(form.includes(`name="${name}"`), `contact form is missing ${name}`);
+  assert.match(form, /name="form_name" value="Contact form"/);
+  assert.match(form, /name="website"[^>]*tabindex="-1"/);
+  for (const name of ["first_name", "last_name", "email", "phone1"]) {
+    assert.match(form, new RegExp(`name="${name}"[^>]*required`), `${name} is not required`);
+  }
+  // The key is injected at build time; the endpoint must be this site's webhook, the proxy, or blank.
+  const endpoint = form.match(/data-endpoint="([^"]*)"/)[1];
+  assert.match(endpoint, /^(|\/api\/lead|https:\/\/tigoniot\.com\/hooks\/[A-Za-z0-9_-]{16,})$/);
+});
+
+test("vehicle pages pre-fill the lead modal with the cart", () => {
+  const inventory = JSON.parse(read("inventory.json"));
+  const cart = inventory.carts.find((entry) => entry.vin && entry.serial) ?? inventory.carts[0];
+  const html = read(join("golfcart", cart.slug, "index.html"));
+  const button = html.match(/<a [^>]*data-testid="button-check-availability"[^>]*>/)?.[0] ?? "";
+  assert.ok(button.includes("data-lead-open"), "vehicle page has no quote button");
+  if (cart.vin) assert.ok(button.includes(`data-vin="${cart.vin}"`), "quote button does not carry the VIN");
+  if (cart.serial) assert.ok(button.includes(`data-sku="${cart.serial}"`), "quote button does not carry the stock number");
 });

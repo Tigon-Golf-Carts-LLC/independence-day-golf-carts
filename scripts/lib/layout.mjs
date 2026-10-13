@@ -8,6 +8,7 @@
 
 import { site, salesEvent, nav, keywords } from "../../data/site.config.mjs";
 import { esc, jsonLd, isoStamp } from "./util.mjs";
+import { leadModal, leadOpenAttrs } from "./lead-form.mjs";
 
 const YEAR = new Date().getUTCFullYear();
 const OG_IMAGE = `${site.url}/images/og-image.png`;
@@ -333,6 +334,7 @@ const ICONS = {
   clock: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>`,
   tick: `<svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>`,
   external: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></svg>`,
+  mail: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>`,
   menu: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>`,
   sun: `<svg class="icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>`,
   moon: `<svg class="icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>`,
@@ -381,6 +383,7 @@ function header(activePath) {
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme">
         ${ICONS.sun}${ICONS.moon}
       </button>
+      <a class="btn btn--navy btn--sm" ${leadOpenAttrs()}>${ICONS.mail}<span>Get a Quote</span></a>
       <a class="btn btn--primary btn--sm" href="${site.phoneTel}">${ICONS.phone}<span>${esc(site.phone)}</span></a>
     </div>
   </div>
@@ -511,7 +514,7 @@ export function renderPage(options) {
     ...(options.graph ?? []),
   ];
 
-  const scriptTags = ["/js/site.js", ...scripts]
+  const scriptTags = ["/js/site.js", "/js/lead-form.js", ...scripts]
     .map((src) => `<script src="${src}" defer></script>`)
     .join("\n");
 
@@ -531,6 +534,7 @@ ${breadcrumbHtml(breadcrumbs)}
 ${body}
 </main>
 ${footer(stores)}
+${leadModal()}
 ${scriptTags}
 </body>
 </html>
